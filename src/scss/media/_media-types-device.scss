@@ -1,0 +1,106 @@
+/* stylelint-disable */
+
+// [1] breakpoints
+
+@function bp-val($name) {
+  @if type-of($name) == 'number' {
+    @return $name;
+  }
+
+  $val: map-get($breakpoints, $name);
+
+  @if $val == null {
+    @error 'Breakpoint #{$name} not found';
+  }
+
+  @return $val;
+}
+
+@function bp-val-next($name) {
+  $breakpoint-names: map_keys($breakpoints);
+  $n: index($breakpoint-names, $name);
+
+  @if $n >= length($breakpoint-names) {
+    @error 'Next breakpoint after #{$name} not found';
+  }
+
+  $next-key: nth($breakpoint-names, $n + 1);
+
+  @return map-get($breakpoints, $next-key);
+}
+
+// min-width using  @include bp-up(sm)
+
+@mixin bp-up($name) {
+  $val: bp-val($name);
+
+  @media (min-width: $val) {
+    @content;
+  }
+}
+
+// max-width using  @include bp-down(xl)
+
+@mixin bp-down($name) {
+  $val: bp-val($name);
+
+  @media (max-width: $val - 0.02) {
+    @content;
+  }
+}
+
+// single breakpoint
+
+@mixin bp-only($name) {
+  @if type-of($name) == 'number' {
+    @error '#{$name} should be breakpoint name';
+  }
+
+  $min: bp-val($name);
+  $max: bp-val-next($name);
+
+  @media (min-width: $min) and (max-width: $max - 0.02) {
+    @content;
+  }
+}
+
+// between breakpoints
+
+@mixin bp-between($name1, $name2) {
+  $min: bp-val($name1);
+  $max: bp-val($name2);
+
+  @media (min-width: $min) and (max-width: $max - 0.02) {
+    @content;
+  }
+}
+
+// example:
+// @include bp-up(sm) {
+//   margin-bottom: 0;
+// }
+
+// [2]  retina
+
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+// [3]  the different scenarios of a device pointer
+// https://www.smashingmagazine.com/2022/03/guide-hover-pointer-media-queries
+
+// targets only devices that can hover
+@mixin device-pointer {
+  @media (hover: hover), (pointer: fine) and (any-pointer: coarse) {
+    @content;
+  }
+}
+
+// targets only devices that don't hover
+@mixin device-touch {
+  @media (hover: none) and (pointer: coarse) {
+    @content;
+  }
+}

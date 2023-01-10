@@ -1,0 +1,10 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "media";
+@import "fonts";
+@import "helpers"; // дебаг штуки
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/button";

@@ -1,0 +1,34 @@
+// https://a11yproject.com/posts/understanding-vestibular-disorders/
+// https://web.dev/prefers-reduced-motion/
+
+/* stylelint-disable */
+@mixin reduced-motion-reduce {
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      &,
+      &::before,
+      &::after {
+        background-attachment: initial !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+        animation-duration: 1ms !important;
+        animation-delay: -1ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  }
+}
+
+@mixin reduced-motion-no-preference {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+// тестируем выполняется ли reduce в системе вкл/выкл
+
+// В Windows 10: Настройки > Специальные возможности > Экран > Показать анимацию в Windows.
+// В Windows 11: Настройки > Универсальный доступ > Визуальные эффекты > Эффекты анимации.
+// В macOS: Системные настройки > Универсальный доступ > Экран > Уменьшить движение.
+// В iOS: Настройки > Основные > Универсальный доступ > Уменьшить движение.

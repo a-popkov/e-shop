@@ -1,0 +1,204 @@
+// typography
+
+$font-primary: "ABeeZee", "Roboto", "Doppio", "Segoe UI", "Helvetica Neue", "Helvetica", "Cantarell", sans-serif;
+// $font-base: 0.520833vw; // формула calc(10 / (1920 / 100))
+$font-size: 16; // default
+
+$line-height: 1.16;
+$font-weight: (
+  100: 100,
+  200: 200,
+  300: 300,
+  400: 400,
+  500: 500,
+  600: 600,
+  700: 700,
+  800: 800,
+  900: 900,
+);
+
+@function fw($key) {
+  @if map-has-key($font-weight, $key) {
+    @return map-get($font-weight, $key);
+  }
+}
+
+// spacing
+
+$content-fluid-width: 1888px;
+$content-width: 1060px;
+$fields: 16px;
+$container-fluid-width: $content-fluid-width + ($fields * 2);
+$container-width: $content-width + ($fields * 2);
+$offset: 42px;
+$columns: 12;
+$gap: 20px;
+$spacer: 1rem;
+$spacers: (
+  1: ($spacer * 0.25),
+  2: ($spacer * 0.5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 2),
+  6: ($spacer * 3),
+);
+
+// использование через map-get:
+// padding: map-get($spacers, 4);
+// или так:
+// padding: space(4);
+@function space($key) {
+  @if map-has-key($spacers, $key) {
+    @return map-get($spacers, $key);
+  }
+
+  @warn "Значения `#{$key}` нет в $spacers-списке, см. файл app/src/scss/_vars.scss";
+
+  @return null;
+}
+
+// default breakpoints https://zellwk.com/blog/media-query-units/
+
+$break_sm: 576; // 576px;
+$break_md: 767; // 767px;
+$break_lg: 992; // 992px;
+$break_xl: 1024; // 1024px;
+$break_xxl: 1200; // 1200px;
+
+$breakpoints: (
+  sm: calc($break_sm / $font-size) * 1em,
+  md: calc($break_md / $font-size) * 1em,
+  lg: calc($break_lg / $font-size) * 1em,
+  xl: calc($break_xl / $font-size) * 1em,
+  xxl: calc($break_xxl / $font-size) * 1em,
+);
+
+// z-index
+
+$z-index: (
+  immortal: 100,
+  popup: 15,
+  navigation: 10,
+  popover: 5,
+  dropdown: 2,
+  wrapper: 1,
+  default: 0,
+  under: -1
+);
+
+// использование через map-get:
+// z-index: map-get($z-index, navigation);
+// или так:
+// z-index: z(navigation);
+@function z($key) {
+  @if map-has-key($z-index, $key) {
+    @return map-get($z-index, $key);
+  }
+
+  @warn "Значения `#{$key}` нет в $z-index-списке, см. файл app/src/scss/_vars.scss";
+
+  @return null;
+}
+
+// transparentize
+
+$color-opacity: 0.6;
+
+// Color palettes
+
+$colors: (
+  light: #fff,
+  dark: #000,
+
+  // neutral light-gray
+
+  neutral-lightest: #fcf7f2,
+  neutral-light-alpha: rgba(255, 255, 255, 0.6),
+  neutral-orange-alpha: rgba(216, 119, 0, 0.6),
+
+  // gray
+
+  grey-lightest: #e7e7e7,
+  grey-lighter: #c4c4c4,
+  grey-light: #a1a0a3,
+  grey-medium: #48474c,
+  grey-dark: #323136,
+  grey-darker: #131218,
+
+  // orange
+
+  orange-lightest: #f7b045,
+  orange-lighter: #f90,
+  orange-light: #ea8305,
+  orange-medium: #d87700,
+  orange-dark: #e1670e,
+  orange-darker: #a55d06,
+
+  // yellow
+
+  yellow-light: #ffd600,
+  yellow-dark: #a1880a,
+
+  // accent
+
+  // accent: #000,
+  accent-opacity: transparentize(#fff, 1 - $color-opacity),
+
+  // links
+
+  // link: #0078ff,
+  // link-underline: transparentize(#0078ff, 1 - $color-opacity),
+  link-hover: #d87700,
+  // link-hover-underline: transparentize(#ff0000, 1 - $color-opacity),
+  link-active: #a55d06,
+  // link-active-underline: transparentize(#cc0000, 1 - $color-opacity),
+  link-visited: #a55d06,
+  // link-visited-underline: transparentize(#b40eb4, 1 - $color-opacity)
+);
+
+// использование через map-get:
+// color: map-get($colors, accent);
+// или так:
+// color: clr(accent);
+@function clr($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Цвет `#{$key}` не указан в списке $colors, см. файл app/src/scss/_vars.scss";
+
+  @return null;
+}
+
+// stylization
+
+$request-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+// $search-shadow: 0 0 20px rgba(0, 0, 0, 0.12);
+// $main-shadow:
+//   0 80px 80px -20px rgba(154, 156, 165, 0.08),
+//   0 30px 24px -10px rgba(154, 156, 165, 0.05),
+//   0 12px 10px -6px rgba(154, 156, 165, 0.04),
+//   0 4px 4px -4px rgba(30, 33, 44, 0.03);
+$border-radius: 5px;
+$border: 4px solid color(link);
+$focus: 4px solid color(link);
+
+// speed
+
+$hero-slider-speed: 500;
+
+// easing transitions
+
+$duration-normal: 0.4s;
+$easing-back-out: cubic-bezier(0.25, 0.74, 0.22, 1.1); // http://cubic-bezier.com/#.25,.74,.22,1.1
+$easing-back-in: cubic-bezier(0.47, -0.1, 0.5, -0.06); // http://cubic-bezier.com/#.47,-0.1,.5,-.06
+$easing-out: ease-out;
+$easing-in: ease-in;
+
+// create CSS variables from Sass
+
+// :root {
+//   @each $key, $value in $colors {
+//     --#{$key}: #{$value};
+//   }
+// }

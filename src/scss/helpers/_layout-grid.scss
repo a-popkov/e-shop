@@ -1,0 +1,55 @@
+/* дай class="grid-layout" для page__body и появится сетка по которой ты сможешь ориентироваться в своем проекте */
+
+.layout-grid::before {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  pointer-events: none;
+
+  --grid-color: rgb(255 0 0 / 0.2);
+  --grid-sides: 42rem; // боковые отступы
+  --grid-gutter: 2rem; // расстояние между колонками
+  --grid-columns: 12;  // количество колонок
+  --grid-column-width: calc(
+    (100% - var(--grid-gutter) * var(--grid-columns)) / var(--grid-columns)
+  );
+
+  border: solid transparent;
+  border-width: 0 calc(var(--grid-sides) - var(--grid-gutter) / 2);
+
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent calc(var(--grid-gutter) / 2),
+    var(--grid-color) calc(var(--grid-gutter) / 2),
+    var(--grid-color) calc(var(--grid-column-width) + var(--grid-gutter) / 2),
+    transparent calc(var(--grid-column-width) + var(--grid-gutter) / 2),
+    transparent calc(var(--grid-column-width) + var(--grid-gutter))
+  );
+
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 140rem) {
+  .grid-layout::before {
+    --grid-sides: 30.5rem;
+    --grid-columns: 12;
+  }
+}
+
+@media (max-width: 736px) {
+  .grid-layout::before {
+    --grid-sides: 2.4rem;
+    --grid-columns: 8;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-layout::before {
+    --grid-sides: 1.2rem;
+    --grid-columns: 4;
+  }
+}

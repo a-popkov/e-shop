@@ -1,0 +1,13 @@
+/* stylelint-disable */
+
+$global-font-path: "../fonts/";
+
+@mixin font-face($font-family, $font-file, $font-weight, $font-style) {
+  @font-face {
+    font-family: "#{$font-family}";
+    src: url("#{$global-font-path}#{$font-file}.woff2") format("woff2");
+    font-weight: #{$font-weight};
+    font-display: swap;
+    font-style: $font-style;
+  }
+}

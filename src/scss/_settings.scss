@@ -1,0 +1,417 @@
+* {
+  &,
+  &::before,
+  &::after {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-size-adjust: none;
+  }
+}
+
+@include reduced-motion-reduce;
+
+/* Page */
+
+.page,
+.page__body {
+  height: 100%;
+}
+
+.page {
+  @include antialias;
+  @include text-size-adjust(100%);
+
+  font-family: $font-primary;
+  // font-size: $font-base;
+  font-size: $font-size * 1px;
+  text-rendering: optimizeSpeed;
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+.page__body {
+  @include flex-column;
+
+  margin-inline: auto;
+  min-inline-size: 320px;
+  max-inline-size: 1920px;
+  font-weight: fw(400);
+  font-size: 18px;
+  line-height: $line-height;
+  color: clr(grey-lighter);
+  background-color: clr(grey-darker);
+}
+
+.page__main {
+  @include flex-column;
+
+  flex-grow: 1;
+}
+
+// Reset
+
+.reset-btn {
+  display: inline-block;
+  margin: 0;
+  outline: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  transition: $duration-normal;
+  cursor: pointer;
+  user-select: none;
+}
+
+.reset-link {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  text-decoration: none;
+  color: currentColor;
+  background-color: transparent;
+  transition: $duration-normal;
+  cursor: pointer;
+}
+
+.reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reset-img {
+  display: block;
+  vertical-align: middle;
+  border-style: none;
+  height: auto;
+  max-inline-size: 100%;
+  object-fit: cover;
+  user-select: none;
+
+  // If a `width` and/or `height` attribute have been explicitly defined, let’s not make the image fluid.
+  &[width],
+  &[height] {
+    max-inline-size: none;
+  }
+
+  &[draggable="false"] {
+    pointer-events: none;
+    -webkit-user-drag: none;
+  }
+}
+
+.reset-input {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::placeholder {
+    text-overflow: ellipsis;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.reset-table {
+  border: 1px solid transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  max-inline-size: 100%;
+  background-color: transparent;
+}
+
+svg {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100%;
+  // fill: currentColor;
+}
+
+/* Accessibility */
+
+@include focus-visible;
+
+.is-lock-scroll {
+  position: fixed;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  overscroll-behavior: none;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.is-hide {
+  opacity: 0;
+}
+
+.invisible {
+  @include invisible;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip-path: inset(100%);
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+}
+
+// Base
+
+.site-container {
+  @include flex-column;
+
+  min-block-size: 100vh;
+}
+
+.container-fluid {
+  margin-inline: auto;
+  padding-inline: $fields;
+  max-inline-size: $container-fluid-width;
+}
+
+.container {
+  @include container;
+}
+
+.main-title {
+  margin: 0;
+  font-family: $font-primary;
+  font-weight: fw(700);
+  font-size: clamp(24px, 5vw, 48px);
+  line-height: 0.83;
+  letter-spacing: 0.3px;
+  color: clr(light);
+
+  span {
+    display: block;
+    margin-block-end: 10px;
+    font-weight: fw(400);
+    font-size: clamp(14px, 5vw, 16px);
+  }
+}
+
+.main-descr {
+  @include font-brand;
+
+  margin: 0;
+  font-size: clamp(14px, 3vw, 22px);
+  line-height: 1.36;
+  letter-spacing: 0.3px;
+  color: clr(grey-lightest);
+}
+
+// .item-descr{}
+
+// *::placeholder {
+//   color: clr(accent);
+//   opacity: 1;
+// }
+
+.centered {
+  text-align: center;
+}
+
+// расширение области элемента для лучшего взаимодействия на тач устройствах
+
+@include device-touch {
+  .expanded {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-inline: -1em;
+      inset-block: -1em;
+    }
+  }
+}
+
+/* Underline */
+
+.underline {
+  position: relative;
+  white-space: nowrap;
+}
+
+.underline::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-end: -0.6em;
+  display: block;
+  width: 100%;
+  height: 0.1em;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform $duration-normal $easing-out;
+}
+
+.underline:hover:not(:focus-visible):not(:active) {
+  color: clr(orange-medium);
+}
+
+.underline:hover:not(:focus-visible):not(:active)::after {
+  background-color: clr(orange-medium);
+  transform: scaleX(1);
+}
+
+.focus {
+  position: relative;
+  z-index: 2;
+  transition-property: color, background-color;
+}
+
+.focus::before {
+  content: "";
+  position: absolute;
+  inset-inline: -0.5em;
+  inset-block: -0.2em;
+  z-index: -1;
+  border-radius: 17em;
+  background-color: transparent;
+}
+
+.focus:focus-visible::before {
+  outline: 0.1em solid clr(orange-medium);
+  outline-offset: 0.2em;
+}
+
+// адаптивный видео-блок
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid;
+  padding-top: 30px;
+  padding-bottom: 56.25%;
+  height: 0;
+
+  &iframe,
+  &object,
+  &embed {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+  padding-block-end: 56.25%; // 16:9 ratio
+  height: 0;
+
+  &img {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    width: 100%;
+    height: 100%;
+
+    // aspect-ratio: attr(width) / attr(height);
+  }
+}
+
+.dont-break-out {
+  // Технически это одно и то же, но используйте и то, и другое
+
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+
+  // Добавляет дефис там, где слово ломается, если поддерживается
+
+  hyphens: auto;
+}
+
+// animation
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ui-spin {
+  animation-name: spin;
+  animation-duration: 0.85s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  10%,
+  90% { transform: translate3d(-1px, 0, 0); }
+
+  20%,
+  80% { transform: translate3d(2px, 0, 0); }
+
+  30%,
+  50%,
+  70% { transform: translate3d(-4px, 0, 0); }
+
+  40%,
+  60% { transform: translate3d(4px, 0, 0); }
+}
+
+.ui-shake {
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform: translate3d(0, 0, 0);
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes counter-pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes load {
+  to {
+    background-position: 200% 0;
+  }
+}

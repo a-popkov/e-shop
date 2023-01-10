@@ -1,0 +1,18 @@
+/* TEAM */
+  Author:
+  Site:
+  Instagram:
+  Mail:
+  Location:
+
+  Developer: Andrey Popkov
+  Site:      http://a-popkov.ru
+  Mail:      popkov.info@gmail.com
+  Github:    https://github.com/a-popkov
+  Location:  Russia, Moscow
+
+/* SITE */
+  CMS:
+  Language:    RU
+  Environment: HTML, SCSS, JavaScript
+  Software:
