@@ -1,0 +1,43 @@
+{
+  "lang": "ru",
+  "name": "Музыкальный магазин «Гитарная Лавка»",
+  "short_name": "GuitarLavka",
+  "description": "Официальный сайт музыкального магазина «Гитарная Лавка»",
+  "start_url": "/",
+  "display": "browser",
+  "orientation": "any",
+  "theme_color": "#131218",
+  "background_color": "#131218",
+  "icons": [
+    {
+      "src": "assets/favicons/512-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicons/192-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicons/180-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicons/32-icon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicons/16-icon.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicons/any-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
