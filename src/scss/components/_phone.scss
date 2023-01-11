@@ -1,0 +1,52 @@
+.phone {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.21;
+  color: clr(grey-light);
+
+  svg {
+    display: inline-block;
+    margin-inline-end: 0.4em;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    fill: currentColor;
+    object-fit: cover;
+    transition: fill $duration-normal $easing-out;
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+    border-radius: 17em 0 0 17em;
+    background-position: left;
+    background-repeat: no-repeat;
+    transition-property: color;
+    transition-duration: $duration-normal;
+    transition-timing-function: $easing-out;
+
+    &:hover:not(:focus-visible):not(:active) {
+      color: clr(link-hover);
+    }
+
+    &:active {
+      color: clr(link-active);
+    }
+  }
+
+  &__caption {
+    margin-inline-start: 1.5em;
+
+    @include bp-down(sm) {
+      display: none;
+    }
+  }
+
+  &:focus-visible {
+    .phone__value {
+      outline: 0.1em solid clr(link-hover);
+      outline-offset: 0.2em;
+    }
+  }
+}

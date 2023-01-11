@@ -1,0 +1,139 @@
+.header {
+  position: relative;
+
+  // top
+
+  &__top {
+    &::after {
+      @include pseudo;
+
+      inset-inline-start: 0;
+      border-block-start: 0.1em solid #242424;
+      width: 100%;
+      max-inline-size: clamp(575px, 96%, 184rem);
+    }
+  }
+
+  &__container-fluid {
+    @include flex-all-sb;
+
+    padding-block: 7px;
+  }
+
+  &__location {
+    @include bp-up(md) {
+      width: 324px;
+    }
+  }
+
+  &__social {
+    @include bp-down(lg) {
+      display: none;
+    }
+  }
+
+  // bottom
+
+  &__navbar {
+    display: grid;
+    column-gap: 15px;
+    align-items: center;
+    grid-auto-flow: column;
+    padding-block: 20px 3px;
+
+    &--main {
+      grid-template-columns: 1fr auto 1fr;
+
+      @include bp-down(sm) {
+        grid-template-columns: 1fr repeat(2, min-content);
+      }
+    }
+
+    &--inner {
+      grid-template-columns: auto 2fr;
+    }
+  }
+
+  &__search {
+    @include bp-down(sm) {
+      order: 1;
+    }
+  }
+
+  &__shop-nav {
+    justify-content: flex-end;
+    order: 2;
+  }
+
+  &__menu {
+    padding-block: 17px;
+
+    // &--main {
+    //   @include bp-down(sm) {
+    //     &.menu__list {
+    //       display: none;
+    //       flex-flow: column nowrap;
+    //       align-items: flex-start;
+    //       opacity: 0;
+    //       visibility: hidden;
+    //       transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    //     }
+
+    //     &.menu--active {
+    //       position: fixed;
+    //       left: 0;
+    //       top: 25%;
+    //       z-index: 10;
+    //       overflow-y: auto;
+    //       width: 100%;
+    //       height: 100vh;
+    //       background-color: clr(grey-darker);
+    //       opacity: 1;
+    //       visibility: visible;
+    //       transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    //     }
+    //   }
+    // }
+
+      // @include bp-down(55em) {
+      //     display: none;
+      //     flex-flow: column nowrap;
+      //     align-items: flex-start;
+      //     opacity: 0;
+      //     visibility: hidden;
+      //     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      // }
+    // }
+
+    &.active {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__burger {
+    &--main {
+      @include bp-down(sm) {
+        display: grid;
+      }
+    }
+
+    &--inner {
+      @include bp-down(55em) {
+        display: grid;
+      }
+    }
+  }
+
+  &__logo {
+    &--main {
+      .logo__img {
+        @include bp-up(md) {
+          width: 331px;
+          height: 132px;
+        }
+      }
+    }
+  }
+}
