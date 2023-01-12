@@ -7,8 +7,13 @@
 @import "settings";
 
 // подключения компонентов страницы
-// @import "./components/button";
+@import "./components/button";
 @import "./components/header";
 @import "./components/location";
 @import "./components/social";
 @import "./components/phone";
+@import "./components/logo";
+@import "./components/search";
+@import "./components/shop-nav";
+@import "./components/burger";
+@import "./components/menu";

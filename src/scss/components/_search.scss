@@ -1,0 +1,262 @@
+.search-box {
+  position: relative;
+  border-radius: 0.5em;
+  width: 100%;
+  height: 40px;
+  max-inline-size: 40px;
+  background-color: transparent;
+  transition: all $duration-normal $easing-out;
+
+  &__input {
+    position: relative;
+    outline: none;
+    border-radius: 0.5em;
+    padding-block: 5px;
+    padding-inline: 30px;
+    width: 100%;
+    height: 100%;
+    font-weight: fw(400);
+    font-size: 14px;
+    color: clr(grey-lighter);
+    caret-color: clr(orange-medium);
+    background-color: transparent;
+    transition: width $duration-normal $easing-out;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1;
+      color: clr(light);
+    }
+
+    &:focus-visible::placeholder {
+      font-size: 0;
+    }
+
+    @include bp-down(sm) {
+      padding-inline: 12px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: clr(light);
+    background-color: transparent;
+    transform: translateY(-50%);
+
+    &--search,
+    &--close {
+      position: absolute;
+      border-radius: 0.5em;
+      width: 23px;
+      height: 23px;
+    }
+
+    &--search {
+      inset-inline-start: 0;
+    }
+
+    &--close {
+      inset-inline-end: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &--left {
+    // здесь задаем ширину при закрытом состоянии
+    max-inline-size: 375px;
+
+    @include bp-up(sm) {
+      button {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &--right {
+    // здесь задаем ширину при закрытом состоянии
+    max-inline-size: 23px;
+
+    // Инпут при актив
+
+    input {
+      padding-inline: 15px;
+
+      &::placeholder {
+        font-size: 0;
+        line-height: 0;
+      }
+
+      &.active {
+        padding-block: 5px;
+        padding-inline: 40px;
+        background-color: clr(grey-medium);
+
+        &::placeholder {
+          font-weight: fw(400);
+          font-size: 14px;
+          line-height: 1;
+          color: clr(grey-lighter);
+        }
+      }
+    }
+
+    // Иконка поиска при актив
+
+    .search-icon {
+      z-index: z(wrapper);
+      border-radius: 0.5em;
+
+      &.active {
+        left: 10px;
+      }
+
+      &.active span {
+        border-color: clr(grey-lighter);
+        transition: none;
+        cursor: initial;
+
+        &::after {
+          background-color: clr(grey-lighter);
+          transition: none;
+        }
+      }
+    }
+
+    // Иконка закрытия
+
+    .close-icon {
+      opacity: 0;
+      visibility: hidden;
+
+      &.active {
+        right: 10px;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &.active {
+      z-index: z(popup);
+      width: 100%; // это позволило поиску расшириться до лого но тормозит!
+      max-inline-size: 800px;
+      transition: all $duration-normal $easing-back-out;
+    }
+  }
+}
+
+/* Magnifier search icon */
+
+.magnifier {
+  position: relative;
+  display: block;
+  border: 2px solid clr(light);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  background-color: transparent;
+  transition-property: border, background-color;
+  transition-duration: $duration-normal;
+  transition-timing-function: $easing-out;
+}
+
+.magnifier::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  bottom: 0;
+  border-radius: 0 7.5px 7.5px 0;
+  width: 7px;
+  height: 2px;
+  background-color: clr(light);
+  transform: translateX(100%) rotate(45deg);
+  transform-origin: 0 50%;
+  transition-property: border, background-color;
+  transition-duration: $duration-normal;
+  transition-timing-function: $easing-out;
+}
+
+.magnifier:hover {
+  border: 2px solid clr(orange-medium);
+}
+
+.magnifier:hover::after {
+  background-color: clr(orange-medium);
+}
+
+.magnifier:active {
+  border: 2px solid clr(orange-darker);
+}
+
+.magnifier:active::after {
+  background-color: clr(orange-darker);
+}
+
+/* Magnifier search icon */
+
+/* Cross cancel & clear icon */
+
+.cross {
+  position: relative;
+  display: block;
+  border: 2px solid clr(light);
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  transition: border $duration-normal $easing-out, background-color $duration-normal $easing-out;
+  cursor: pointer;
+}
+
+.cross::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60%;
+  height: 2.33px;
+  background-color: clr(light);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: background-color $duration-normal $easing-out;
+}
+
+.cross::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2.33px;
+  height: 60%;
+  background-color: clr(light);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: background-color $duration-normal $easing-out;
+}
+
+.cross:hover {
+  border-color: clr(orange-medium);
+}
+
+.cross:hover::before,
+.cross:hover::after {
+  background-color: clr(orange-medium);
+}
+
+.cross:active {
+  border-color: clr(orange-darker);
+}
+
+.cross:active::before,
+.cross:active::after {
+  background-color: clr(orange-darker);
+}
+
+/* Cross cancel & clear icon */

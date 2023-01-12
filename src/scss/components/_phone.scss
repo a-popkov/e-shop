@@ -19,12 +19,6 @@
   &__value {
     display: flex;
     align-items: center;
-    border-radius: 17em 0 0 17em;
-    background-position: left;
-    background-repeat: no-repeat;
-    transition-property: color;
-    transition-duration: $duration-normal;
-    transition-timing-function: $easing-out;
 
     &:hover:not(:focus-visible):not(:active) {
       color: clr(link-hover);
@@ -40,13 +34,6 @@
 
     @include bp-down(sm) {
       display: none;
-    }
-  }
-
-  &:focus-visible {
-    .phone__value {
-      outline: 0.1em solid clr(link-hover);
-      outline-offset: 0.2em;
     }
   }
 }

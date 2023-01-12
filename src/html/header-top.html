@@ -2,13 +2,13 @@
   <div class="header__container-fluid container-fluid">
     <address class="header__location location">
       <span class="location__city">Ваш город:</span>
-      <a class="reset-link location__value" href="#" aria-label="Ваше местоположение">Самара</a>
+      <a class="reset-link location__value expanded focus" href="#" aria-label="Ваше местоположение">Самара</a>
     </address>
     <div class="header__social">
       @include('social.html')
     </div>
-    <a class="reset-link header__phone phone expanded" href="tel:88001002680" aria-label="Позвонить в магазин">
-      <span class="phone__value">
+    <div class="header__phone phone">
+      <a class="reset-link phone__value expanded focus" href="tel:88001002680" aria-label="Позвонить в магазин">
         <svg width="22" height="21" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g>
@@ -20,8 +20,8 @@
           </g>
         </svg>
         8 (800) 100 26 80
-      </span>
+      </a>
       <span class="phone__caption">ЕЖЕДНЕВНО 10:00-20:00</span>
-    </a>
+    </div>
   </div>
 </div>

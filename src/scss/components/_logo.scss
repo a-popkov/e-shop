@@ -1,0 +1,9 @@
+.logo {
+  &__img {
+    width: 167px;
+
+    @include bp-down(sm) {
+      width: 100px;
+    }
+  }
+}
