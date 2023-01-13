@@ -39,7 +39,7 @@
     column-gap: 15px;
     align-items: center;
     grid-auto-flow: column;
-    padding-block: 20px 3px;
+    padding-block: 20px 10px;
 
     &--main {
       grid-template-columns: 1fr auto 1fr;
@@ -76,7 +76,7 @@
   }
 
   &__menu {
-    padding-block: 17px;
+    padding-block: 10px;
   }
 
   &__burger {
@@ -87,7 +87,7 @@
     }
 
     &--inner {
-      @include bp-down(55em) {
+      @include bp-down(56em) {
         display: grid;
       }
     }

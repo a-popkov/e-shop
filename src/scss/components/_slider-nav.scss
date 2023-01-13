@@ -1,0 +1,29 @@
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: clamp(55px, 5vw, 95px);
+  height: 95px;
+  transform: translateY(-50%);
+
+  svg {
+    transition: stroke $duration-normal;
+  }
+
+  &__next {
+    svg {
+      stroke: clr(light);
+    }
+  }
+
+  &:hover:not(.swiper-button-disabled) {
+    svg {
+      stroke: clr(link-hover);
+    }
+  }
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: auto;
+}

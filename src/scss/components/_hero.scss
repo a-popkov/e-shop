@@ -1,0 +1,262 @@
+.hero {
+  position: relative;
+
+  &__container {
+    display: grid;
+    column-gap: clamp(15px, 3vw, 20px);
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+    height: 400px;
+
+    @include bp-down(sm) {
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 191px auto;
+      height: 191px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    place-content: end start;
+    grid-column: 2 / 3;
+    grid-template-rows: 78px 92px;
+    // padding-block-start: clamp(50px, 5vw, 100px);
+    row-gap: clamp(15px, 5vw, 30px);
+    // position: absolute;
+    // z-index: 1;
+    max-inline-size: 484px;
+    opacity: $color-opacity;
+
+    @include bp-down(sm) {
+      grid-template-rows: 45px 92px;
+      opacity: 1;
+    }
+  }
+
+  // &__img {
+  //   position: absolute;
+  //   z-index: -1;
+  //   width: 100%;
+  //   height: 400px;
+  //   object-fit: cover;
+  // }
+
+  &__title {
+    max-inline-size: 460px;
+  }
+
+  &__descr {
+    max-inline-size: 340px;
+
+    &--video {
+      max-inline-size: 450px;
+    }
+  }
+
+  &__title,
+  &__descr {
+    overflow-wrap: break-word;
+    user-select: none;
+  }
+
+  &__btn {
+    // position: absolute;
+    // inset-block-end: 0;
+    // z-index: 1;
+    grid-column: 2 / 3;
+    // grid-row: 7 / 8;
+    margin-block-start: 15px;
+    max-inline-size: 170px;
+    max-height: 35px;
+    font-size: 16px;
+
+    @include bp-down(sm) {
+      grid-column: 2 span;
+    }
+  }
+
+  // slider navigation buttons
+
+  &__next {
+    right: clamp(1px, 18vw, (100% - 1200px) / 2);
+  }
+
+  &__prev {
+    left: clamp(1px, 18vw, (100% - 1200px) / 2);
+  }
+
+  &__next,
+  &__prev {
+    @include bp-down(sm) {
+      display: none;
+    }
+  }
+}
+
+.hero__slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero__slide {
+  @include bg-cover;
+
+  max-inline-size: 100%;
+  background-color: clr(grey-dark);
+
+  &--one.visible {
+    background-image:
+      -webkit-image-set(
+        url("../images/hero/hero-bg-des-1-1400@2x.avif") 2x,
+        url("../images/hero/hero-bg-des-1-1400@1x.avif") 1x,
+        url("../images/hero/hero-bg-des-1-1400@2x.webp") 2x,
+        url("../images/hero/hero-bg-des-1-1400@1x.webp") 1x,
+        url("../images/hero/hero-bg-des-1-1400@2x.jpg") 2x,
+        url("../images/hero/hero-bg-des-1-1400@1x.jpg") 1x
+      );
+    background-image:
+      image-set(
+        url("../images/hero/hero-bg-des-1-1400@2x.avif") type("image/avif") 2x,
+        url("../images/hero/hero-bg-des-1-1400@1x.avif") type("image/avif") 1x,
+        url("../images/hero/hero-bg-des-1-1400@2x.webp") type("image/webp") 2x,
+        url("../images/hero/hero-bg-des-1-1400@1x.webp") type("image/webp") 1x,
+        url("../images/hero/hero-bg-des-1-1400@2x.jpg") 2x,
+        url("../images/hero/hero-bg-des-1-1400@1x.jpg") 1x
+      );
+
+    @include bp-down(992px) {
+        background-image:
+          -webkit-image-set(
+            url("../images/hero/hero-bg-des-1-950@2x.avif") 2x,
+            url("../images/hero/hero-bg-des-1-950@1x.avif") 1x,
+            url("../images/hero/hero-bg-des-1-950@2x.webp") 2x,
+            url("../images/hero/hero-bg-des-1-950@1x.webp") 1x,
+            url("../images/hero/hero-bg-des-1-950@2x.jpg") 2x,
+            url("../images/hero/hero-bg-des-1-950@1x.jpg") 1x
+          );
+        background-image:
+          image-set(
+            url("../images/hero/hero-bg-des-1-950@2x.avif") type("image/avif") 2x,
+            url("../images/hero/hero-bg-des-1-950@1x.avif") type("image/avif") 1x,
+            url("../images/hero/hero-bg-des-1-950@2x.webp") type("image/webp") 2x,
+            url("../images/hero/hero-bg-des-1-950@1x.webp") type("image/webp") 1x,
+            url("../images/hero/hero-bg-des-1-950@2x.jpg") 2x,
+            url("../images/hero/hero-bg-des-1-950@1x.jpg") 1x
+          );
+    }
+
+    @include bp-down(650px) {
+          background-image:
+      -webkit-image-set(
+        url("../images/hero/hero-bg-mob-1-320@2x.avif") 2x,
+        url("../images/hero/hero-bg-mob-1-320@1x.avif") 1x,
+        url("../images/hero/hero-bg-mob-1-320@2x.webp") 2x,
+        url("../images/hero/hero-bg-mob-1-320@1x.webp") 1x,
+        url("../images/hero/hero-bg-mob-1-320@2x.jpg") 2x,
+        url("../images/hero/hero-bg-mob-1-320@1x.jpg") 1x
+      );
+    background-image:
+      image-set(
+        url("../images/hero/hero-bg-mob-1-320@2x.avif") type("image/avif") 2x,
+        url("../images/hero/hero-bg-mob-1-320@1x.avif") type("image/avif") 1x,
+        url("../images/hero/hero-bg-mob-1-320@2x.webp") type("image/webp") 2x,
+        url("../images/hero/hero-bg-mob-1-320@1x.webp") type("image/webp") 1x,
+        url("../images/hero/hero-bg-mob-1-320@2x.jpg") 2x,
+        url("../images/hero/hero-bg-mob-1-320@1x.jpg") 1x
+      );
+    }
+  }
+
+  &--two.visible {
+    background-image:
+      -webkit-image-set(
+        url("../images/hero/hero-bg-des-2-1400@1x.avif") 1x,
+        url("../images/hero/hero-bg-des-2-1400@2x.avif") 2x,
+        url("../images/hero/hero-bg-des-2-1400@2x.webp") 2x,
+        url("../images/hero/hero-bg-des-2-1400@1x.webp") 1x,
+        url("../images/hero/hero-bg-des-2-1400@2x.jpg") 2x,
+        url("../images/hero/hero-bg-des-2-1400@1x.jpg") 1x
+      );
+    background-image:
+      image-set(
+        url("../images/hero/hero-bg-des-2-1400@2x.avif") type("image/avif") 2x,
+        url("../images/hero/hero-bg-des-2-1400@1x.avif") type("image/avif") 1x,
+        url("../images/hero/hero-bg-des-2-1400@2x.webp") type("image/webp") 2x,
+        url("../images/hero/hero-bg-des-2-1400@1x.webp") type("image/webp") 1x,
+        url("../images/hero/hero-bg-des-2-1400@2x.jpg") 2x,
+        url("../images/hero/hero-bg-des-2-1400@1x.jpg") 1x
+      );
+  }
+
+  &--three.visible {
+    background-image:
+      -webkit-image-set(
+        url("../images/hero/hero-bg-des-3-1400@1x.avif") 1x,
+        url("../images/hero/hero-bg-des-3-1400@2x.avif") 2x,
+        url("../images/hero/hero-bg-des-3-1400@2x.webp") 2x,
+        url("../images/hero/hero-bg-des-3-1400@1x.webp") 1x,
+        url("../images/hero/hero-bg-des-3-1400@2x.jpg") 2x,
+        url("../images/hero/hero-bg-des-3-1400@1x.jpg") 1x
+      );
+    background-image:
+      image-set(
+        url("../images/hero/hero-bg-des-3-1400@2x.avif") type("image/avif") 2x,
+        url("../images/hero/hero-bg-des-3-1400@1x.avif") type("image/avif") 1x,
+        url("../images/hero/hero-bg-des-3-1400@2x.webp") type("image/webp") 2x,
+        url("../images/hero/hero-bg-des-3-1400@1x.webp") type("image/webp") 1x,
+        url("../images/hero/hero-bg-des-3-1400@2x.jpg") 2x,
+        url("../images/hero/hero-bg-des-3-1400@1x.jpg") 1x
+      );
+  }
+
+  &--four.visible {
+    background-image:
+      -webkit-image-set(
+        url("../images/hero/hero-bg-des-4-1400@1x.avif") 1x,
+        url("../images/hero/hero-bg-des-4-1400@2x.avif") 2x,
+        url("../images/hero/hero-bg-des-4-1400@2x.webp") 2x,
+        url("../images/hero/hero-bg-des-4-1400@1x.webp") 1x,
+        url("../images/hero/hero-bg-des-4-1400@2x.jpg") 2x,
+        url("../images/hero/hero-bg-des-4-1400@1x.jpg") 1x
+      );
+    background-image:
+      image-set(
+        url("../images/hero/hero-bg-des-4-1400@2x.avif") type("image/avif") 2x,
+        url("../images/hero/hero-bg-des-4-1400@1x.avif") type("image/avif") 1x,
+        url("../images/hero/hero-bg-des-4-1400@2x.webp") type("image/webp") 2x,
+        url("../images/hero/hero-bg-des-4-1400@1x.webp") type("image/webp") 1x,
+        url("../images/hero/hero-bg-des-4-1400@2x.jpg") 2x,
+        url("../images/hero/hero-bg-des-4-1400@1x.jpg") 1x
+      );
+  }
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    @include bp-down(sm) {
+      background: linear-gradient(
+        to right,
+        hsl(0, 0%, 0%) 0%,
+        hsla(0, 0%, 0%, 0.995) 8.2%,
+        hsla(0, 0%, 0%, 0.981) 16%,
+        hsla(0, 0%, 0%, 0.958) 23.4%,
+        hsla(0, 0%, 0%, 0.926) 30.4%,
+        hsla(0, 0%, 0%, 0.885) 37.3%,
+        hsla(0, 0%, 0%, 0.835) 43.8%,
+        hsla(0, 0%, 0%, 0.776) 50.2%,
+        hsla(0, 0%, 0%, 0.709) 56.5%,
+        hsla(0, 0%, 0%, 0.633) 62.6%,
+        hsla(0, 0%, 0%, 0.548) 68.7%,
+        hsla(0, 0%, 0%, 0.455) 74.8%,
+        hsla(0, 0%, 0%, 0.354) 81%,
+        hsla(0, 0%, 0%, 0.244) 87.2%,
+        hsla(0, 0%, 0%, 0.126) 93.5%,
+        hsla(0, 0%, 0%, 0) 100%
+      ) left center/100% no-repeat;
+    }
+  }
+}

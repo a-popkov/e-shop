@@ -220,7 +220,7 @@ svg {
   @include font-brand;
 
   margin: 0;
-  font-size: clamp(14px, 3vw, 22px);
+  font-size: clamp(10px, 3vw, 22px);
   line-height: 1.36;
   letter-spacing: 0.3px;
   color: clr(grey-lightest);
