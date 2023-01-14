@@ -1,0 +1,89 @@
+.categories-article {
+  @include flex-all-center;
+  @include bg-cover;
+
+  position: relative;
+  overflow-y: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(19, 18, 24, 0.56);
+  }
+
+  &__content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block-start: clamp(21px, 3vw, 45px);
+    padding-block-end: clamp(18px, 3vw, 30px);
+  }
+
+  &__icon {
+    margin-block-end: clamp(11px, 3vw, 50px);
+    width: clamp(45px, 8vw, 145px);
+    height: clamp(45px, 8vw, 145px);
+    fill: transparent;
+    object-fit: cover;
+
+    path {
+      stroke: clr(light);
+      transition: stroke $duration-normal $easing-out;
+    }
+  }
+
+  &__link {
+    font-weight: fw(400);
+    font-size: clamp(12px, 4vw, 24px);
+    line-height: 1;
+    text-align: center;
+    color: clr(light);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+
+    &:focus-visible::before {
+      box-shadow: inset 0 0 4px 5px rgb(234 131 5 / 60%);
+    }
+  }
+
+  &:hover:not(:focus-visible):not(:active) {
+    svg path {
+      stroke: clr(link-hover);
+    }
+
+    .categories-article__link {
+      color: clr(link-hover);
+    }
+  }
+
+  &--guitars {
+    &.visible {
+      @include image-set("../images/categories/guitars");
+    }
+  }
+
+  &--ukulele {
+    &.visible {
+      @include image-set("../images/categories/ukulele");
+    }
+  }
+
+  &--accessories {
+    &.visible {
+      @include image-set("../images/categories/accessories");
+    }
+  }
+
+  &--strings {
+    &.visible {
+      @include image-set("../images/categories/strings");
+    }
+  }
+}

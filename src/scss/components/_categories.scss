@@ -1,0 +1,22 @@
+.categories {
+  position: relative;
+  inset-block-start: 85px;
+  z-index: z(popover);
+  max-block-size: 560px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: clamp(15px, 3vw, $gap);
+  }
+
+  &__item {
+    grid-column: 6 span;
+  }
+
+  &__article {
+    @include bp-down(sm) {
+      border-radius: 5px;
+    }
+  }
+}
