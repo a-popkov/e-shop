@@ -1,0 +1,38 @@
+.brands {
+  position: relative;
+  padding-block-start: clamp(115px, 11vw, 200px);
+  padding-block-end: clamp(20px, 5vw, 46px);
+  background-color: #cc7408;
+
+  &__list {
+    display: grid;
+    column-gap: clamp(25px, 5vw, 50px);
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 170px));
+    row-gap: 20px;
+
+    @include bp-down(sm) {
+      grid-template-columns: repeat(auto-fill, minmax(auto, 82px));
+    }
+  }
+
+  &__item {
+    @include flex-all-center;
+
+    flex: 0 0 50%;
+
+    @include bp-down(sm) {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+
+  &__logo {
+    width: clamp(85px, 16vw, 170px);
+    height: clamp(59px, 6vw, 110px);
+    max-inline-size: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+}
