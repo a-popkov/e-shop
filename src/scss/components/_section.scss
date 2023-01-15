@@ -1,0 +1,58 @@
+.section {
+  &__title {
+    @include font-brand;
+
+    font-size: clamp(24px, 4vw, 36px);
+    line-height: 1.02;
+    letter-spacing: 0.3px;
+    color: clr(light);
+
+    &--accent {
+      position: relative;
+      margin-block-end: 55px;
+      text-align: center;
+
+      &::before {
+        @include pseudo;
+
+        left: 50%;
+        bottom: -0.3em;
+        width: 300px;
+        height: 2px;
+        background-color: clr(orange-medium);
+        transform: translateX(-50%);
+
+        @include bp-down(sm) {
+          left: 0;
+          width: 228px;
+          transform: translateX(-7%);
+        }
+      }
+
+      @include bp-down(sm) {
+        margin-block-end: 30px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+// .section-team {
+//   &__title {
+//     margin-block-end: 45px;
+//   }
+// }
+
+// .section-subtitle{}
+// .section-descr{}
+
+.section__offset {
+  &--sm {
+    padding-block-start: $offset;
+    padding-block-end: $offset;
+  }
+
+  &--md {
+    padding-block-start: $offset * 2;
+  }
+}

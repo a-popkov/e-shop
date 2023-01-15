@@ -7,6 +7,7 @@
 @import "settings";
 
 // подключения компонентов страницы
+@import "./components/section";
 @import "./components/button";
 @import "./components/header";
 @import "./components/location";
@@ -22,3 +23,6 @@
 @import "./components/categories";
 @import "./components/categories-article";
 @import "./components/brands";
+@import "./components/popular-product";
+@import "./components/product";
+@import "./components/rating";

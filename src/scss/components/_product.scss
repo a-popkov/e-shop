@@ -1,0 +1,131 @@
+.product {
+  position: relative;
+  overflow: hidden;
+  width: 220px;
+  max-block-size: 410px;
+  background-color: clr(grey-medium);
+
+  &__link {
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: z(wrapper);
+    }
+  }
+
+  &__image {
+    overflow: hidden;
+    border-bottom-right-radius: 67px;
+    aspect-ratio: 4 / 5;
+  }
+
+  &__info {
+    @include flex-column;
+
+    justify-content: space-between;
+    padding: 10px 13px;
+    gap: 10px;
+  }
+
+  &__category {
+    font-size: 14px;
+    color: clr(light);
+  }
+
+  &__name {
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    max-block-size: 43px;
+    font-weight: fw(400);
+    font-size: 16px;
+    text-overflow: ellipsis;
+    color: clr(light);
+    transition: max-block-size $duration-normal $easing-out;
+
+    &:hover:not(:focus-visible):not(:active) {
+      @include device-pointer {
+        z-index: 2;
+        overflow: visible;
+        max-block-size: min-content;
+        background: clr(grey-medium);
+      }
+    }
+
+    &--large {
+      height: 58px;
+      max-block-size: 100%;
+      font-size: 24px;
+    }
+  }
+
+  &__props {
+    @include flex-all-sb;
+  }
+
+  &__price {
+    margin-block-start: auto;
+  }
+
+  &__comment {
+    display: block;
+    font-size: 14px;
+    color: clr(grey-light);
+
+    &:hover:not(:focus-visible):not(:active) {
+      @include device-pointer {
+        color: clr(link-hover);
+      }
+    }
+  }
+
+  &--border {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+
+  &--hover {
+    &:hover:not(:focus-visible):not(:active) {
+      @include device-pointer {
+        box-shadow: 0 4px 20px rgba(234, 131, 5, 0.6);
+      }
+    }
+  }
+}
+
+.product-price {
+  @include flex-column;
+
+  &__prev {
+    position: relative;
+    font-size: 14px;
+    text-decoration: none;
+    color: clr(grey-light);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: 6px;
+      width: 54px;
+      height: 1px;
+      background-color: #b1b0b3;
+      transform: rotate(10deg);
+    }
+
+    &:empty {
+      &::before {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+
+  &__current {
+    margin-block-end: auto;
+    font-weight: fw(400);
+    font-size: 18px;
+    color: clr(light);
+  }
+}
