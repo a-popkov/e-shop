@@ -88,7 +88,7 @@
   &--hover {
     &:hover:not(:focus-visible):not(:active) {
       @include device-pointer {
-        box-shadow: 0 4px 20px rgba(234, 131, 5, 0.6);
+        box-shadow: $hover-shadow;
       }
     }
   }

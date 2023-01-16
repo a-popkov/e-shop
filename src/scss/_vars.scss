@@ -1,7 +1,6 @@
 // typography
 
 $font-primary: "ABeeZee", "Roboto", "Doppio", "Segoe UI", "Helvetica Neue", "Helvetica", "Cantarell", sans-serif;
-// $font-base: 0.520833vw; // формула calc(10 / (1920 / 100))
 $font-size: 16; // default
 
 $line-height: 1.16;
@@ -113,8 +112,8 @@ $colors: (
   // neutral light-gray
 
   neutral-lightest: #fcf7f2,
-  neutral-light-alpha: rgba(255, 255, 255, 0.6),
-  neutral-orange-alpha: rgba(216, 119, 0, 0.6),
+  neutral-light-alpha: rgb(255 255 255 / 60%),
+  neutral-orange-alpha: rgb(216 119 0 / 60%),
 
   // gray
 
@@ -172,13 +171,9 @@ $colors: (
 
 // stylization
 
-$request-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-// $search-shadow: 0 0 20px rgba(0, 0, 0, 0.12);
-// $main-shadow:
-//   0 80px 80px -20px rgba(154, 156, 165, 0.08),
-//   0 30px 24px -10px rgba(154, 156, 165, 0.05),
-//   0 12px 10px -6px rgba(154, 156, 165, 0.04),
-//   0 4px 4px -4px rgba(30, 33, 44, 0.03);
+$request-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+$hover-shadow: 0 4px 20px rgb(234 131 5 / 60%);
+$focus-shadow: inset 0 0 4px 5px rgb(234 131 5 / 60%);
 $border-radius: 5px;
 $border: 4px solid color(link);
 $focus: 4px solid color(link);

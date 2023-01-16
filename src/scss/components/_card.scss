@@ -1,0 +1,163 @@
+.card {
+  @include bg-cover;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  height: 400px;
+  max-inline-size: 300px;
+  background-color: clr(grey-light);
+  transition-property: transform, opacity, visibility, box-shadow;
+  transition-duration: 0.5s;
+  transition-timing-function: $easing-back-out;
+
+  &__content {
+    @include bp-up(sm) {
+      @include flex-column;
+      @include invisible;
+
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-end: 0;
+      z-index: 2;
+      flex-grow: 1;
+      justify-content: space-between;
+      padding-block-start: 17px;
+      padding-inline: 32px;
+      width: 100%;
+      height: 100%;
+      transform: translateY(400px);
+      transition-property: transform, opacity, visibility;
+      transition-duration: 0.5s;
+      transition-timing-function: $easing-back-out;
+    }
+
+    @include bp-down(sm) {
+      display: none;
+    }
+  }
+
+  &__descr {
+    @include bp-up(sm) {
+      font-size: 18px;
+      line-height: 1.6;
+      color: clr(light);
+    }
+  }
+
+  &__subtitle {
+    @include bp-up(sm) {
+      @include flex-all-center;
+
+      height: 100px;
+      font-size: 18px;
+      line-height: 1.6;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      color: clr(orange-light);
+    }
+  }
+
+  &__link {
+    &::after {
+      @include pseudo;
+
+      inset: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include bp-up(sm) {
+      &:focus-visible {
+        &::after {
+          box-shadow: $focus-shadow;
+        }
+      }
+    }
+  }
+
+  &__title {
+    @include flex-all-center;
+
+    width: 100%;
+    height: 100px;
+    font-weight: fw(400);
+    font-size: 24px;
+    letter-spacing: 0.3px;
+    text-align: center;
+    color: clr(light);
+    background-color: rgb(19 18 24 / 80%);
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: $easing-back-out;
+
+    &--uppercase {
+      text-transform: uppercase;
+    }
+  }
+
+  &--hover {
+    &:hover:not(:focus-visible):not(:active) {
+      @include device-pointer {
+        box-shadow: $hover-shadow;
+      }
+    }
+  }
+
+  &--move {
+    &::before {
+      @include pseudo;
+
+      inset-inline-start: 0;
+      inset-block-start: 0;
+      width: 100%;
+      height: 0;
+      background-color: rgb(19 18 24 / 80%);
+    }
+
+    @include bp-up(sm) {
+      &:hover:not(:focus-visible):not(:active) {
+        & .card__content {
+          @include visible;
+
+          transform: translateY(0);
+        }
+
+        & .card__title {
+          opacity: 0;
+        }
+
+        &::before {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &--school {
+    &.visible {
+      @include image-set ("../images/services/serv-bg-school-2");
+    }
+  }
+
+  &--selection {
+    &.visible {
+      @include image-set ("../images/services/serv-bg-trade-1");
+    }
+  }
+
+  &--repair {
+    &.visible {
+      @include image-set ("../images/services/serv-bg-repair-2");
+    }
+  }
+
+  &--trade {
+    &.visible {
+      @include image-set ("../images/services/serv-bg-school-1");
+    }
+  }
+}
