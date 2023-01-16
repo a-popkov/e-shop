@@ -1,0 +1,31 @@
+<section class="join">
+  <div class="join__image decoration decoration--join">
+    <picture>
+      <source type="image/avif" srcset="../images/join.avif">
+      <source type="image/webp" srcset="../images/join.webp">
+      <img src="../images/join.png" alt="" loading="lazy" aria-hidden="true" tabindex="-1" alt="">
+    </picture>
+  </div>
+  <div class="container join__container">
+    <form action="#" id="form-request" class="join__form form-request">
+      <div class="join__overhead form-request__overhead">вступай в клуб</div>
+      <div class="join__heading form-request__heading">Guitar Lavka</div>
+      <p class="join__descr form-request__descr">Полезные письма об&nbsp;инструментах и&nbsp;мероприятиях</p>
+      <div class="join__items form-request__items">
+        <label class="join__label form-request__label">
+          <input id="email-request" class="reset-input join__input form-request__input" type="email" name="Е-маил"
+            placeholder="Ваш email ..." required autocomplete="off" pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+.[a-z]{2,}"
+            title="Введите адрес электронной почты в формате name@example.com">
+        </label>
+        <button class="reset-btn btn btn--orange btn--orange-medium join__btn form-request__btn" type="submit" disabled>
+          <svg width="27" height="27">
+            <use xlink:href="../images/sprite-mono.svg#telegram"></use>
+          </svg>
+        </button>
+      </div>
+      <a class="reset-link agree form-request__agree" href="#">
+        Я&nbsp;даю согласие на&nbsp;обработку своих персональных данных
+      </a>
+    </form>
+  </div>
+</section>

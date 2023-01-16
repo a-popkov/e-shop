@@ -1,0 +1,93 @@
+.form {
+  display: flex;
+
+  &__label {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+
+    // &:not(:last-child) {
+    //   margin-block-end: 8px;
+    // }
+
+    &:has(:invalid) input {
+      border-color: rgba(75%, 9%, 9%, 0.7);
+    }
+
+    &:has(:invalid:not(:focus-visible)) input {
+      animation: shake 1s;
+    }
+
+    &:has(:focus-visible) input {
+      border-color: rgba(234, 131, 5, 0.37);
+    }
+
+    &:has(:valid) input {
+      border-color: rgba(234, 131, 5, 0.37);
+      background-color: clr(orange-medium);
+    }
+
+    &:has(:placeholder-shown) input {
+      border-color: clr(neutral-light-alpha);
+    }
+
+    &:has(:placeholder-shown:not(:focus-visible)) input {
+      animation: none;
+    }
+  }
+
+  &__input {
+    outline: none;
+    border: 1px solid clr(neutral-light-alpha);
+    border-radius: $border-radius;
+    padding-block: 15px;
+    padding-inline: 25px;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    background-color: transparent;
+    transition: background-color $duration-normal;
+
+    &::placeholder {
+      color: clr(neutral-light-alpha);
+    }
+
+    &:focus-visible {
+      background-color: rgba(234, 131, 5, 0.37);
+    }
+
+    &:hover:not(:focus-visible):not(:active) {
+      @include device-pointer {
+        background-color: rgba(234, 131, 5, 0.37);
+      }
+    }
+
+    &--big {
+      outline: none;
+      padding-inline-start: 14px;
+      padding-block: 15px;
+      max-width: 100%;
+      resize: none;
+    }
+  }
+
+  // ответ кнопки на валидную форму
+
+  &:valid [type="submit"] {
+    border: none;
+    color: clr(light);
+    background-color: clr(orange-medium);
+  }
+}
+
+.agree {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.42;
+  text-decoration: underline;
+  color: rgba(196, 196, 196, 0.6);
+
+  @include bp-down(sm) {
+    text-align: center;
+  }
+}

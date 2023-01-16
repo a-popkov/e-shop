@@ -1,0 +1,102 @@
+.form-request {
+  position: relative;
+  z-index: 2;
+  border-radius: 30px;
+  padding-block: clamp(22px, 3vw, 32px);
+  padding-inline: clamp(17px, 5vw, 40px);
+  width: 100%;
+  max-inline-size: 620px;
+  box-shadow: $request-shadow;
+  caret-color: clr(orange-medium);
+  background-color: clr(neutral-lightest);
+
+  &__overhead {
+    padding-block-start: 5px;
+    font-size: clamp(14px, 4vw, 18px);
+    text-align: center;
+    text-transform: uppercase;
+    color: clr(grey-dark);
+  }
+
+  &__heading {
+    margin-block-end: 5px;
+    font-weight: fw(400);
+    font-size: clamp(36px, 5vw, 48px);
+    line-height: 0.8;
+    text-align: center;
+    text-transform: uppercase;
+    color: clr(orange-medium);
+  }
+
+  &__descr {
+    font-size: 14px;
+    line-height: 1.28;
+    text-align: center;
+    color: clr(grey-lighter);
+  }
+
+  &__items {
+    @include flex-column;
+
+    gap: 9px;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-inline-end: 10px;
+    }
+  }
+
+  &__input {
+    border-radius: 5px;
+    padding-inline: clamp(10px, 3vw, 20px);
+    width: 100%;
+    height: 43px;
+    box-shadow: inset $request-shadow;
+    color: clr(grey-light);
+    background-color: #f2eae0;
+    transition: background-color $duration-normal;
+
+    &::placeholder {
+      font-size: clamp(14px, 3vw, 18px);
+      color: clr(grey-light);
+    }
+
+    &:focus-visible {
+      outline: 2px solid clr(link-hover);
+      outline-offset: 2px;
+      background-color: clr(neutral-lightest);
+    }
+
+    &:hover:not(:focus-visible):not(:active) {
+      background-color: clr(neutral-lightest);
+    }
+  }
+
+  &__btn {
+    height: 43px;
+
+    svg {
+      width: 27px;
+      height: 27px;
+      fill: clr(light);
+    }
+
+    @include bp-down(sm) {
+      padding-inline: 11px;
+    }
+  }
+
+  &__agree {
+    display: block;
+    margin-block-start: 6px;
+  }
+
+  &:valid [type="submit"] {
+    background-color: clr(orange-light);
+  }
+}

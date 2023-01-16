@@ -1,0 +1,42 @@
+.join {
+  position: relative;
+  padding-block: 80px;
+  height: 520px;
+
+  &__container {
+    @include flex-all-end;
+
+    padding-block: 43px 42px;
+  }
+
+  &__heading {
+    font-family: "Doppio";
+  }
+
+  &__descr {
+    margin-block-end: clamp(15px, 3vw, 38px);
+  }
+
+  &__items {
+    position: relative;
+  }
+
+  &__label {
+    max-inline-size: 452px;
+
+    @include bp-down(40em) {
+      max-inline-size: 536px;
+    }
+  }
+
+  &__input {
+    @include bp-down(sm) {
+      padding-inline-end: 55px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    inset-inline-end: 0;
+  }
+}

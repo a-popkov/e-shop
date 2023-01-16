@@ -1,0 +1,59 @@
+.decoration {
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+
+  &::before {
+    @include pseudo;
+
+    inset: 0;
+    background-color: rgba(216, 119, 0, 0.6);
+  }
+
+  &--join {
+    border-radius: 0 171.5px 171.5px 0;
+    width: clamp(260px, 52vw, 960px);
+    height: 343px;
+    max-inline-size: 100%;
+
+    img {
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      max-inline-size: 960px;
+      object-fit: cover;
+
+      @include bp-down(md) {
+        display: none;
+      }
+    }
+  }
+
+  &--wide {
+    border-radius: 0 370.5px 386.5px 0;
+    height: 725px;
+    max-inline-size: 100%;
+  }
+
+  &--follow {
+    width: clamp(1011px, 70%, 65%);
+    transform: translateY(-25%);
+
+    @include bp-down(md) {
+      display: none; // не отключай, а показывай от...
+    }
+  }
+
+  &--repair {
+    width: clamp(730px, 50%, 65%);
+    transform: translateY(28%);
+  }
+
+  &--packing {
+    width: clamp(730px, 47%, 65%);
+    transform: translateY(-40%);
+  }
+}
