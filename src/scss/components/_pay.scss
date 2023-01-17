@@ -1,0 +1,29 @@
+.pay {
+  &__name {
+    display: block;
+    margin-block-end: 7px;
+    font-weight: fw(400);
+    font-size: 18px;
+    line-height: 1.16;
+    text-transform: uppercase;
+    color: clr(grey-lighter);
+  }
+
+  &__list {
+    @include flex-v-center;
+
+    gap: 1px;
+  }
+
+  &__item {
+    img {
+      width: 100%;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    a:focus-visible {
+      box-shadow: $focus-shadow;
+    }
+  }
+}

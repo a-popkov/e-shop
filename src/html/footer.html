@@ -1,0 +1,132 @@
+<footer class="footer">
+  @include('to-top.html')
+  <div class="container footer__container">
+    <div class="footer__start">
+      <a class="reset-link footer__logo" href="#">
+        <img class="reset-img" src="./images/svg/logo-white.svg" loading="lazy" alt="Логотип магазина «Гитарная Лавка»"
+          aria-hidden="true" tabindex="-1">
+      </a>
+      <nav class="footer-nav footer__nav" aria-label="Дополнительная навигация">
+        <div class="footer-nav__col">
+          <h3 class="footer-nav__title footer-title">Каталог</h3>
+          <ul role="list" class="reset-list footer-nav__list">
+            <li class="footer-nav__item">
+              <a class="reset-link footer-nav__link expanded" href="#">Гитары</a>
+            </li>
+            <li class="footer-nav__item">
+              <a class="reset-link footer-nav__link expanded" href="№">Укулеле</a>
+            </li>
+            <li class="footer-nav__item">
+              <a class="reset-link footer-nav__link expanded" href="#">Аксесуары</a>
+            </li>
+            <li class="footer-nav__item">
+              <a class="reset-link footer-nav__link expanded" href="#">Струны</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-nav__col">
+          <h3 class="footer-nav__title footer-title">Сервис</h3>
+          <ul role="list" class="reset-list footer-nav__list">
+            <li class="footer-nav__item">
+              <a class="reset-link footer-nav__link expanded" href="#">Оплата</a>
+            </li>
+            <li class="footer-nav__item">
+              <a class="reset-link footer-nav__link expanded" href="#">Гарантия</a>
+            </li>
+            <li class="footer-nav__item">
+              <a class="reset-link footer-nav__link expanded" href="#">Доставка</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-nav__col">
+          <h3 class="footer-nav__title footer-title">Услуги</h3>
+          <ul role="list" class="reset-list footer-nav__list">
+            <li class="footer-nav__item">
+              <a class="reset-link footer-nav__link expanded" href="#">Ремонт</a>
+            </li>
+            <li class="footer-nav__item">
+              <a class="reset-link footer-nav__link expanded" href="#">Онлайн подбор</a>
+            </li>
+            <li class="footer-nav__item">
+              <a class="reset-link footer-nav__link expanded" href="#">Обучение</a>
+            </li>
+            <li class="footer-nav__item">
+              <a class="reset-link footer-nav__link expanded" href="#">Комиссионка</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__end">
+      <div class="footer__col-start">
+        <p class="footer__descr" tabindex="0">
+          Мы&nbsp;работаем по&nbsp;всей России, поэтому можем сделать онлайн-показ инструмента и&nbsp;доставить его
+          до&nbsp;вашей двери
+        </p>
+        <div class="footer-contacts">
+          <div class="footer-contacts__item">
+            <span class="footer-contacts__caption">Остались вопросы?</span>
+            <a class="reset-link expanded footer-contacts__link footer-contacts__link--call" href="tel:88001002680"
+              aria-label="Свяжитесь с нами по телефону">
+              8 (800) 100-26-80
+            </a>
+          </div>
+          <div class="footer-contacts__item">
+            <span class="footer-contacts__caption">ЕЖЕДНЕВНО 10:00-20:00</span>
+            <a class="reset-link expanded footer-contacts__link footer-contacts__link--mail"
+              aria-label="Или напишите нам на электронную почту" href="mailto:info@guitarlavka.ru">info@guitarlavka.ru
+            </a>
+          </div>
+        </div>
+        <div class="footer__social">
+          @include('social.html')
+        </div>
+        <div class="footer__pay pay">
+          <span class="pay__name">Cпособы оплаты</span>
+          <ul role="list" class="reset-list pay__list" aria-label="Способы оплаты">
+            <li class="pay__item">
+              <a class="reset-link" href="#" aria-label="Оплатить с помощью Master Card">
+                <img src="../images/pay/master-card.png" loading="lazy" alt="" />
+              </a>
+            </li>
+            <li class="pay__item">
+              <a class="reset-link" href="#" aria-label="Оплатить с помощью Apple Pat">
+                <img src="../images/pay/apple-pay.png" loading="lazy" alt="" />
+              </a>
+            </li>
+            <li class="pay__item">
+              <a class="reset-link" href="#" aria-label="Оплатить с помощью PayPal">
+                <img src="../images/pay/paypal.png" loading="lazy" alt="" />
+              </a>
+            </li>
+            <li class="pay__item">
+              <a class="reset-link" href="#" aria-label="Оплатить с помощью VISA">
+                <img src="../images/pay/visa.png" loading="lazy" alt="" />
+              </a>
+            </li>
+            <li class="pay__item">
+              <a class="reset-link" href="#" aria-label="Оплатить с помощью Yandex Money">
+                <img src="../images/pay/yandex.png" loading="lazy" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <small class="footer__copyright">
+          &copy; 2021 GuitarLavka - музыкальный магазин
+          <span>Политика конфиденциальности</span>
+        </small>
+      </div>
+      <div class="footer__col-end">
+        <a class="footer__mobile" href="https://instagram.com/guitar_lavka?igshid=YmMyMTA2M2Y=" target="_blank"
+          rel="noopener noreferrer" aria-label="Магазин «Гитарная Лавка» в Инстаграм" aria-hidden="true" tabindex="-1">
+          <picture>
+            <source type="image/avif" srcset="../images/mobile.avif">
+            <source type="image/webp" srcset="../images/mobile.webp">
+            <img class="reset-img" src="../images/mobile.png" loading="lazy"
+              alt="Изображение экрана мобильного телефона с открытой страницей Магазина «Гитарная Лавка» в Инстаграм">
+          </picture>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,32 @@
+.to-top {
+  position: fixed;
+  inset-inline-end: clamp(0px, 19vw, calc((100% - 1162px ) / 2));
+  inset-block-end: 100px;
+  z-index: z(popover);
+  display: grid;
+  place-items: center;
+  border-radius: 100%;
+  width: clamp(50px, 8vw, 100px);
+  height: clamp(50px, 8vw, 100px);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: rgba(234, 131, 5, 0.71);
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility, background-color;
+
+  &__icon {
+    width: clamp(15px, 3vw, 30px);
+    height: clamp(20px, 3vw, 40px);
+    fill: clr(neutral-light-alpha);
+    object-fit: cover;
+  }
+
+  &:hover:not(:focus-visible):not(:active) {
+    background-color: rgba(234, 131, 5, 0.85);
+  }
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

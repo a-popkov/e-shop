@@ -1,0 +1,42 @@
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(10px, 5vw, 43px);
+
+  &__title {
+    margin-block-end: 11px;
+    font-weight: fw(400);
+    font-size: clamp(16px, 3vw, 24px);
+    line-height: 1.16;
+    text-transform: uppercase;
+    color: clr(light);
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-block-end: 5px;
+    }
+  }
+
+  &__link {
+    font-weight: fw(400);
+    font-size: clamp(14px, 3vw, 18px);
+    line-height: 1.16;
+    color: clr(grey-lighter);
+
+    &:focus,
+    &:hover:not(:active) {
+      @include device-pointer {
+        color: clr(link-hover);
+      }
+    }
+
+    &:active {
+      color: clr(orange-darker);
+    }
+
+    @include bp-down(sm) {
+      color: rgb(255 255 255 / 30%);
+    }
+  }
+}
