@@ -81,35 +81,8 @@
         <div class="footer__social">
           @include('social.html')
         </div>
-        <div class="footer__pay pay">
-          <span class="pay__name">Cпособы оплаты</span>
-          <ul role="list" class="reset-list pay__list" aria-label="Способы оплаты">
-            <li class="pay__item">
-              <a class="reset-link" href="#" aria-label="Оплатить с помощью Master Card">
-                <img src="../images/pay/master-card.png" loading="lazy" alt="" />
-              </a>
-            </li>
-            <li class="pay__item">
-              <a class="reset-link" href="#" aria-label="Оплатить с помощью Apple Pat">
-                <img src="../images/pay/apple-pay.png" loading="lazy" alt="" />
-              </a>
-            </li>
-            <li class="pay__item">
-              <a class="reset-link" href="#" aria-label="Оплатить с помощью PayPal">
-                <img src="../images/pay/paypal.png" loading="lazy" alt="" />
-              </a>
-            </li>
-            <li class="pay__item">
-              <a class="reset-link" href="#" aria-label="Оплатить с помощью VISA">
-                <img src="../images/pay/visa.png" loading="lazy" alt="" />
-              </a>
-            </li>
-            <li class="pay__item">
-              <a class="reset-link" href="#" aria-label="Оплатить с помощью Yandex Money">
-                <img src="../images/pay/yandex.png" loading="lazy" alt="" />
-              </a>
-            </li>
-          </ul>
+        <div class="footer__pay">
+          @include('pay.html')
         </div>
         <small class="footer__copyright">
           &copy; 2021 GuitarLavka - музыкальный магазин

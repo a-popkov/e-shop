@@ -24,7 +24,7 @@
     line-height: 1.16;
     color: clr(grey-lighter);
 
-    &:focus,
+    &:focus-visible,
     &:hover:not(:active) {
       @include device-pointer {
         color: clr(link-hover);

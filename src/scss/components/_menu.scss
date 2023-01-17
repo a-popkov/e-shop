@@ -33,7 +33,8 @@
     font-size: 14px;
     text-align: center;
 
-    &:hover:not(:focus-visible):not(:active) {
+    &:focus-visible,
+    &:hover:not(:active) {
       @include device-pointer {
         color: clr(link-hover);
       }
