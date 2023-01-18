@@ -1,0 +1,20 @@
+.wholesale {
+  &__container {
+    @include bp-up(md) {
+      padding-inline: 60px;
+    }
+  }
+
+  &__title {
+    margin-block-end: 20px;
+    max-inline-size: 640px;
+  }
+
+  &__descr {
+    margin-block-end: 65px;
+    max-inline-size: 640px;
+    font-size: 14px;
+    line-height: 1.42;
+    color: clr(neutral-light-alpha);
+  }
+}
