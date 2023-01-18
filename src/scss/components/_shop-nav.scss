@@ -1,7 +1,5 @@
 .shop-nav {
-  @include flex-v-center;
-
-  gap: 15px;
+  @include flex;
 
   &__list {
     @include flex-v-center;

@@ -72,7 +72,9 @@
   }
 
   &__shop-nav {
-    justify-content: flex-end;
+    @include flex-h-end;
+
+    gap: 15px;
   }
 
   &__menu {

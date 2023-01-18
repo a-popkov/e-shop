@@ -12,23 +12,8 @@
       <a class="reset-link header__logo header__logo--main logo focus" href="../index.html">
         <img class="reset-img logo__img" src="../images/svg/logo-orange.svg" alt="Логотип магазина «Гитарная Лавка»">
       </a>
-      <div class="header__shop-nav shop-nav">
-        <ul class="reset-list shop-nav__list">
-          <li class="shop-nav__item">
-            <a class="reset-link expanded shop-nav__link choices focus" href="#"
-              aria-label="Перейти в мои избранные товары">
-              <span class="choices__icon"></span>
-              <span class="choices__quantity"></span>
-            </a>
-          </li>
-          <li class="shop-nav__item">
-            <a class="reset-link expanded shop-nav__link cart focus" href="#"
-              aria-label="Перейти в корзину для оформления заказа">
-              <span class="cart__icon"></span>
-              <span class="cart__quantity"></span>
-            </a>
-          </li>
-        </ul>
+      <div class="header__shop-nav">
+        @include('shop-nav.html')
         <button class="reset-btn header__burger--main burger" aria-label="Открыть меню" aria-expanded="false"
           data-burger>
           <span class="burger__line"></span>
@@ -36,7 +21,7 @@
       </div>
     </div>
     <nav class="header__menu menu menu--main" data-menu>
-      @include('menu.html')
+      @include('menu-list.html')
     </nav>
   </div>
 </div>
