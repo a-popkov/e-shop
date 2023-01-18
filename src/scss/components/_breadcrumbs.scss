@@ -1,0 +1,36 @@
+.breadcrumbs {
+  padding-block: 10px;
+
+  &__list {
+    @include flex-v-center;
+
+    padding-inline: 10px;
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-inline-end: 20px;
+
+      &::after {
+        content: "/";
+        position: absolute;
+        right: -13px;
+        top: 3px;
+        font-size: 16px;
+        color: clr(grey-medium);
+      }
+    }
+  }
+
+  &__link {
+    font-size: 13px;
+    color: clr(grey-light);
+
+    &:not([href]) {
+      color: clr(grey-medium);
+      cursor: default;
+    }
+  }
+}

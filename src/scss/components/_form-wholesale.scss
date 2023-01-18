@@ -1,0 +1,85 @@
+.form-wholesale {
+  &__name {
+    margin-block-end: 10px;
+    font-weight: fw(400);
+    font-size: 18px;
+    line-height: 1.16;
+    text-transform: uppercase;
+    color: clr(light);
+
+    @include bp-down(md) {
+      font-size: 24px;
+      color: clr(orange-light);
+    }
+  }
+
+  &__start {
+    max-width: 241px;
+
+    @include bp-down(md) {
+      width: 100%;
+      max-width: initial;
+    }
+  }
+
+  &__end {
+    flex-grow: 1;
+    flex-direction: column;
+    max-width: 674px;
+
+    @include bp-down(md) {
+      width: 100%;
+      max-width: initial;
+    }
+  }
+
+  &__form {
+    gap: 13px;
+
+    @include bp-down(md) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__label {
+    &:not(:last-child) {
+      margin-block-end: 9px;
+    }
+  }
+
+  &__input {
+    &--big {
+      height: 89px;
+
+      @include bp-down(md) {
+        padding-inline-start: 25px;
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include bp-up(sm) {
+      flex-direction: row;
+    }
+  }
+
+  &__btn {
+    @include bp-down(sm) {
+      margin-block: 45px 5px;
+      max-inline-size: 100%;
+      font-weight: 400;
+      color: clr(light);
+      background-color: clr(orange-light);
+    }
+  }
+
+  &__agree {
+    display: inline-block;
+    margin-inline-start: 13px;
+    max-width: 241px;
+  }
+}
