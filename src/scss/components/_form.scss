@@ -6,12 +6,8 @@
     flex-direction: column-reverse;
     width: 100%;
 
-    // &:not(:last-child) {
-    //   margin-block-end: 8px;
-    // }
-
     &:has(:invalid) input {
-      border-color: rgba(75%, 9%, 9%, 0.7);
+      border-color: rgb(75% 9% 9% / 70%);
     }
 
     &:has(:invalid:not(:focus-visible)) input {
@@ -19,11 +15,11 @@
     }
 
     &:has(:focus-visible) input {
-      border-color: rgba(234, 131, 5, 0.37);
+      border-color: clr(neutral-invalid-alpha);
     }
 
     &:has(:valid) input {
-      border-color: rgba(234, 131, 5, 0.37);
+      border-color: clr(neutral-invalid-alpha);
       background-color: clr(orange-medium);
     }
 
@@ -53,12 +49,12 @@
     }
 
     &:focus-visible {
-      background-color: rgba(234, 131, 5, 0.37);
+      background-color: clr(neutral-invalid-alpha);
     }
 
     &:hover:not(:focus-visible):not(:active) {
       @include device-pointer {
-        background-color: rgba(234, 131, 5, 0.37);
+        background-color: clr(neutral-invalid-alpha);
       }
     }
 
@@ -85,7 +81,7 @@
   font-size: 14px;
   line-height: 1.42;
   text-decoration: underline;
-  color: rgba(196, 196, 196, 0.6);
+  color: rgba(196 196 196 / 60%);
 
   @include bp-down(sm) {
     text-align: center;
