@@ -19,7 +19,7 @@
     color: clr(light);
 
     &-alpha {
-      background-color: rgba(216, 119, 0, 0.6);
+      background-color: clr(neutral-orange-alpha);
 
       &:hover:not(:focus-visible):not(:active) {
         background-color: clr(orange-light);
@@ -41,7 +41,7 @@
     }
 
     &:disabled {
-      background-color: rgba(216, 119, 0, 0.6);
+      background-color: clr(neutral-orange-alpha);
       cursor: default;
       user-select: none;
     }

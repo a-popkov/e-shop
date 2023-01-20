@@ -1,0 +1,81 @@
+.packing {
+  display: flex;
+  gap: 20px;
+
+  &__start {
+    width: 532px;
+  }
+
+  &__end {
+    flex-shrink: 2;
+    max-width: 460px;
+  }
+
+  &__title {
+    margin-block-end: 10px;
+    font-weight: fw(400);
+    font-size: clamp(18px, 3vw, 36px);
+    line-height: 0.97;
+    text-transform: uppercase;
+    color: clr(light);
+  }
+
+  &__list {
+    grid-column: 2 / -1;
+  }
+
+  &__item {
+    position: relative;
+    padding-inline-start: clamp(60px, 6vw, 81px);
+    font-size: clamp(16px, 3vw, 24px);
+    line-height: 1.45;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: calc(50% - 2px);
+      display: block;
+      width: clamp(44px, 5vw, 68px);
+      background-color: clr(orange-light);
+    }
+
+    &:first-child::before {
+      height: 6px;
+    }
+
+    &:last-child::before {
+      height: 1px;
+    }
+
+    &:nth-child(2)::before {
+      height: 5px;
+    }
+
+    &:nth-child(3)::before {
+      height: 4px;
+    }
+
+    &:nth-child(4)::before {
+      height: 3px;
+    }
+
+    &:nth-child(5)::before {
+      height: 2px;
+    }
+  }
+
+  &__text {
+    margin-block: 25px;
+
+    p {
+      font-size: 14px;
+      line-height: 1.42;
+      color: clr(neutral-light-alpha);
+    }
+  }
+
+  @include bp-down(md) {
+    flex-wrap: wrap;
+  }
+}

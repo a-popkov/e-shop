@@ -1,0 +1,71 @@
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+}
+
+.video__link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video__media {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.video__button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  display: none;
+  border: none;
+  padding: 0;
+  width: 68px;
+  height: 48px;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.video__button-shape {
+  fill: #212121;
+  fill-opacity: 0.8;
+  transition-property: fill, fill-opacity;
+  transition-duration: $duration-normal;
+  transition-timing-function: $easing-out;
+}
+
+.video__button-icon {
+  fill: #fff;
+}
+
+.video__button:focus {
+  outline: none;
+}
+
+.video:hover .video__button-shape,
+.video__button:focus .video__button-shape {
+  fill: #ff0000;
+  fill-opacity: 1;
+}
+
+/* Enabled */
+
+.video--enabled {
+  cursor: pointer;
+}
+
+.video--enabled .video__button {
+  display: block;
+}
