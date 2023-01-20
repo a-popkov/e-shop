@@ -53,7 +53,8 @@
   }
 
   &--packing {
-    width: clamp(730px, 47%, 65%);
+    width: clamp(260px, 47%, 65%);
+    height: clamp(280px, 70vw, 605px);
     transform: translateY(-40%);
   }
 }

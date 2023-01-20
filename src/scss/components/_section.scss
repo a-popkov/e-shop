@@ -53,6 +53,6 @@
   }
 
   &--md {
-    padding-block-start: $offset * 2;
+    padding-block-start: clamp(28px, 5vw, 84px);
   }
 }
