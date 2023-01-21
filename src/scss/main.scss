@@ -5,6 +5,7 @@
 @import "fonts";
 @import "helpers"; // дебаг штуки
 @import "settings";
+// @import "accessibility";
 
 // подключения компонентов страницы
 @import "./components/section";
@@ -25,6 +26,7 @@
 @import "./components/brands";
 @import "./components/popular-product";
 @import "./components/product";
+@import "./components/product-price";
 @import "./components/rating";
 @import "./components/services";
 @import "./components/card";

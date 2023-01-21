@@ -93,39 +93,3 @@
     }
   }
 }
-
-.product-price {
-  @include flex-column;
-
-  &__prev {
-    position: relative;
-    font-size: 14px;
-    text-decoration: none;
-    color: clr(grey-light);
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset-inline-start: 0;
-      inset-block-start: 6px;
-      width: 54px;
-      height: 1px;
-      background-color: clr(grey-light);
-      transform: rotate(10deg);
-    }
-
-    &:empty {
-      &::before {
-        width: 0;
-        height: 0;
-      }
-    }
-  }
-
-  &__current {
-    margin-block-end: auto;
-    font-weight: fw(400);
-    font-size: 18px;
-    color: clr(light);
-  }
-}

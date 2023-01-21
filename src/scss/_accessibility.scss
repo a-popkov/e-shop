@@ -1,0 +1,42 @@
+// Accessibility concerns
+
+// The presence of the () element is not announced by most screen reading technology in its default configuration.
+// It can be made to be announced by using the CSS content property, along with the ::before and ::after pseudo-element.
+
+s::before,
+s::after {
+  position: absolute;
+  clip-path: inset(100%);
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+s::before {
+  content: " [start of stricken text] ";
+}
+
+s::after {
+  content: " [end of stricken text] ";
+}
+
+mark::before,
+mark::after {
+  position: absolute;
+  clip-path: inset(100%);
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+mark::before {
+  content: " [highlight start] ";
+}
+
+mark::after {
+  content: " [highlight end] ";
+}
