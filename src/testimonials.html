@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+@include('html/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('html/header-inner.html')
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul class="reset-list breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="reset-link breadcrumbs__link" href="/">Главная</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="reset-link breadcrumbs__link">Отзывы</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <main class="page__main">
+      @include('html/testimonials-section.html')
+    </main>
+    @include('html/footer.html')
+  </div>
+</body>
+
+</html>

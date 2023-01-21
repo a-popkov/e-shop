@@ -1,0 +1,25 @@
+.testimonials {
+  display: grid;
+  justify-content: center;
+  max-inline-size: 1007px;
+  background-color: clr(grey-darker);
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block-end: 50px;
+    gap: 30px;
+  }
+
+  &__link {
+    color: clr(orange-light);
+  }
+
+  @include bp-up(md) {
+    border: 1px solid clr(light);
+    border-radius: 30px;
+    padding-block: 45px 27px;
+    padding-inline: clamp(2rem, 6vw, 94px);
+  }
+}

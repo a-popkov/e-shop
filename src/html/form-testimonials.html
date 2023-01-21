@@ -1,0 +1,30 @@
+<div class="form-testimonials">
+  <h3 class="form-testimonials__name">Добавить отзыв</h3>
+  <form class="form form-testimonials__form" id="form-wholesale" action="#" method="post">
+    <label class="form-testimonials__label form__label" for="name">
+      <input class="reset-input form-testimonials__input form__input" type="text" name="Имя" id="name"
+        placeholder="Ваше имя..." required pattern="[А-Яа-я]{2,}" title="Введите Ваше имя кириллицей">
+    </label>
+    <label class="form-testimonials__label form__label" for="email">
+      <input class="reset-input form-testimonials__input form__input" type="email" name="Е-маил" id="email"
+        placeholder="Е-mail..." required pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+.[a-z]{2,}"
+        title="Введите адрес электронной почты в формате name@example.com">
+    </label>
+    <label class="form-testimonials__label form__label form-testimonials__label form__label--big">
+      <textarea class="reset-input form-testimonials__input form__input form-testimonials__input--big form__input--big"
+        name="Сообщение" cols="30" rows="10" placeholder="Отзыв..."></textarea>
+    </label>
+    <div class="form-testimonials__estimate">
+      <span>Оценить</span>
+      @include('rating.html')
+    </div>
+    <div class="form-testimonials__btns">
+      <button class="reset-btn btn btn--orange form-testimonials__btn" type="submit" disabled>
+        Отправить
+      </button>
+      <a class="reset-link agree form-wholesale__agree" href="#">
+        Я&nbsp;даю согласие на&nbsp;обработку своих персональных данных
+      </a>
+    </div>
+  </form>
+</div>

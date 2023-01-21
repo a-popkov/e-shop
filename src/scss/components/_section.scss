@@ -37,14 +37,17 @@
   }
 }
 
-// .section-team {
-//   &__title {
-//     margin-block-end: 45px;
-//   }
-// }
+.section__descr {
+  margin-block-end: 25px;
+  color: clr(neutral-light-alpha);
 
-// .section-subtitle{}
-// .section-descr{}
+  @include bp-down(sm) {
+    max-inline-size: 23ch;
+    font-size: 16px;
+    line-height: 1.42;
+    text-align: left;
+  }
+}
 
 .section__offset {
   &--sm {

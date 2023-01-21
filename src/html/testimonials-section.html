@@ -1,0 +1,20 @@
+<section class="section section__offset--sm">
+  <div class="container">
+    <h2 class="section__title section__title--accent">Отзывы</h2>
+    <p class="section__descr centered">
+      Отзывы на Яндекс.Картах -
+      <a class="reset-link expanded testimonials__link" href="#" target="_blank">читать все отзывы</a>
+    </p>
+    <div class="testimonials">
+      <ul class="testimonials__list reset-list">
+        <li class="testimonials__item">
+          @include('testimonials-item.html')
+        </li>
+        <li class="testimonials__item">
+          @include('testimonials-item.html')
+        </li>
+      </ul>
+      @include('form-testimonials.html')
+    </div>
+  </div>
+</section>

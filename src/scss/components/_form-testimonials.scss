@@ -1,0 +1,75 @@
+.form-testimonials {
+  &__name {
+    margin: 0;
+    margin-block-end: 10px;
+    font-weight: fw(400);
+    font-size: 18px;
+    line-height: 1.94;
+    color: clr(orange-light);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    &:not(:last-child) {
+      margin-block-end: 15px;
+    }
+  }
+
+  &__input {
+    border: none;
+    border-radius: 15px;
+    padding-inline: 28px;
+    height: 57px;
+    box-shadow: 0 4px 15px 1px rgba(255 255 255 / 24%);
+
+    &::placeholder {
+      font-weight: fw(400);
+      font-style: italic;
+      font-size: clamp(12px, 5vw, 14px);
+      line-height: 1.21;
+    }
+
+    &--big {
+      margin-block-end: 10px;
+      height: 184px;
+    }
+  }
+
+  &__estimate {
+    display: flex;
+    align-items: center;
+    margin-block-end: 20px;
+
+    span {
+      margin-inline-end: 10px;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.21;
+      color: clr(neutral-light-alpha);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include bp-up(sm) {
+      flex-direction: row;
+    }
+  }
+
+  &__btn {
+    text-transform: uppercase;
+
+    @include bp-down(sm) {
+      margin-block-end: 7px;
+      width: 100%;
+      max-inline-size: 100%;
+    }
+  }
+}

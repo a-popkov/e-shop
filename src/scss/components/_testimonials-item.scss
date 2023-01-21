@@ -1,0 +1,73 @@
+.testimonials-item {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: repeat(4, auto);
+
+  &__image {
+    grid-row: 1 / span 2;
+    overflow: hidden;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to right, #000 35%, transparent) left center / 100%
+      no-repeat;
+    object-fit: cover;
+
+    @include bp-down(md) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+
+  &__author {
+    padding-inline-start: 10px;
+    max-inline-size: 15ch;
+    font-style: normal;
+    font-size: clamp(16px, 3vw, 18px);
+    color: clr(light);
+
+    @include bp-down(md) {
+      padding-inline-start: initial;
+    }
+  }
+
+  &__text {
+    grid-row: 2 span;
+    margin-block: 10px;
+    border-radius: 15px;
+    padding: 15px;
+    max-inline-size: 760px;
+    font-size: clamp(12px, 3vw, 14px);
+    line-height: 1.21;
+    color: clr(neutral-light-alpha);
+    background-color: #2a292e;
+
+    @include bp-down(md) {
+      grid-column: 1 / span 2;
+      grid-row-start: 3;
+    }
+  }
+
+  &__data {
+    align-self: end;
+    grid-column-start: 2;
+    grid-row-start: 4;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.21;
+    color: rgb(255 255 255 / 13%);
+
+    @include bp-down(md) {
+      grid-row-start: 2;
+    }
+  }
+}
