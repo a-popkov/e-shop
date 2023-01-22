@@ -1,0 +1,19 @@
+.testimonials-video {
+  position: relative;
+  margin-block-end: 100px;
+  padding-block-end: 24px;
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    width: 1017px;
+    max-width: 100%;
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    width: 330px;
+  }
+}

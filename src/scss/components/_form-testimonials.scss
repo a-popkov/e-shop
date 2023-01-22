@@ -6,6 +6,11 @@
     font-size: 18px;
     line-height: 1.94;
     color: clr(orange-light);
+
+    @include bp-down(sm) {
+      font-size: 24px;
+      line-height: 1.45;
+    }
   }
 
   &__form {
