@@ -1,0 +1,19 @@
+.show-more {
+  background-color: transparent;
+  cursor: pointer;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    stroke: clr(light);
+    transition: stroke $duration-normal $easing-out;
+  }
+
+  @include device-pointer {
+    &:hover {
+      svg {
+        stroke: clr(neutral-light-alpha);
+      }
+    }
+  }
+}

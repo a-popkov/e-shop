@@ -1,0 +1,86 @@
+.person {
+  @include bg-cover;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  width: 300px;
+  height: 400px;
+  background-color: clr(grey-light);
+  transition-property: opacity, visibility;
+  transition-duration: $duration-normal;
+  transition-timing-function: $easing-out;
+  cursor: pointer;
+
+  &::before {
+    @include pseudo;
+
+    inset-inline-start: 0;
+    inset-block-end: 0;
+    width: 100%;
+    background-color: rgba(19, 18, 24, 0.6);
+    transition: height $duration-normal $easing-out;
+
+    @include device-pointer {
+      height: 0;
+    }
+
+    @include device-touch {
+      height: 100%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__content {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 125px;
+    z-index: 2;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-block-start: 17px;
+    padding-inline: 24px;
+    width: 100%;
+    height: 100%;
+    transition-property: opacity, visibility;
+    transition-duration: $duration-normal;
+    transition-timing-function: $easing-out;
+
+    @include device-pointer {
+      @include invisible;
+    }
+  }
+
+  &__name {
+    margin-block-end: 10px;
+    font-size: 18px;
+    line-height: 1.95;
+    color: clr(light);
+  }
+
+  &__descr {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.42;
+    color: clr(neutral-light-alpha);
+  }
+
+  @include device-pointer {
+    &:hover {
+      &::before {
+        height: 100%;
+      }
+
+      & .person__content {
+        @include visible;
+      }
+    }
+  }
+}

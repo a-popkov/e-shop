@@ -1,0 +1,43 @@
+.team {
+  &__list {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: 20px;
+  }
+
+  &__item {
+    max-inline-size: 300px;
+
+    @include bp-down(md) {
+      &:nth-child(n+5) {
+        display: none;
+      }
+
+      &.is-visible {
+        display: block;
+      }
+    }
+  }
+
+  &__caption {
+    margin-block-start: 12px;
+    font-size: 24px;
+    text-align: center;
+    color: clr(light);
+
+    @include bp-down(md) {
+      display: none;
+    }
+  }
+
+  &__more {
+    display: none;
+    margin-block-start: 20px;
+    text-align: center;
+
+    @include bp-down(md) {
+      display: block;
+    }
+  }
+}
