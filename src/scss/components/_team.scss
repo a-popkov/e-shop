@@ -30,14 +30,4 @@
       display: none;
     }
   }
-
-  &__more {
-    display: none;
-    margin-block-start: 20px;
-    text-align: center;
-
-    @include bp-down(md) {
-      display: block;
-    }
-  }
 }

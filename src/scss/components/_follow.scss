@@ -1,0 +1,119 @@
+.follow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-inline-size: 800px;
+
+  &-section {
+    padding-block-end: 75px;
+
+    &__container {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__start {
+    padding-inline-end: clamp(20px, 5vw, 50px);
+    max-inline-size: 400px;
+
+    @include bp-down(md) {
+      border-bottom: 1px solid clr(light);
+      padding: 0;
+      padding-block-end: 20px;
+    }
+  }
+
+  &__title {
+    max-inline-size: 310px;
+  }
+
+  &__text {
+    margin-block-end: 10px;
+    max-inline-size: 310px;
+    font-size: 14px;
+    line-height: 1.78;
+    color: clr(neutral-light-alpha);
+
+    &--italic {
+      font-style: italic;
+    }
+
+    &--border {
+      margin-block-start: 10px;
+      border-inline-start: 6px solid clr(orange-light);
+      border-radius: 5px;
+      padding: 10px 16px;
+      width: 417px;
+      max-inline-size: 100%;
+      box-shadow: -5px 5px 20px rgb(255 255 255 / 13%);
+      background-color: clr(grey-darker);
+    }
+
+    @include bp-down(md) {
+      border: none;
+      padding: 0;
+      width: 100%;
+      max-inline-size: 100%;
+      box-shadow: none;
+      font-style: normal;
+    }
+  }
+
+  &__social {
+    svg {
+      fill: clr(light);
+    }
+  }
+
+  &__end {
+    position: relative;
+    padding-inline-end: 10px;
+    padding-inline-start: clamp(20px, 5vw, 50px);
+    max-inline-size: 400px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: 0;
+      width: 1px;
+      height: 100%;
+      background-color: clr(light);
+      transform: translateX(-50%);
+
+      @include bp-down(md) {
+        content: none;
+      }
+    }
+
+    @include bp-down(md) {
+      padding: 0;
+      padding-block-start: 20px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-block-end: 32px;
+    }
+  }
+
+  &__name {
+    margin-block-end: 5px;
+    font-weight: fw(400);
+    font-size: 18px;
+    color: clr(light);
+  }
+
+  &__descr {
+    font-size: 14px;
+    line-height: 1.42;
+    color: clr(neutral-light-alpha);
+  }
+
+  @include bp-down(md) {
+    flex-direction: column;
+  }
+}

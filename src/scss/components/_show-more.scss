@@ -1,6 +1,7 @@
 .show-more {
-  background-color: transparent;
-  cursor: pointer;
+  display: none;
+  margin-block-start: 20px;
+  margin-inline: auto;
 
   svg {
     width: 30px;
@@ -15,5 +16,9 @@
         stroke: clr(neutral-light-alpha);
       }
     }
+  }
+
+  @include bp-down(md) {
+    display: block;
   }
 }

@@ -20,7 +20,7 @@
     inset-inline-start: 0;
     inset-block-end: 0;
     width: 100%;
-    background-color: rgba(19, 18, 24, 0.6);
+    background-color: rgb(19 18 24 / 60%);
     transition: height $duration-normal $easing-out;
 
     @include device-pointer {

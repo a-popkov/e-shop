@@ -1,0 +1,81 @@
+.route {
+  border-radius: 5px;
+  padding: 41px 37px 45px;
+  width: 1042px;
+  max-inline-size: 100%;
+  box-shadow: -5px 5px 20px rgba(255, 255, 255, 0.13);
+
+  &__title {
+    margin-block-end: 40px;
+    font-weight: 700;
+    font-size: clamp(20px, 4vw, 24px);
+    color: clr(light);
+  }
+
+  &__detail {
+    display: flex;
+    gap: clamp(20px, 4vw, 50px);
+
+    @include bp-down(xl) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    // width: 322px;
+    // max-inline-size: 100%;
+    width: 100%;
+
+    @include bp-down(md) {
+      width: 100%;
+    }
+  }
+
+  &__address {
+    flex: 1;
+    margin-block-end: 20px;
+  }
+
+  &__name {
+    margin-block-end: 7px;
+    font-size: 18px;
+    line-height: 1.38;
+    color: clr(light);
+  }
+
+  &__descr {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.42;
+    color: clr(neutral-light-alpha);
+
+    &--italic {
+      font-style: italic;
+    }
+
+    &--station {
+      display: inline-block;
+      color: clr(light);
+    }
+  }
+
+  &__metro {
+    &--center {
+      display: flex;
+      align-items: center;
+      margin-block-end: 10px;
+    }
+
+    &--icon {
+      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      background-image: url("../images/svg/mono/metro.svg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}

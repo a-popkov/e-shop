@@ -1,0 +1,53 @@
+.map {
+  overflow: hidden;
+  width: 100%;
+  background-color: clr(grey-light);
+
+  &--big {
+    height: 322px;
+  }
+
+  &--small {
+    width: 420px;
+    height: 320px;
+  }
+}
+
+[class*="ground-pane"] {
+  filter: invert(100%);
+}
+
+[class*="copyrights-pane"] {
+  display: none !important;
+}
+
+.balloon {
+  width: 180px;
+  height: 50px;
+  background-color: clr(grey-dark);
+}
+
+.map [class*="balloon__layout"] {
+  box-shadow: 1px 0 5px clr(neutral-light-alpha);
+}
+
+.map [class*="balloon"],
+.map [class*="balloon__tail"]::after {
+  background-color: clr(grey-darker);
+}
+
+.map [class*="balloon__close-button"] {
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' /%3E%3C/svg%3E%0A");
+  background-position: center;
+  opacity: 1;
+}
+
+.balloon__address {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: clr(light);
+}
