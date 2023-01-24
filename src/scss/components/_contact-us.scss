@@ -1,0 +1,129 @@
+.contact-us {
+  position: relative;
+
+  &::after {
+    @include pseudo;
+
+    left: 0;
+    border-block-start: 0.1em solid #242424;
+    width: 100%;
+    max-inline-size: clamp(575px, 96%, 184rem);
+  }
+
+  & .section__title {
+    display: none;
+
+    @include bp-down(sm) {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin-block-end: 10px;
+    font-weight: fw(400);
+    font-size: clamp(16px, 5vw, 36px);
+    line-height: 0.97;
+    color: clr(light);
+  }
+
+  &__descr {
+    margin: 0;
+    margin-block-end: 40px;
+    font-size: clamp(12px, 5vw, 14px);
+    line-height: 1.42;
+    color: clr(neutral-light-alpha);
+
+    &--width {
+      display: block;
+      max-inline-size: 600px;
+    }
+  }
+
+  &__info {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: min-content auto;
+    margin-block-end: 40px;
+    gap: clamp(20px, 5vw, 30px);
+  }
+}
+
+.contacts {
+  display: grid;
+  column-gap: clamp(25px, 3vw, 40px);
+  grid-template-columns: repeat(2, auto);
+  row-gap: 40px;
+
+  &-link {
+    padding-inline-start: 27px;
+    background-position: left center;
+    background-size: 22px 22px;
+    background-repeat: no-repeat;
+
+    &__caption {
+      display: inline-block;
+      margin-block-end: 5px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.38;
+      color: clr(light);
+
+      @include bp-down(sm) {
+        display: none;
+      }
+    }
+
+    &__value {
+      display: block;
+      overflow-wrap: break-word;
+      margin-block-end: 10px;
+      padding-inline-start: 27px;
+      font-style: italic;
+      font-size: 14px;
+      word-break: break-word;
+      word-wrap: break-word;
+      color: clr(light);
+
+      @include bp-down(51em) {
+        display: none;
+      }
+    }
+
+    &--call {
+      background-image: url("../images/svg/mono/phone.svg");
+    }
+
+    &--location {
+      background-image: url("../images/svg/mono/location.svg");
+    }
+
+    &--mail {
+      background-image: url("../images/svg/mono/mail.svg");
+    }
+
+    &--vkontakte {
+      background-image: url("../images/svg/mono/vk.svg");
+    }
+
+    &--youtube {
+      background-image: url("../images/svg/mono/yout.svg");
+    }
+
+    &--instagram {
+      background-image: url("../images/svg/mono/insta.svg");
+    }
+  }
+
+  @include bp-down(40em) {
+    grid-template-columns: min-content;
+    row-gap: 12px;
+  }
+
+  & .social {
+    padding-inline: clamp(10px, 5vw, 20px);
+
+    @include bp-down(md) {
+      display: none;
+    }
+  }
+}

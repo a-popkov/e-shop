@@ -8,8 +8,15 @@
   }
 
   &--small {
-    width: 420px;
+    width: clamp(320px, 24vw, 420px);
     height: 320px;
+
+    @include bp-down(sm) {
+      overflow: hidden;
+      border-radius: 100%;
+      width: clamp(240px, 5vw, 320px);
+      height: clamp(240px, 5vw, 320px);
+    }
   }
 }
 
