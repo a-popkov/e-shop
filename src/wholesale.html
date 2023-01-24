@@ -8,17 +8,17 @@
     <header class="header">
       @include('html/header-top.html')
       @include('html/header-inner.html')
-      <div class="breadcrumbs">
-        <div class="container">
-          <ul class="reset-list breadcrumbs__list">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="На этой странице">
+          <ul class="reset-list breadcrumbs__list" role="list">
             <li class="breadcrumbs__item">
-              <a class="reset-link breadcrumbs__link" href="/">Главная</a>
+              <a class="reset-link breadcrumbs__link" aria-label="Назад на Главную" href="/">Главная</a>
             </li>
-            <li class="breadcrumbs__item">
+            <li class="breadcrumbs__item" aria-current="Оптом">
               <a class="reset-link breadcrumbs__link">Оптом</a>
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
     </header>
     <main class="page__main">

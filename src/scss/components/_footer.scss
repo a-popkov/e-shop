@@ -49,11 +49,6 @@
     font-size: clamp(14px, 2vw, 18px);
     line-height: 1.3;
 
-    &:focus {
-      outline: none;
-      color: clr(link-hover);
-    }
-
     @include bp-down(sm) {
       display: none;
     }

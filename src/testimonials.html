@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html class="page" lang="ru">
+<html class="page" dir="ltr" lang="ru">
 
 @include('html/head.html')
 
-<body class="page__body">
+<body class="page__body" id="page__body">
   <div class="site-container">
-    @include('html/header-inner.html')
-    <div class="breadcrumbs">
+    <header class="header">
+      @include('html/header-top.html')
+      @include('html/header-inner.html')
       <div class="container">
-        <ul class="reset-list breadcrumbs__list">
-          <li class="breadcrumbs__item">
-            <a class="reset-link breadcrumbs__link" href="/">Главная</a>
-          </li>
-          <li class="breadcrumbs__item">
-            <a class="reset-link breadcrumbs__link">Отзывы</a>
-          </li>
-        </ul>
+        <nav class="breadcrumbs" aria-label="На этой странице">
+          <ul class="reset-list breadcrumbs__list" role="list">
+            <li class="breadcrumbs__item">
+              <a class="reset-link breadcrumbs__link" aria-label="Назад на Главную" href="/">Главная</a>
+            </li>
+            <li class="breadcrumbs__item" aria-current="Отзывы">
+              <a class="reset-link breadcrumbs__link">Отзывы</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
+    </header>
     <main class="page__main">
       @include('html/testimonials-section.html')
       @include('html/testimonials-video.html')
