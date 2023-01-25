@@ -3,11 +3,11 @@
   padding: 41px 37px 45px;
   width: 1042px;
   max-inline-size: 100%;
-  box-shadow: -5px 5px 20px rgba(255, 255, 255, 0.13);
+  box-shadow: -5px 5px 20px rgb(255 255 255 / 13%);
 
   &__title {
     margin-block-end: 40px;
-    font-weight: 700;
+    font-weight: fw(700);
     font-size: clamp(20px, 4vw, 24px);
     color: clr(light);
   }
@@ -24,8 +24,6 @@
   &__item {
     display: flex;
     flex-direction: column;
-    // width: 322px;
-    // max-inline-size: 100%;
     width: 100%;
 
     @include bp-down(md) {
@@ -40,14 +38,14 @@
 
   &__name {
     margin-block-end: 7px;
-    font-size: 18px;
+    font-size: clamp(16px, 5vw, 18px);
     line-height: 1.38;
     color: clr(light);
   }
 
   &__descr {
     font-style: normal;
-    font-size: 14px;
+    font-size: clamp(12px, 5vw, 14px);
     line-height: 1.42;
     color: clr(neutral-light-alpha);
 

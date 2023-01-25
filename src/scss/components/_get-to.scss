@@ -1,0 +1,27 @@
+.get-to {
+  &__container {
+    display: grid;
+    grid-template-columns: minmax(auto, 420px) minmax(auto, 530px);
+    gap: 42px;
+
+    @include bp-down(882px) {
+      grid-template-columns: auto;
+    }
+  }
+
+  &__title {
+    margin-block-end: 30px;
+    text-align: left;
+
+    &::before {
+      left: 0;
+      width: 390px;
+      transform: none;
+    }
+  }
+
+  &__detail {
+    flex-direction: column;
+    gap: clamp(20px, 4vw, 30px);
+  }
+}
