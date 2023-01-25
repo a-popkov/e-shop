@@ -16,8 +16,15 @@
 
   &__image {
     overflow: hidden;
-    border-bottom-right-radius: 67px;
     aspect-ratio: 4 / 5;
+
+    &--radius-l {
+      border-bottom-right-radius: 67px;
+    }
+
+    &--radius-s {
+      border-bottom-right-radius: 30px;
+    }
   }
 
   &__info {

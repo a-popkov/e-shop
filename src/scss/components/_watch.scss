@@ -1,0 +1,45 @@
+.watch {
+  position: relative;
+  z-index: 1;
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    width: 940px;
+    max-width: 100%;
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    width: 220px;
+  }
+
+  &__next {
+    right: 0;
+    top: 37%;
+    transform: translateX(30px);
+  }
+
+  &__prev {
+    left: 0;
+    top: 37%;
+    transform: translateX(-30px);
+  }
+
+  &__descr {
+    padding-block: 54px;
+
+    p {
+      font-size: clamp(12px, 5vw, 18px);
+    }
+  }
+
+  &__next,
+  &__prev {
+    @include bp-down(sm) {
+      display: none;
+    }
+  }
+}

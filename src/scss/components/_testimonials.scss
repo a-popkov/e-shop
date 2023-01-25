@@ -17,6 +17,7 @@
   }
 
   @include bp-up(md) {
+    margin-inline: auto;
     border: 1px solid clr(light);
     border-radius: 30px;
     padding-block: 45px 27px;
