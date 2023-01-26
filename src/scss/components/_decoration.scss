@@ -65,4 +65,13 @@
       transform: translateY(-40%);
     }
   }
+
+  &--school {
+    right: -100%;
+
+    @include bp-down(md) {
+      left: -102%;
+      top: -232%;
+    }
+  }
 }

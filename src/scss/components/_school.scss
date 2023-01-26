@@ -1,0 +1,42 @@
+.school {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(335px, 1fr));
+  grid-template-rows: repeat(2, minmax(auto, min-content));
+  gap: 20px;
+
+  &__banner {
+    position: relative;
+    display: grid;
+    place-items: center;
+
+    .join__descr {
+      margin-block-end: 55px;
+    }
+
+    @include bp-down(md) {
+      margin-block: 60px;
+    }
+  }
+
+  &__descr {
+    p {
+      font-size: clamp(12px, 3vw, 14px);
+      line-height: 1.42;
+      color: clr(neutral-light-alpha);
+    }
+
+    p:last-of-type {
+      margin-block-end: 10px;
+    }
+
+    @include bp-up(md) {
+      grid-column: 2 span;
+      grid-row: 2 / -1;
+    }
+  }
+
+  @include bp-down(md) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+}
