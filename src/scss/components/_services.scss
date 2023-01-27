@@ -8,6 +8,14 @@
   &-page {
     padding-block-end: $offset;
 
+    & .section__title {
+      display: none;
+
+      @include bp-down(sm) {
+        display: block;
+      }
+    }
+
     &__list {
       grid-template-columns: repeat(auto-fill, 250px);
     }
