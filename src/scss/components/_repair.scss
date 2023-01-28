@@ -1,0 +1,123 @@
+.repair {
+  &-terms {
+    padding-inline-start: clamp(10px, 4vw, 60px);
+    max-width: 942px;
+
+    p {
+      font-size: clamp(14px, 3vw, 18px);
+      line-height: 1.38;
+      color: clr(neutral-light-alpha);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-block-end: 35px;
+    gap: $gap;
+  }
+
+  &__block {
+    display: flex;
+    gap: 25px;
+
+    @include bp-down(md) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__start {
+    @include bg-cover;
+
+    flex-shrink: 2;
+    width: 100%;
+    height: 100%;
+    max-inline-size: 452px;
+    aspect-ratio: 1 / 1;
+
+    &--restoration {
+      background-image: url("../images/services/serv-bg-repair-92.jpg");
+    }
+
+    &--tuning {
+      background-image: url("../images/services/serv-bg-repair-111.jpg");
+    }
+
+    &--replacement {
+      background-image: url("../images/services/serv-bg-repair-42.jpg");
+    }
+
+    &--neck {
+      background-image: url("../images/services/serv-bg-repair-32.jpg");
+    }
+
+    &--electronics {
+      background-image: url("../images/services/serv-bg-repair-72.jpg");
+    }
+
+    &--relatedwork {
+      background-image: url("../images/services/serv-bg-repair-22.jpg");
+    }
+
+    &--painting {
+      background-image: url("../images/services/serv-bg-repair-82.jpg");
+    }
+
+    &--maintenance {
+      background-image: url("../images/services/serv-bg-repair-12.jpg");
+    }
+  }
+
+  &__end {
+    display: flex;
+    flex-direction: column;
+    padding-block-start: 46px;
+    width: 100%;
+    max-inline-size: 586px;
+    max-block-size: 452px;
+
+    @include bp-down(md) {
+      margin-block-end: 30px;
+      padding: 0;
+    }
+  }
+
+  &__subtitle {
+    margin-block-end: 10px;
+    font-weight: 400;
+    font-size: clamp(24px, 5vw, 36px);
+    line-height: 35px;
+    color: clr(light);
+  }
+
+  &__props {
+    margin-block-start: auto;
+  }
+
+  &__price {
+    display: block;
+    margin-block-end: 5px;
+    font-size: 24px;
+    line-height: 1.45;
+    color: clr(orange-light);
+  }
+
+  &__btn {
+    max-inline-size: 161px;
+    font-weight: fw(400);
+    font-size: 18px;
+  }
+
+  &__appeal {
+    margin-block: 65px;
+    max-inline-size: 80%;
+    font-size: clamp(14px, 3vw, 18px);
+    line-height: 1.66;
+    color: clr(light);
+
+    @include bp-down(md) {
+      max-inline-size: 100%;
+    }
+  }
+}

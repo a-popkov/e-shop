@@ -1,0 +1,49 @@
+.tabs {
+  position: relative;
+
+  &__nav-btn {
+    &--active {
+      box-shadow: 0 4px 20px rgba(234, 131, 5, 0.6);
+    }
+  }
+
+  &__nav-arrow {
+    position: absolute;
+    // inset-inline-start: calc((50% - 4vw) / 1);
+    inset-inline-start: 45%;
+    inset-block-start: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: $gap;
+
+    @include bp-down(md) {
+      position: relative;
+      inset-inline-start: 0;
+      margin-block-end: 20px;
+    }
+  }
+
+  &__arrow {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    text-align: center;
+    color: clr(grey-light);
+
+    svg {
+      width: 22px;
+      height: 22px;
+      object-fit: cover;
+    }
+  }
+
+  &__panel {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}
