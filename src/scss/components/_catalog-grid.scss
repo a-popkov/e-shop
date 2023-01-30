@@ -1,0 +1,12 @@
+.catalog-grid {
+  width: 100%;
+  max-inline-size: 940px;
+
+  &__list {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-block-end: clamp(24px, 5vw, 64px);
+    gap: 20px;
+  }
+}

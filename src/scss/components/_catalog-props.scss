@@ -1,0 +1,78 @@
+.catalog-props {
+  display: flex;
+  column-gap: clamp(20px, 5vw, 40px);
+  flex-wrap: wrap;
+  align-items: center;
+  margin-block-end: 28px;
+  padding-block: 7px;
+  width: 100%;
+  row-gap: 5px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__caption {
+    display: inline-block;
+    margin-inline-end: 6px;
+    font-weight: fw(400);
+    font-size: 14px;
+    line-height: 1.21;
+    text-align: center;
+    color: clr(neutral-light-alpha);
+  }
+
+  &__select {
+    &--width {
+      min-inline-size: 182px;
+    }
+  }
+
+  .custom-checkbox__text {
+    display: flex;
+    align-items: center;
+    padding-inline-start: 32px;
+    color: clr(neutral-light-alpha);
+
+    &::before {
+      inset-block-start: 3px;
+      border-radius: 5px;
+      width: 24px;
+      height: 24px;
+    }
+
+    &::after {
+      inset-block-start: 5px;
+      border-radius: 3px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .counter {
+    display: flex;
+  }
+
+  @include bp-up(lg) {
+    justify-content: flex-end;
+  }
+}
+
+.shape {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  &__icon {
+    width: initial;
+    height: 14px;
+    fill: clr(grey-lighter);
+    transition-property: fill;
+    transition-duration: $duration-normal;
+
+    &:hover {
+      fill: clr(link-hover);
+    }
+  }
+}

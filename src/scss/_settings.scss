@@ -24,7 +24,6 @@
   @include text-size-adjust(100%);
 
   font-family: $font-primary;
-  // font-size: $font-base;
   font-size: $font-size * 1px;
   text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
@@ -229,13 +228,6 @@ svg {
   letter-spacing: 0.3px;
   color: clr(grey-lightest);
 }
-
-// .item-descr{}
-
-// *::placeholder {
-//   color: clr(accent);
-//   opacity: 1;
-// }
 
 .centered {
   text-align: center;

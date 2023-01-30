@@ -1,0 +1,93 @@
+.catalog-filters {
+  width: 100%;
+  max-inline-size: 254px;
+
+  &__nav {
+    @include flex-all-sb;
+
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    font-size: clamp(14px, 3vw, 24px);
+
+    &.tabs__nav-btn--active {
+      box-shadow: none;
+
+      &:focus-visible {
+        @include device-pointer {
+          background-color: transparent;
+        }
+      }
+
+      @include bp-up(sm) {
+        color: clr(link-hover);
+      }
+    }
+
+    @include bp-up(sm) {
+      padding: 0;
+      color: clr(light);
+      background-color: initial;
+
+      &:hover:not(:focus-visible) {
+        color: clr(link-hover);
+
+        &.btn--orange-alpha {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  &__heading {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__title {
+    font-weight: fw(400);
+    font-size: 14px;
+    text-transform: uppercase;
+    color: clr(light);
+    transition-property: color;
+    transition-duration: $duration-normal;
+  }
+
+  &__quantity {
+    position: initial;
+  }
+
+  &__icon {
+    &::after {
+      content: "";
+      position: absolute;
+      inset-inline-end: 0;
+      inset-block-start: 50%;
+      width: 14px;
+      height: 14px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23fff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' /%3E%3C/svg%3E");
+      background-position: right;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+      transition-property: transform, background-image;
+      transition-duration: $duration-normal;
+    }
+  }
+
+  &__items {
+    columns: 2;
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 2.14;
+    color: clr(grey-lighter);
+
+    &:hover:not(:focus-visible):not(:active) {
+      @include device-pointer {
+        color: clr(link-hover);
+      }
+    }
+  }
+}
