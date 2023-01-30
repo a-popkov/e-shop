@@ -1,0 +1,18 @@
+.choose-section {
+  &__text {
+    margin-block-start: clamp(30px, 5vw, 90px);
+
+    p {
+      font-weight: 400;
+      font-size: clamp(12px, 3vw, 14px);
+      line-height: 2.14;
+      color: clr(neutral-light-alpha);
+    }
+  }
+
+  &__more {
+    @include bp-down(sm) {
+      display: none;
+    }
+  }
+}

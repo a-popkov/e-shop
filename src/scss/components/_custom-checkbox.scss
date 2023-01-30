@@ -1,0 +1,43 @@
+.custom-checkbox {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    &:checked + span {
+      color: clr(link-hover);
+
+      &::after {
+        background-color: currentColor;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    padding-inline-start: 20px;
+    font-size: 14px;
+    line-height: 2.14;
+    color: clr(grey-lighter);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: 0;
+      border: 1px solid currentColor;
+      border-radius: 2px;
+      width: 14px;
+      height: 14px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-inline-start: 2px;
+      inset-block-start: 2px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

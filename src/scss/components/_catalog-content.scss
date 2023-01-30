@@ -1,0 +1,27 @@
+.catalog-content {
+  position: relative;
+
+  &::after {
+    @include pseudo;
+
+    left: 0;
+    border-block-start: 0.1em solid #242424;
+    width: 100%;
+    max-inline-size: clamp(575px, 96%, 184rem);
+  }
+
+  &__container {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+
+    @include bp-up(1400px) {
+      max-inline-size: 1382px;
+    }
+
+    @include bp-down(md) {
+      flex-wrap: wrap;
+      row-gap: 20px;
+    }
+  }
+}

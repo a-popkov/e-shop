@@ -1,0 +1,10 @@
+<section class="section section__offset--sm">
+  <h2 class="section__title visually-hidden" aria-hidden="true">Каталог</h2>
+  <div class="catalog-content">
+    <div class="container catalog-content__container">
+      @include('catalog-filters.html')
+      @include('catalog-grid.html')
+    </div>
+    @include('catalog-pagination.html')
+  </div>
+</section>

@@ -1,0 +1,22 @@
+.quantity {
+  position: absolute;
+  inset-inline-start: 13px;
+  inset-block-end: -7.7px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9px;
+  padding: 3.5px;
+  max-block-size: 15px;
+  box-shadow: 0 0 0 0.2em clr(grey-darker);
+  font-weight: fw(400);
+  font-size: 14px;
+  text-align: center;
+  color: clr(light);
+  background-color: clr(orange-light);
+
+  &:empty {
+    padding: 0;
+    box-shadow: none;
+    background-color: initial;
+  }
+}
