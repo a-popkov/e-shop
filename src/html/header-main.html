@@ -14,10 +14,9 @@
       </a>
       <div class="header__shop-nav">
         @include('shop-nav.html')
-        <button class="reset-btn header__burger--main burger" aria-label="Открыть меню" aria-expanded="false"
-          data-burger>
-          <span class="burger__line"></span>
-        </button>
+        <div class="header__burger header__burger--main">
+          @include('burger.html')
+        </div>
       </div>
     </div>
     <nav class="header__menu menu menu--main" data-menu>

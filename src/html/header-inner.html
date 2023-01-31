@@ -24,10 +24,9 @@
         <!-- Поиск / -->
         @include('shop-nav.html')
       </div>
-      <button class="reset-btn header__burger--inner burger" aria-label="Открыть меню" aria-expanded="false"
-        data-burger>
-        <span class="burger__line"></span>
-      </button>
+      <div class="header__burger header__burger--inner">
+        @include('burger.html')
+      </div>
     </div>
   </div>
 </div>
