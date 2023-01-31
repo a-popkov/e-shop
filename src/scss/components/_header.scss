@@ -55,6 +55,7 @@
   }
 
   &__logo {
+    z-index: 11;
     display: grid;
 
     &--main {
@@ -82,15 +83,21 @@
   }
 
   &__burger {
+    display: none;
+
     &--main {
       @include bp-down(sm) {
+        z-index: z(popup);
         display: grid;
+        align-items: center;
       }
     }
 
     &--inner {
       @include bp-down(56em) {
+        z-index: z(popup);
         display: grid;
+        align-items: center;
       }
     }
   }

@@ -8,7 +8,7 @@ export const enableScroll = () => {
   vars.bodyEl.style.paddingRight = '0px';
 
   vars.bodyEl.style.top = 'auto';
-  vars.bodyEl.classList.remove('dis-scroll');
+  vars.bodyEl.classList.remove('is-lock-scroll');
   window.scroll({
     top: pagePosition,
     left: 0
