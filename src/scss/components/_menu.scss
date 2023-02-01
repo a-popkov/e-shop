@@ -125,3 +125,15 @@
     }
   }
 }
+
+// @media (min-width: 576px) {
+//   .menu + .menu__list {
+//     visibility: var(--nav-list-visibility, hidden);
+//     transform: var(--nav-list-transform, translateX(100%));
+//   }
+// }
+
+// [aria-expanded="false"] + .menu__list {
+//   visibility: var(--nav-list-visibility, hidden);
+//   transform: var(--nav-list-transform, translateX(100%));
+// }

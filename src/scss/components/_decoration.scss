@@ -80,4 +80,10 @@
     height: clamp(280px, 70vw, 455px);
     transform: translateY(-17%);
   }
+
+  &--product {
+    width: clamp(260px, 47%, 65%);
+    height: clamp(280px, 70vw, 725px);
+    transform: translateY(-31%);
+  }
 }
