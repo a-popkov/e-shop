@@ -1,9 +1,9 @@
 <section class="section section__offset--md">
   <div class="container">
-    <div class="card">
-      <div class="card-slider">
-        <div class="card-slider__nav nav-slider">
-          <div class="nav-slider__item">
+    <div class="product-block">
+      <div class="product-slider">
+        <div class="product-slider__nav">
+          <div class="product-slider__item" tabindex="0">
             <picture>
               <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
               <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
@@ -11,7 +11,7 @@
                 alt="Фотография акустической гитары Kepma A1C">
             </picture>
           </div>
-          <div class="nav-slider__item">
+          <div class="product-slider__item" tabindex="0">
             <picture>
               <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
               <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
@@ -19,7 +19,7 @@
                 alt="Фотография акустической гитары Kepma A1C">
             </picture>
           </div>
-          <div class="nav-slider__item">
+          <div class="product-slider__item" tabindex="0">
             <picture>
               <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
               <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
@@ -28,59 +28,68 @@
             </picture>
           </div>
         </div>
-        <div class="card-slider__content slider-content">
-          <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide">
-                <picture>
-                  <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
-                  <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
-                  <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
-                    alt="Фотография акустической гитары Kepma A1C">
-                </picture>
-              </div>
-              <div class="swiper-slide">
-                <picture>
-                  <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
-                  <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
-                  <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
-                    alt="Фотография акустической гитары Kepma A1C">
-                </picture>
-              </div>
-              <div class="swiper-slide">
-                <picture>
-                  <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
-                  <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
-                  <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
-                    alt="Фотография акустической гитары Kepma A1C">
-                </picture>
-              </div>
+        <div class="product-slider__content slider-content">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <picture>
+                <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                  alt="Фотография акустической гитары Kepma A1C">
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                  alt="Фотография акустической гитары Kepma A1C">
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                  alt="Фотография акустической гитары Kepma A1C">
+              </picture>
             </div>
           </div>
         </div>
       </div>
-      <div class="card-info">
-        <div class="card-info__header">
-          <span class="reset-link card-info__category" itemprop="category">Гитары</span>
-          <h3 class="card-info__name" itemprop="name">Акустическая гитара Kepma A1C Black Gloss</h3>
-        </div>
-        <audio class="card-info__sound" src=""></audio>
-        <p class="card-info__descr">Гитара которая удивляет своим звуком и&nbsp;качеством, отлично лежит в&nbsp;руках.
+      <div class="product-header">
+        <span class="reset-link product__category product-header__category" itemprop="category">Гитары</span>
+        <h3 class="product-header__name" itemprop="name">Акустическая гитара Kepma A1C Black Gloss</h3>
+      </div>
+      <div class="product-info">
+        <!-- <audio controls class="product-info__sound" src=""></audio> -->
+        <img class="product-info__sound" src="../images/svg/multi/play-soud.svg" alt="">
+        <p class="product-info__descr">Гитара которая удивляет своим звуком и&nbsp;качеством, отлично лежит
+          в&nbsp;руках.
           Верхняя дека из&nbsp;ели, нижняя и&nbsp;обечайка из&nbsp;красного дерева, классический набор который делает
-          звук ярким и&nbsp;объемным</p>
-        <div class="card-info available">в наличии</div>
-        <div class="product__props">
-          <div class="product__price product-price" itemprop="offers" itemscope
+          звук ярким и&nbsp;объемным
+        </p>
+        <p class="product-info__available">в наличии</p>
+        <div class="product-info__props">
+          <div class="product-info__price product-price" itemprop="offers" itemscope
             itemtype="https://schema.org/AggregateOffer">
-            <p class="product-price__current" itemprop="lowPrice">&#8381;19 500</p>
+            <p class="product-price__current product-info__current" itemprop="lowPrice">&#8381;19 500</p>
             <p class="product-price__credit">в рассрочку от 2 489&#8381;</p>
-            <button class="reset-btn btn">в корзину</button>
+            <button class="reset-btn btn btn--yellow btn--uppercase">в корзину</button>
           </div>
-          <div class="product__stat">
+          <div class="product-info__stat">
             @include('rating.html')
-            <button class="reset-btn btn">купить в 1 клик</button>
+            <ul class="reset-list product-info__social social" title="">
+              <li class="social__item"><a class="reset-link social__link social__link--vk" href="#" target="_blank"
+                  rel="noopener noreferrer" aria-label="Поделиться во Вконтакте"></a></li>
+              <li class="social__item"><a class="reset-link social__link social__link--od" href="#" target="_blank"
+                  rel="noopener noreferrer" aria-label="Поделиться в Одноклассиниках"></a></li>
+              <li class="social__item"><a class="reset-link social__link social__link--fb" href="#" target="_blank"
+                  rel="noopener noreferrer" aria-label="Поделиться в Фейсбуке"></a></li>
+              <li class="social__item"><a class="reset-link social__link social__link--tw" href="#" target="_blank"
+                  rel="noopener noreferrer" aria-label="Поделиться в Твиттере"></a></li>
+            </ul>
+            <button class="reset-btn btn btn--gray btn--uppercase">купить в 1 клик</button>
           </div>
         </div>
       </div>

@@ -1,0 +1,33 @@
+.product-panel {
+  &__list {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__btn {
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background-color: rgb(19 18 24 / 56%);
+      transition-property: background-color;
+      transition-duration: $duration-normal;
+    }
+
+    &:hover::after {
+      background-color: initial;
+      transition-property: background-color;
+    }
+
+    &.cart,
+    &.choices {
+      position: relative;
+      z-index: 2;
+
+      &--active::after {
+        background-color: initial;
+      }
+    }
+  }
+}

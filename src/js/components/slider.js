@@ -6,6 +6,7 @@ const popProdSlider = document.querySelector('.popular-product__slider');
 const viewSlider = document.querySelector('.view__slider');
 const watchSlider = document.querySelector('.watch__slider');
 const testimonialsSlider = document.querySelector('.testimonials-video__slider');
+const productSlider = document.querySelector('.slider-content');
 
 let heroSwiper = new Swiper(heroSlider, {
   keyboard: {
@@ -175,3 +176,32 @@ let testimonialsSwiper = new Swiper(testimonialsSlider, {
     clickable: true,
   },
 });
+
+let productSwiper = new Swiper(productSlider, {
+  slidesPerView: 1,
+});
+
+const productSlideItem = document.querySelectorAll('.product-slider__item');
+const maxItems = 5;
+const productNav = document.querySelector('.product-slider__nav');
+
+productSlideItem.forEach((el, index) => {
+  el.setAttribute('data-index', index);
+
+  el.addEventListener('click', (e) => {
+    const index = parseInt(e.currentTarget.dataset.index);
+
+    productSwiper.slideTo(index)
+  });
+});
+
+const slideMore = () => {
+  let childenLength = productNav.children.length;
+    if (childenLength > maxItems) {
+    document.querySelectorAll(`.product-slider__item:nth-child(n+${maxItems + 1})`).forEach(el => {
+    el.style.display = 'none';});
+    productNav.insertAdjacentHTML('beforeend', `<button class="reset-btn modal-open">Ещё ${childenLength - maxItems}</button>`)
+  }
+};
+
+slideMore()

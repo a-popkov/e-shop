@@ -3,7 +3,7 @@
 
   &__prev {
     position: relative;
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
     text-decoration: none;
     color: clr(grey-light);
 
@@ -12,7 +12,7 @@
       position: absolute;
       inset-inline-start: 0;
       inset-block-start: 6px;
-      width: 54px;
+      width: clamp(47px, 4vw, 54px);
       height: 1px;
       background-color: clr(grey-light);
       transform: rotate(10deg);
@@ -28,8 +28,15 @@
 
   &__current {
     margin-block-end: auto;
-    font-weight: fw(400);
-    font-size: 18px;
+    font-size: clamp(14px, 3vw, 18px);
     color: clr(light);
+  }
+
+  &__credit {
+    margin-block-start: clamp(0px, 3vw, -3px);
+    margin-block-end: 5px;
+    font-size: clamp(10px, 3vw, 14px);
+    text-transform: uppercase;
+    color: clr(neutral-yellow-alpha);
   }
 }
