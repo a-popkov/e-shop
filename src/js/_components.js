@@ -9,4 +9,5 @@ import './components/map';
 import './components/tabs';
 import './components/accordion';
 import './components/custom-select';
+import './components/product-tabs';
 // import './components/to-top'; // экранировать код, выдает ошибку

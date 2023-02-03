@@ -9,4 +9,10 @@
     margin-block-end: clamp(24px, 5vw, 64px);
     gap: 20px;
   }
+
+  &__item {
+    .product {
+      height: 100%;
+    }
+  }
 }

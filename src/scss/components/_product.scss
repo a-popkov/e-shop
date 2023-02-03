@@ -1,8 +1,9 @@
 .product {
+  @include flex-column;
+
   position: relative;
   overflow: hidden;
   max-inline-size: 220px;
-  max-block-size: 410px;
   background-color: clr(grey-medium);
 
   &__panel {
@@ -47,6 +48,7 @@
   &__info {
     @include flex-column;
 
+    flex-grow: 1;
     justify-content: space-between;
     padding: 10px 13px;
     gap: 10px;
@@ -85,6 +87,8 @@
 
   &__props {
     @include flex-all-sb;
+
+    margin-block-start: auto;
   }
 
   &__price {
@@ -101,6 +105,12 @@
         color: clr(link-hover);
       }
     }
+  }
+
+  &__text {
+    font-size: clamp(12px, 3vw, 14px);
+    line-height: 1.5;
+    color: clr(neutral-light-alpha);
   }
 
   &:hover {
@@ -203,7 +213,7 @@
 
   &__sound {
     margin-block-end: 13px;
-    // background-image: url('../images/svg/multi/play-soud.svg');
+    // background-image: url("../images/svg/multi/play-soud.svg");
     // background-position: center;
     // background-size: cover;
     // background-repeat: no-repeat;
@@ -252,28 +262,28 @@
       border-radius: initial;
 
       &--vk {
-        background-image: url('../images/svg/multi/vkontakte.svg');
+        background-image: url("../images/svg/multi/vkontakte.svg");
         background-position: center;
         background-size: 22px 22px;
         background-repeat: no-repeat;
       }
 
       &--fb {
-        background-image: url('../images/svg/multi/facebook.svg');
+        background-image: url("../images/svg/multi/facebook.svg");
         background-position: center;
         background-size: 22px 22px;
         background-repeat: no-repeat;
       }
 
       &--od {
-        background-image: url('../images/svg/multi/odnoklassniki.svg');
+        background-image: url("../images/svg/multi/odnoklassniki.svg");
         background-position: center;
         background-size: 22px 22px;
         background-repeat: no-repeat;
       }
 
       &--tw {
-        background-image: url('../images/svg/multi/twitter.svg');
+        background-image: url("../images/svg/multi/twitter.svg");
         background-position: center;
         background-size: 22px 22px;
         background-repeat: no-repeat;

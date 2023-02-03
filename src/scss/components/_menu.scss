@@ -1,5 +1,6 @@
 .menu {
   position: var(--nav-position, fixed);
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +21,7 @@
     background-color: clr(grey-darker);
 
     @include reduced-motion-no-preference {
-      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), visibility 0.3s linear;
+      transition: transform 0.4s ease-in-out, visibility 0.4s linear;
     }
   }
 
@@ -49,10 +50,6 @@
     @include bp-down(sm) {
       font-size: 18px;
     }
-  }
-
-  &--active {
-    z-index: 10;
   }
 
   &--main {
@@ -125,15 +122,3 @@
     }
   }
 }
-
-// @media (min-width: 576px) {
-//   .menu + .menu__list {
-//     visibility: var(--nav-list-visibility, hidden);
-//     transform: var(--nav-list-transform, translateX(100%));
-//   }
-// }
-
-// [aria-expanded="false"] + .menu__list {
-//   visibility: var(--nav-list-visibility, hidden);
-//   transform: var(--nav-list-transform, translateX(100%));
-// }

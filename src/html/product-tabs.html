@@ -1,0 +1,42 @@
+<div class="tabs-nav">
+  <ul class="reset-list tabs-nav__list">
+    <li class="tabs-nav__item">
+      <button class="reser-btn tabs-nav__btn tabs-nav__btn--active" data-path="description">Описание</button>
+    </li>
+    <li class="tabs-nav__item">
+      <button class="reser-btn tabs-nav__btn" data-path="characteristics">Характеристики</button>
+    </li>
+    <li class="tabs-nav__item">
+      <button class="reser-btn tabs-nav__btn" data-path="testimonials">Отзывы</button>
+    </li>
+    <li class="tabs-nav__item">
+      <button class="reser-btn tabs-nav__btn" data-path="delivery">Доставка и оплата</button>
+    </li>
+    <li class="tabs-nav__item">
+      <button class="reser-btn tabs-nav__btn" data-path="guarantee">Гарантия</button>
+    </li>
+    <li class="tabs-nav__item">
+      <button class="reser-btn tabs-nav__btn" data-path="return">Возврат</button>
+    </li>
+  </ul>
+  <div class="tabs-content">
+    <div class="tabs-item tabs-item--active" data-target="description">
+      @include('product-description.html')
+    </div>
+    <div class="tabs-item" data-target="characteristics">
+      2
+    </div>
+    <div class="tabs-item" data-target="guarantee">
+      @include('product-guarantee.html')
+    </div>
+    <div class="tabs-item" data-target="delivery">
+      @include('delivery.html')
+    </div>
+    <div class="tabs-item" data-target="testimonials">
+      @include('form-testimonials.html')
+    </div>
+    <div class="tabs-item" data-target="return">
+      @include('product-return.html')
+    </div>
+  </div>
+</div>
