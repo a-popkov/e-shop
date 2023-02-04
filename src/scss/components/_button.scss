@@ -47,18 +47,20 @@
     }
   }
 
-  &--yellow {
-    padding: 6px 25px;
+  &--yellow,
+  &--gray {
+    padding-block: clamp(2px, 5vw, 6px);
+    padding-inline: clamp(10px, 5vw, 25px);
     font-weight: fw(400);
-    font-size: 18px;
+    font-size: clamp(12px, 5vw, 18px);
+  }
+
+  &--yellow {
     color: clr(light);
     background-color: clr(neutral-yellow-alpha);
   }
 
   &--gray {
-    padding: 6px 25px;
-    font-weight: fw(400);
-    font-size: 18px;
     color: clr(neutral-light-alpha);
     background-color: #2a292e;
   }
