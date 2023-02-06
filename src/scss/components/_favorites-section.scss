@@ -1,0 +1,28 @@
+.favorites-section {
+  &__heading {
+    font-weight: fw(400);
+    font-size: 14px;
+    line-height: 1.21;
+    color: rgb(255 255 255 / 13%);
+
+    &::after {
+      @include pseudo;
+
+      left: 0;
+      border-block-start: 0.1em solid #242424;
+      width: 100%;
+      max-inline-size: clamp(575px, 65%, 184rem);
+    }
+  }
+
+  &__item {
+    &::after {
+      @include pseudo;
+
+      left: 0;
+      border-block-start: 0.1em solid #242424;
+      width: 100%;
+      max-inline-size: clamp(575px, 65%, 184rem);
+    }
+  }
+}
