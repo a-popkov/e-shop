@@ -1,0 +1,58 @@
+.compare {
+  &__row {
+
+  }
+
+  &__cell {
+    vertical-align: bottom;
+    border-bottom: 2px solid #242424;
+    padding-inline: 10px;
+    max-inline-size: 240px;
+    text-align: center;
+
+    &:nth-child(-n+4) {
+      padding-block-end: 27px;
+    }
+  }
+
+  &__btn {
+    font-weight: fw(400);
+    color: rgb(255 255 255 / 80%);
+
+    &:not(:last-child) {
+      margin-block-end: 8px;
+    }
+
+    &--active {
+      background-color: clr(orange-medium);
+    }
+  }
+
+  &__img {
+    margin-block-end: 20px;
+  }
+
+  &__name {
+    margin-block-end: 5px;
+  }
+}
+
+.compare-value {
+  vertical-align: middle;
+  font-weight: fw(400);
+  font-size: clamp(12px, 4vw, 18px);
+  line-height: 1.16;
+  color: clr(light);
+
+  @include bp-down(sm) {
+    color: #2a292e;
+  }
+}
+
+.compare-price {
+  vertical-align: middle;
+  font-weight: fw(400);
+  font-size: clamp(12px, 4vw, 24px);
+  line-height: 1.16;
+  color: rgb(255 255 255 / 80%);
+}

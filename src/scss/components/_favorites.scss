@@ -1,8 +1,29 @@
 .favorites {
+  position: relative;
   display: flex;
   column-gap: 9px;
   align-items: center;
   padding-block: 15px;
+
+  &__link {
+    position: absolute;
+    inset-inline-end: 15px;
+    inset-block-start: 15px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: clr(link-hover);
+      transition-property: fill;
+      transition-duration: $duration-normal;
+    }
+
+    &:hover {
+      svg {
+        fill: clr(light);
+      }
+    }
+  }
 
   &__info {
     display: flex;
@@ -10,6 +31,11 @@
     justify-content: space-between;
     width: 100%;
     max-inline-size: 594px;
+
+    @include bp-down(sm) {
+      flex-wrap: wrap;
+      row-gap: 22px;
+    }
   }
 
   &__action {
@@ -19,13 +45,16 @@
   }
 
   &__descr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     max-inline-size: 251px;
   }
 
   &__name {
-    margin-block-end: 13px;
+    margin-block-end: clamp(7px, 4vw, 13px);
     font-weight: fw(400);
-    font-size: 18px;
+    font-size: clamp(12px, 4vw, 18px);
     line-height: 1.16;
     text-transform: uppercase;
     color: clr(light);
@@ -33,6 +62,7 @@
 
   &__more {
     font-size: 10px;
+    line-height: 1.4;
     color: clr(orange-light);
 
     @include bp-up(sm) {
@@ -42,21 +72,50 @@
 
   &__characteristic {
     td {
-      font-size: 14px;
+      border-spacing: initial;
+      font-size: clamp(10px, 2vw, 14px);
       line-height: 1.43;
       color: clr(neutral-light-alpha);
+
+      @include bp-down(sm) {
+        &:nth-child(even) {
+          padding-inline-start: 5px;
+        }
+      }
+    }
+
+    @include bp-down(sm) {
+      tr:nth-child(n+3) {
+        display: none;
+      }
     }
   }
 
   &__current {
-    margin-block-end: 10px;
-    font-size: 24px;
+    margin-block-end: clamp(2px, 1vw, 10px);
+    font-size: clamp(12px, 4vw, 24px);
     line-height: 1.16;
     color: clr(light);
+
+    @include bp-down(sm) {
+      color: clr(orange-light);
+    }
   }
 
-  &__add {
+  &__buy {
     margin-block-end: 14px;
+
+    &:hover {
+      background-color: clr(link-hover);
+    }
+
+    @include bp-down(sm) {
+      margin: 0;
+      padding-inline: 21px;
+      height: 27px;
+      font-size: 10px;
+      color: clr(grey-darker);
+    }
   }
 
   &__remove {
@@ -65,5 +124,25 @@
     font-size: 14px;
     line-height: 1;
     color: rgb(255 255 255 / 40%);
+
+    &:hover {
+      color: clr(link-hover);
+    }
+
+    @include bp-down(sm) {
+      display: none;
+    }
+  }
+
+  &__compare {
+    // display: none;
+    margin-block-start: 5px;
+    font-size: 14px;
+    line-height: 1;
+    color: rgb(255 255 255 / 40%);
+
+    &:hover {
+      color: clr(link-hover);
+    }
   }
 }

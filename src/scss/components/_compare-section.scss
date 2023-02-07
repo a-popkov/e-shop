@@ -1,0 +1,7 @@
+.compare-section {
+  @include bp-up(sm) {
+    .section__title {
+      display: none;
+    }
+  }
+}

@@ -3,6 +3,7 @@
     font-weight: fw(400);
     font-size: 14px;
     line-height: 1.21;
+    text-transform: uppercase;
     color: rgb(255 255 255 / 13%);
 
     &::after {
@@ -11,7 +12,11 @@
       left: 0;
       border-block-start: 0.1em solid #242424;
       width: 100%;
-      max-inline-size: clamp(575px, 65%, 184rem);
+      max-inline-size: clamp(240px, 58%, 184rem);
+    }
+
+    @include bp-down(sm) {
+      display: none;
     }
   }
 
@@ -22,7 +27,19 @@
       left: 0;
       border-block-start: 0.1em solid #242424;
       width: 100%;
-      max-inline-size: clamp(575px, 65%, 184rem);
+      max-inline-size: clamp(240px, 58%, 184rem);
+    }
+  }
+
+  @include bp-up(sm) {
+    .section__title {
+      display: none;
+    }
+  }
+
+  @include bp-down(sm) {
+    .section__title {
+      margin-block-end: 5px;
     }
   }
 }
