@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="page" dir="ltr" lang="ru">
+
+@include('html/head.html')
+
+<body class="page__body" id="page__body">
+  <div class="site-container">
+    <header class="header">
+      @include('html/header-top.html')
+      @include('html/header-inner.html')
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="На этой странице">
+          <ul class="reset-list breadcrumbs__list" role="list">
+            <li class="breadcrumbs__item">
+              <a class="reset-link breadcrumbs__link" aria-label="Назад на Главную" href="/">Главная</a>
+            </li>
+            <li class="breadcrumbs__item" aria-current="Корзина">
+              <a class="reset-link breadcrumbs__link">Корзина</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="page__main">
+      @include('html/cart-section.html')
+      <section class="section section__offset--md">
+        <div class="container">
+          <h2 class="section__title section__title--accent">Вместе с этим покупают</h2>
+          @include('html/popular-product.html')
+        </div>
+      </section>
+    </main>
+    @include('html/footer.html')
+  </div>
+</body>
+
+</html>

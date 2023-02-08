@@ -33,6 +33,7 @@
 .page__body {
   @include flex-column;
 
+  overflow-anchor: none;
   margin-inline: auto;
   min-inline-size: 320px;
   max-inline-size: 1920px;

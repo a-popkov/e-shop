@@ -8,7 +8,6 @@
   &__link {
     position: absolute;
     inset-inline-end: 15px;
-    inset-block-start: 15px;
 
     svg {
       width: 24px;
@@ -22,6 +21,14 @@
       svg {
         fill: clr(light);
       }
+    }
+
+    @include bp-up(sm) {
+      inset-block-start: 15px;
+    }
+
+    @include bp-down(sm) {
+      inset-block-end: 35px;
     }
   }
 
@@ -137,12 +144,16 @@
   &__compare {
     // display: none;
     margin-block-start: 5px;
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
     line-height: 1;
     color: rgb(255 255 255 / 40%);
 
     &:hover {
       color: clr(link-hover);
+    }
+
+    @include bp-down(sm) {
+      border-bottom: 1px dotted currentColor;
     }
   }
 }
