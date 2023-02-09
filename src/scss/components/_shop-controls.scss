@@ -1,5 +1,11 @@
-.favorites-section {
-  &__heading {
+.shop-controls {
+  &__head {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: 445px 100px 100px;
+  }
+
+  &__col {
     font-weight: fw(400);
     font-size: 14px;
     line-height: 1.21;
@@ -21,13 +27,15 @@
   }
 
   &__item {
-    &::after {
-      @include pseudo;
+    &:not(:last-child) {
+      &::after {
+        @include pseudo;
 
-      left: 0;
-      border-block-start: 0.1em solid #242424;
-      width: 100%;
-      max-inline-size: clamp(240px, 58%, 184rem);
+        left: 0;
+        border-block-start: 0.1em solid #242424;
+        width: 100%;
+        max-inline-size: clamp(240px, 58%, 184rem);
+      }
     }
   }
 

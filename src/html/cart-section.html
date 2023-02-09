@@ -1,18 +1,45 @@
-<section class="section section__offset--sm favorites-section">
+<section class="section section__offset--sm shop-controls">
   <div class="container">
     <h2 class="section__title section__title--accent">Корзина</h2>
-    <ul class="reset-list favorites-section__heading section-heading">
-      <li class="section-heading__item">Наименование</li>
-      <li class="section-heading__item">Кол-во</li>
-      <li class="section-heading__item">Цена</li>
-    </ul>
-    <ul class="reset-list favorites-section__list">
-      <li class="favorites-section__item">
-
-      </li>
-      <li class="favorites-section__item">
-
-      </li>
-    </ul>
+    <div class="cart-section">
+      <div class="cart-section__start">
+        <div class="reset-list shop-controls__head">
+          <span class="shop-controls__col">Наименование</span>
+          <span class="shop-controls__col">Кол-во</span>
+          <span class="shop-controls__col">Цена</span>
+        </div>
+        <ul class="reset-list shop-controls__list">
+          <li class="shop-controls__item">
+            @include('cart-product.html')
+          </li>
+        </ul>
+      </div>
+      <div class="cart-section__end">
+        <div class="cart-content">
+          <div class="cart-content__fullprice fullprice">
+            <div class="fullprice__caption">Итого</div>
+            <div class="fullprice__row">
+              <span class="fullprice__text">Общее количество:</span>
+              <span class="fullprice__value">2 шт.</span>
+            </div>
+            <div class="fullprice__row">
+              <span class="fullprice__text">Общая стоимость:</span>
+              <span class="fullprice__value">30 000&#8381;</span>
+            </div>
+          </div>
+        </div>
+        <form action="#" id="form-fullprice" class="fullprice__form">
+          <label class="fullprice__label">
+            <input id="promo" class="reset-input fullprice__input" type="text" name="text"
+              placeholder="Укажите промо-код" required autocomplete="off"
+              pattern="[A-Za-z0-9._+-]+[A-Za-z0-9 -]+.[a-z]{2,}" title="Введите промо-код">
+          </label>
+          <a class="reset-link btn btn--orange btn--orange-medium fullprice__btn" href="#">
+            Перейти к&nbsp;оформлению
+          </a>
+        </form>
+        <a class="reset-link fullprice__link" href="../catalog.html">Продолжить покупки</a>
+      </div>
+    </div>
   </div>
 </section>

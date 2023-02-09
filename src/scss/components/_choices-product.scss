@@ -1,4 +1,4 @@
-.favorites {
+.choices-product {
   position: relative;
   display: flex;
   column-gap: 9px;
@@ -29,6 +29,12 @@
 
     @include bp-down(sm) {
       inset-block-end: 35px;
+    }
+  }
+
+  &__img {
+    @include bp-up(sm) {
+      max-height: 247px;
     }
   }
 
@@ -65,37 +71,6 @@
     line-height: 1.16;
     text-transform: uppercase;
     color: clr(light);
-  }
-
-  &__more {
-    font-size: 10px;
-    line-height: 1.4;
-    color: clr(orange-light);
-
-    @include bp-up(sm) {
-      display: none;
-    }
-  }
-
-  &__characteristic {
-    td {
-      border-spacing: initial;
-      font-size: clamp(10px, 2vw, 14px);
-      line-height: 1.43;
-      color: clr(neutral-light-alpha);
-
-      @include bp-down(sm) {
-        &:nth-child(even) {
-          padding-inline-start: 5px;
-        }
-      }
-    }
-
-    @include bp-down(sm) {
-      tr:nth-child(n+3) {
-        display: none;
-      }
-    }
   }
 
   &__current {
@@ -155,5 +130,35 @@
     @include bp-down(sm) {
       border-bottom: 1px dotted currentColor;
     }
+  }
+}
+
+.product-characteristic {
+  &__more {
+    font-size: 10px;
+    line-height: 1.4;
+    color: clr(orange-light);
+
+    @include bp-up(sm) {
+      display: none;
+    }
+  }
+
+  &__group {
+    display: flex;
+    column-gap: 5px;
+
+    @include bp-down(sm) {
+      &:nth-child(n+3) {
+        display: none;
+      }
+    }
+  }
+
+  span {
+    border-spacing: initial;
+    font-size: clamp(10px, 2vw, 14px);
+    line-height: 1.4;
+    color: clr(neutral-light-alpha);
   }
 }
