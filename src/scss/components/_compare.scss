@@ -1,22 +1,76 @@
 .compare {
-  thead {
+  display: grid;
+  // grid-template-columns: repeat(4, 240px);
+  // grid-template-rows: 250px 90px;
+  row-gap: 40px;
+
+  &__head {
+    .compare__row {
+      align-content: end;
+
+      @include bp-up(md) {
+        grid-template-rows: 366px;
+      }
+
+      @include bp-down(md) {
+        grid-template-rows: 200px 30px;
+      }
+    }
+
     .compare__cell {
-      &:nth-child(-n+4) {
-        vertical-align: bottom;
-        padding-block-end: 27px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-block-end: 20px;
+      padding-inline: 10px;
+      height: 100%;
+      row-gap: 15px;
+    }
+
+    &::after {
+      @include pseudo;
+
+      left: 0;
+      border-block-start: 0.1em solid #242424;
+      width: 100%;
+      max-inline-size: clamp(240px, 65%, 184rem);
+
+      @include bp-down(sm) {
+        border-color: rgb(234 131 5 / 30%);
+      }
+    }
+  }
+
+  &__body {
+    .compare__row {
+      padding-block: 7px;
+    }
+  }
+
+  &__group {
+    &::after {
+      @include pseudo;
+
+      left: 0;
+      border-block-start: 0.1em solid #242424;
+      width: 100%;
+      max-inline-size: clamp(240px, 65%, 184rem);
+
+      @include bp-down(sm) {
+        border-color: rgb(234 131 5 / 30%);
       }
     }
   }
 
   &__row {
-    border-bottom: 1px solid rgba(234, 131, 5, 0.3);
+    display: grid;
+    column-gap: 35px;
+    grid-template-columns: repeat(4, minmax(102px, 240px));
   }
 
   &__cell {
-    vertical-align: middle;
-    padding-block: 13px;
-    padding-inline: 10px;
-    max-inline-size: 240px;
+    // max-inline-size: 240px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.21;
@@ -26,35 +80,57 @@
     // &:nth-child(-n+3) {
     //   border-bottom: 2px solid #242424;
     // }
+
+  }
+
+  &__btns {
+    display: flex;
+    row-gap: 8px;
+
+    @include bp-up(md) {
+      flex-direction: column;
+      grid-row: 2 / 3;
+    }
   }
 
   &__btn {
+    padding-inline: clamp(10px, 3vw, 60px);
     font-weight: fw(400);
     color: rgb(255 255 255 / 80%);
-
-    &:not(:last-child) {
-      margin-block-end: 8px;
-    }
 
     &--active {
       background-color: clr(orange-medium);
     }
+
+    &--diff {
+      grid-column-start: 3;
+      grid-row-start: 2;
+    }
   }
 
-  &__img {
-    margin-block-end: 20px;
+  &__info {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__name {
-    overflow: hidden;
-    margin-block-end: 5px;
-    font-size: clamp(12px, 2vw, 18px);
+    flex-grow: 1;
+    // overflow: hidden;
+    margin: 0;
+    font-size: clamp(12px, 4vw, 16px);
+    text-align: center;
 
-    @include bp-up(sm) {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-    }
+    // @include bp-up(sm) {
+    //   display: -webkit-box;
+    //   -webkit-box-orient: vertical;
+    //   -webkit-line-clamp: 2;
+    // }
+  }
+
+  &__remove {
+    margin-block-start: auto;
   }
 }
 

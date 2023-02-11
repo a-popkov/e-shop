@@ -1,84 +1,114 @@
-<section class="section section__offset--sm compare-section">
+<section class="section section__offset--sm shop-controls">
   <div class="container">
     <h2 class="section__title section__title--accent">Сравнение</h2>
-    <table class="compare">
-      <thead>
-        <tr class="compare__row">
-          <td class="compare__cell">
-            <button class="reset-btn btn btn--black compare__btn compare__btn--active">Все параметры</button>
-            <button class="reset-btn btn btn--black compare__btn">Различия</button>
-          </td>
-          <td class="compare__cell">
+    <div class="compare">
+      <div class="compare__head">
+        <div class="compare__row">
+          <div class="compare__cell">
+            <ul class="reset-list compare__btns compare-btns">
+              <li class="compare-btns__item">
+                <button class="reset-btn btn btn--black compare__btn compare__btn--all compare__btn--active">Все
+                  параметры</button>
+              </li>
+              <li class="compare-btns__item">
+                <button class="reset-btn btn btn--black compare__btn compare__btn--diff">Различия</button>
+              </li>
+            </ul>
+          </div>
+          <div class="compare__cell">
             <picture>
               <source type="image/avif" srcset="../images/products/kepma-d1c.avif">
               <source type="image/webp" srcset="../images/products/kepma-d1c.webp">
-              <img class="reset-img compare__img" loading="lazy" itemprop="image" src="../image/products/kepma-d1c.jpg"
-                alt="Фотография акустической гитары Kepma A1C Black Gloss">
+              <img class="reset-img choices-product__img" loading="lazy" itemprop="image"
+                src="../image/products/kepma-d1c.jpg" alt="Фотография акустической гитары Kepma A1C Black Gloss">
             </picture>
-            <h3 class="favorites__name compare__name" itemprop="name">Акустическая гитара Kepma D1C Dreadnough Black
-            </h3>
-            <button class="reset-btn favorites__remove" type="button">Убрать из&nbsp;сравнения</button>
-          </td>
-          <td class="compare__cell">
+            <div class="compare__info">
+              <h3 class="choices-product__name compare__name" itemprop="name">
+                Акустическая гитара Kepma D1C Dreadnough Black
+              </h3>
+              <button class="reset-btn choices-product__remove compare__remove" type="button">
+                Убрать из&nbsp;сравнения
+              </button>
+            </div>
+          </div>
+          <div class="compare__cell">
             <picture>
               <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
               <source type="image/webp" srcset="../images/products/kepma-a1c.webp">
-              <img class="reset-img compare__img" loading="lazy" itemprop="image" src="../image/products/kepma-a1c.jpg"
-                alt="Фотография акустической гитары Kepma A1C Black Gloss">
+              <img class="reset-img choices-product__img" loading="lazy" itemprop="image"
+                src="../image/products/kepma-a1c.jpg" alt="Фотография акустической гитары Kepma A1C Black Gloss">
             </picture>
-            <h3 class="favorites__name compare__name" itemprop="name">Акустическая гитара Kepma A1C Black Gloss</h3>
-            <button class="reset-btn favorites__remove" type="button">Убрать из&nbsp;сравнения</button>
-          </td>
-          <td class="compare__cell">
+            <div class="compare__info">
+              <h3 class="choices-product__name compare__name" itemprop="name">Акустическая гитара Kepma A1C Black Gloss
+              </h3>
+              <button class="reset-btn choices-product__remove" type="button">Убрать из&nbsp;сравнения</button>
+            </div>
+          </div>
+          <div class="compare__cell">
             <picture>
               <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
               <source type="image/webp" srcset="../images/products/kepma-a1c.webp">
-              <img class="reset-img compare__img" loading="lazy" itemprop="image" src="../image/products/kepma-a1c.jpg"
-                alt="Фотография акустической гитары Kepma A1C Black Gloss">
+              <img class="reset-img choices-product__img" loading="lazy" itemprop="image"
+                src="../image/products/kepma-a1c.jpg" alt="Фотография акустической гитары Kepma A1C Black Gloss">
             </picture>
-            <h3 class="favorites__name compare__name" itemprop="name">Акустическая гитара Kepma A1C Black Gloss</h3>
-            <button class="reset-btn favorites__remove" type="button">Убрать из&nbsp;сравнения</button>
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="compare__cell compare-value">Цена</td>
-          <td class="compare__cell compare-price">15 000₽</td>
-          <td class="compare__cell compare-price">15 000₽</td>
-          <td class="compare__cell compare-price">19 500₽</td>
-        </tr>
-        <tr>
-          <td class="compare__cell compare-value">Цвета</td>
-          <td class="compare__cell">Черный</td>
-          <td class="compare__cell">Черный</td>
-          <td class="compare__cell">Натуральный,Санберст,Черный</td>
-        </tr>
-        <tr>
-          <td class="compare__cell compare-value">Тип корпуса</td>
-          <td class="compare__cell"></td>
-          <td class="compare__cell">Гранд Аудиториум</td>
-          <td class="compare__cell"></td>
-        </tr>
-        <tr>
-          <td class="compare__cell compare-value">Обечайки</td>
-          <td class="compare__cell">Красное дерево</td>
-          <td class="compare__cell">Красное дерево</td>
-          <td class="compare__cell"></td>
-        </tr>
-        <tr>
-          <td class="compare__cell compare-value">Задняя дека</td>
-          <td class="compare__cell">Сапеле</td>
-          <td class="compare__cell">Красное дерево</td>
-          <td class="compare__cell"></td>
-        </tr>
-        <tr>
-          <td class="compare__cell compare-value">Корпус</td>
-          <td class="compare__cell">4/4</td>
-          <td class="compare__cell">4/4</td>
-          <td class="compare__cell"></td>
-        </tr>
-      </tbody>
-    </table>
+            <div class="compare__info">
+              <h3 class="choices-product__name compare__name" itemprop="name">Акустическая гитара Kepma A1C Black Gloss
+              </h3>
+              <button class="reset-btn choices-product__remove" type="button">Убрать из&nbsp;сравнения</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="compare__body">
+        <div class="compare__group">
+          <div class="compare__row">
+            <span class="compare__cell compare-value">Цена</span>
+            <span class="compare__cell compare-price">15 000₽</span>
+            <span class="compare__cell compare-price">15 000₽</span>
+            <span class="compare__cell compare-price">19 500₽</span>
+          </div>
+        </div>
+        <div class="compare__group">
+          <div class="compare__row">
+            <span class="compare__cell compare-value">Цвета</span>
+            <span class="compare__cell">Черный</span>
+            <span class="compare__cell">Черный</span>
+            <span class="compare__cell">Натуральный,Санберст,Черный</span>
+          </div>
+        </div>
+        <div class="compare__group">
+          <div class="compare__row">
+            <span class="compare__cell compare-value">Тип корпуса</span>
+            <span class="compare__cell"></span>
+            <span class="compare__cell">Гранд Аудиториум</span>
+            <span class="compare__cell"></span>
+          </div>
+        </div>
+        <div class="compare__group">
+          <div class="compare__row">
+            <span class="compare__cell compare-value">Обечайки</span>
+            <span class="compare__cell">Красное дерево</span>
+            <span class="compare__cell">Красное дерево</span>
+            <span class="compare__cell"></span>
+          </div>
+        </div>
+        <div class="compare__group">
+          <div class="compare__row">
+            <span class="compare__cell compare-value">Задняя дека</span>
+            <span class="compare__cell">Сапеле</span>
+            <span class="compare__cell">Красное дерево</span>
+            <span class="compare__cell"></span>
+          </div>
+        </div>
+        <div class="compare__group">
+          <div class="compare__row">
+            <span class="compare__cell compare-value">Корпус</span>
+            <span class="compare__cell">4/4</span>
+            <span class="compare__cell">4/4</span>
+            <span class="compare__cell"></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
