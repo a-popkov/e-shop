@@ -32,6 +32,25 @@
     }
   }
 
+  &__total {
+    display: flex;
+  }
+
+  &__product-name {
+    display: flex;
+    margin-block-end: 5px;
+    font-weight: fw(400);
+    font-size: 14px;
+    line-height: 1.21;
+    color: clr(light);
+  }
+
+  &__value {
+    &--operator {
+      margin-inline: 5px;
+    }
+  }
+
   &__text {
     max-inline-size: clamp(80px, 3vw, 95px);
   }

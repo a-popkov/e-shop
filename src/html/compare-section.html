@@ -1,10 +1,16 @@
+<!-- переверстать левая статичная а правая слайдером
+  по одной колонке верстать колоннами с характеристиками к каждому  -->
+
 <section class="section section__offset--sm shop-controls">
   <div class="container">
     <h2 class="section__title section__title--accent">Сравнение</h2>
     <div class="compare">
       <div class="compare__head">
         <div class="compare__row">
-          <div class="compare__cell">
+          <button class="reset-btn btn btn--black compare__btn compare__btn--all compare__btn--active">Все
+            параметры</button>
+          <button class="reset-btn btn btn--black compare__btn compare__btn--diff">Различия</button>
+          <!-- <div class="compare__cell">
             <ul class="reset-list compare__btns compare-btns">
               <li class="compare-btns__item">
                 <button class="reset-btn btn btn--black compare__btn compare__btn--all compare__btn--active">Все
@@ -14,15 +20,15 @@
                 <button class="reset-btn btn btn--black compare__btn compare__btn--diff">Различия</button>
               </li>
             </ul>
-          </div>
+          </div> -->
           <div class="compare__cell">
-            <picture>
-              <source type="image/avif" srcset="../images/products/kepma-d1c.avif">
-              <source type="image/webp" srcset="../images/products/kepma-d1c.webp">
-              <img class="reset-img choices-product__img" loading="lazy" itemprop="image"
-                src="../image/products/kepma-d1c.jpg" alt="Фотография акустической гитары Kepma A1C Black Gloss">
-            </picture>
             <div class="compare__info">
+              <picture>
+                <source type="image/avif" srcset="../images/products/kepma-d1c.avif">
+                <source type="image/webp" srcset="../images/products/kepma-d1c.webp">
+                <img class="reset-img choices-product__img" loading="lazy" itemprop="image"
+                  src="../image/products/kepma-d1c.jpg" alt="Фотография акустической гитары Kepma A1C Black Gloss">
+              </picture>
               <h3 class="choices-product__name compare__name" itemprop="name">
                 Акустическая гитара Kepma D1C Dreadnough Black
               </h3>
@@ -32,26 +38,26 @@
             </div>
           </div>
           <div class="compare__cell">
-            <picture>
-              <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
-              <source type="image/webp" srcset="../images/products/kepma-a1c.webp">
-              <img class="reset-img choices-product__img" loading="lazy" itemprop="image"
-                src="../image/products/kepma-a1c.jpg" alt="Фотография акустической гитары Kepma A1C Black Gloss">
-            </picture>
             <div class="compare__info">
+              <picture>
+                <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
+                <source type="image/webp" srcset="../images/products/kepma-a1c.webp">
+                <img class="reset-img choices-product__img" loading="lazy" itemprop="image"
+                  src="../image/products/kepma-a1c.jpg" alt="Фотография акустической гитары Kepma A1C Black Gloss">
+              </picture>
               <h3 class="choices-product__name compare__name" itemprop="name">Акустическая гитара Kepma A1C Black Gloss
               </h3>
               <button class="reset-btn choices-product__remove" type="button">Убрать из&nbsp;сравнения</button>
             </div>
           </div>
           <div class="compare__cell">
-            <picture>
-              <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
-              <source type="image/webp" srcset="../images/products/kepma-a1c.webp">
-              <img class="reset-img choices-product__img" loading="lazy" itemprop="image"
-                src="../image/products/kepma-a1c.jpg" alt="Фотография акустической гитары Kepma A1C Black Gloss">
-            </picture>
             <div class="compare__info">
+              <picture>
+                <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
+                <source type="image/webp" srcset="../images/products/kepma-a1c.webp">
+                <img class="reset-img choices-product__img" loading="lazy" itemprop="image"
+                  src="../image/products/kepma-a1c.jpg" alt="Фотография акустической гитары Kepma A1C Black Gloss">
+              </picture>
               <h3 class="choices-product__name compare__name" itemprop="name">Акустическая гитара Kepma A1C Black Gloss
               </h3>
               <button class="reset-btn choices-product__remove" type="button">Убрать из&nbsp;сравнения</button>
@@ -73,7 +79,7 @@
             <span class="compare__cell compare-value">Цвета</span>
             <span class="compare__cell">Черный</span>
             <span class="compare__cell">Черный</span>
-            <span class="compare__cell">Натуральный,Санберст,Черный</span>
+            <span class="compare__cell">Санберст</span>
           </div>
         </div>
         <div class="compare__group">

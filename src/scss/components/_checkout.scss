@@ -1,0 +1,57 @@
+.checkout {
+  &__form {
+
+  }
+
+  @include bp-up(sm) {
+    .section__title {
+      position: static;
+      text-align: left;
+
+      &::before {
+        content: none;
+      }
+
+      &::after {
+        @include pseudo;
+
+        left: 0;
+        margin-block-start: 7px;
+        border-block-start: 2px solid #242424;
+        width: 100%;
+        max-inline-size: clamp(240px, 80%, 184rem);
+      }
+    }
+  }
+}
+
+.form-checkout {
+  &__block {
+    display: flex;
+    column-gap: 15px;
+    justify-content: space-between;
+
+    @include bp-down(md) {
+      flex-wrap: wrap;
+      row-gap: 20px;
+    }
+  }
+
+  &__start {
+    width: 100%;
+    max-inline-size: 355px;
+
+    .fullprice__caption {
+      margin-block-end: 15px;
+    }
+
+    @include bp-up(md) {
+      order: 2;
+    }
+  }
+
+  &__end {
+    width: 100%;
+    max-inline-size: 465px;
+  }
+}
