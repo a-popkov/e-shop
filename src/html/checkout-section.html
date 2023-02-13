@@ -15,7 +15,116 @@
             </div>
           </div>
         </div>
-        <div class="form-checkout__end">2</div>
+        <div class="form-checkout__end">
+          <div class="form-checkout__steps checkout-steps">
+            <div class="checkout-steps__item">
+              <h4 class="checkout-steps__title">
+                <span>1.</span> Где и&nbsp;как вы&nbsp;хотите получить заказ?
+              </h4>
+              <div class="checkout-steps__control">
+                <label class="checkout-steps__label checkout-steps__pickup" for="pickup">
+                  <input class="checkout-steps__input" type="radio" name="delivery" id="pickup" checked>
+                  <div class="checkout-field checkout-field--pickup">
+                    <img class="reset-img checkout-field__img" src="../images/svg/mono/pickup.svg" alt=""
+                      aria-hidden="true" tabindex="-1">
+                    <p class="checkout-field__descr">Самовывоз из гитарной лавки</p>
+                    <span class="checkout-field__note">Сегодня, бесплатно</span>
+                  </div>
+                </label>
+                <label class="checkout-steps__label checkout-steps__delivery" for="delivery">
+                  <input class="checkout-steps__input" type="radio" name="delivery" id="delivery">
+                  <div class="checkout-field checkout-field--delivery">
+                    <img class="reset-img checkout-field__img" src="../images/svg/mono/delivery.svg" alt=""
+                      aria-hidden="true" tabindex="-1">
+                    <p class="checkout-field__descr">Доставка</p>
+                    <span class="checkout-field__note">Сегодня от 387 ₽</span>
+                  </div>
+                </label>
+              </div>
+              <div class="checkout-steps__content content-pickup">content-1</div>
+              <div class="checkout-steps__content content-delivery">content-2
+                <!--  -->
+                <!-- <label class="custom-radio">
+                  <input class="custom-radio__input" type="radio">
+                  <span></span>
+                </label> -->
+              </div>
+            </div>
+            <div class="checkout-steps__item">
+              <h4 class="checkout-steps__title">
+                <span>2.</span> Как вам будет удобнее оплатить?
+              </h4>
+              <div class="checkout-steps__control">
+                <label class="checkout-steps__label checkout-steps__pickup">
+                  <input class="checkout-steps__input" type="radio" name="payment" id="payment" checked>
+                  <div class="checkout-field checkout-field--payment">
+                    <p class="checkout-field__descr">Онлайн</p>
+                    <span class="checkout-field__note">Картами Visa</span>
+                  </div>
+                </label>
+                <label class="checkout-steps__label checkout-steps__delivery">
+                  <input class="checkout-steps__input" type="radio" name="payment" id="payment">
+                  <div class="checkout-field checkout-field--payment">
+                    <p class="checkout-field__descr">При получении</p>
+                    <span class="checkout-field__note">Наличными, картой</span>
+                  </div>
+                </label>
+                <label class="checkout-steps__label checkout-steps__delivery">
+                  <input class="checkout-steps__input" type="radio" name="payment" id="payment">
+                  <div class="checkout-field checkout-field--payment">
+                    <p class="checkout-field__descr">Электронными деньги</p>
+                    <span class="checkout-field__note">Наличными, картой</span>
+                  </div>
+                </label>
+                <label class="checkout-steps__label checkout-steps__delivery">
+                  <input class="checkout-steps__input" type="radio" name="payment" id="payment">
+                  <div class="checkout-field checkout-field--payment">
+                    <p class="checkout-field__descr">В рассрочку</p>
+                    <span class="checkout-field__note">Наличными, картой</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="checkout-steps__item recipient-data">
+              <h4 class="checkout-steps__title">
+                <span>3.</span> Укажите данные получателя заказа
+              </h4>
+              <form class="form recipient-data__form" id="recipient-data" action="#" method="post">
+                <div class="recipient-data__start">
+                  <label class="recipient-data__label form__label" for="name">
+                    <input class="reset-input recipient-data__input form__input" type="text" name="Имя" id="name"
+                      placeholder="Имя..." required pattern="[А-Яа-я]{2,}" title="Введите Ваше имя кириллицей">
+                  </label>
+                  <label class="recipient-data__label form__label" for="email">
+                    <input class="reset-input recipient-data__input form__input" type="email" name="Е-маил" id="email"
+                      placeholder="Email..." required pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+.[a-z]{2,}"
+                      title="Введите адрес электронной почты в формате name@example.com">
+                  </label>
+                </div>
+                <div class="recipient-data__end">
+                  <label class="recipient-data__label form__label" for="tel">
+                    <input class="reset-input recipient-data__input form__input" type="tel" name="Телефон" id="tel"
+                      placeholder="Телефон..." required pattern="[+0-9 (0-9) -]{8,18}"
+                      title="Введите номер телефона в формате +7 (800) 100-26-80">
+                  </label>
+                  <label class="recipient-data__label form__label recipient-data__label form__label--big">
+                    <textarea
+                      class="reset-input recipient-data__input form__input recipient-data__input--big form__input--big"
+                      name="Сообщение" cols="30" rows="10" placeholder="Комментарий к заказу..."></textarea>
+                  </label>
+                  <div class="recipient-data__btns">
+                    <button class="reset-btn btn btn--black recipient-data__btn" type="submit" disabled>
+                      Отправить
+                    </button>
+                    <a class="reset-link agree form-wholesale__agree" href="#">
+                      Я&nbsp;даю согласие на&nbsp;обработку своих персональных данных
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </form>
   </div>
