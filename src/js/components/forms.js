@@ -41,3 +41,25 @@
   wholesaleForm?.addEventListener('input', checkValidity)
 
 })();
+
+; (function(){
+
+  function handleFormSubmit(event) {
+    // Просим форму не отправлять данные самостоятельно
+    event.preventDefault()
+    console.log('Отправка заказа!')
+  }
+
+  const wholesaleForm = document?.getElementById('form-checkout')
+  wholesaleForm?.addEventListener('submit', handleFormSubmit)
+
+  function checkValidity(event) {
+    const formNode = event.target.form
+    const isValid = formNode.checkValidity()
+
+    formNode.querySelector('button').disabled = !isValid
+  }
+
+  wholesaleForm?.addEventListener('input', checkValidity)
+
+})();

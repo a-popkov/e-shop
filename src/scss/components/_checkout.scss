@@ -1,6 +1,6 @@
 .checkout {
   &__form {
-
+    display: grid;
   }
 
   @include bp-up(sm) {
@@ -26,7 +26,7 @@
 }
 
 .form-checkout {
-  &__block {
+  &__blocks {
     display: flex;
     column-gap: 15px;
     justify-content: space-between;
@@ -51,20 +51,21 @@
   }
 
   &__end {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-inline-size: 465px;
+    row-gap: 50px;
   }
-}
 
-.checkout-steps {
-  display: flex;
-  flex-direction: column;
-  row-gap: 50px;
+  &__fieldset {
+    padding: 0;
+  }
 
-  &__title {
+  &__legend {
     margin-block-end: 7px;
     font-weight: fw(400);
-    font-size: clamp(14px, 3vw, 24px);
+    font-size: clamp(14px, 4vw, 24px);
     line-height: 1.46;
     color: clr(light);
 
@@ -73,13 +74,14 @@
     }
   }
 
-  &__control {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    margin-block-end: 40px;
+  &__fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: clamp(15px, 2vw, 25px);
+
+    &--receiving {
+      margin-block-end: clamp(25px, 4vw, 40px);
+    }
   }
 
   &__label {
@@ -96,11 +98,37 @@
     visibility: hidden;
 
     &:checked {
-      & + .checkout-field {
+      & + .custom-field {
         border-color: clr(orange-light);
       }
     }
   }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+  }
+
+  &__btn {
+    font-size: clamp(14px, 4vw, 24px);
+
+    @include bp-up(sm) {
+      height: 70px;
+    }
+
+    @include bp-down(sm) {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.checkout-steps {
+  // display: flex;
+  // flex-direction: column;
+  // row-gap: 50px;
+
+
 
   &__content {
     display: none;
@@ -139,7 +167,7 @@
   }
 }
 
-.checkout-field {
+.custom-field {
   display: grid;
   column-gap: 10px;
   grid-auto-flow: dense;
@@ -152,6 +180,7 @@
   height: 82px;
   max-width: 220px;
   background-color: clr(grey-darker);
+  cursor: pointer;
 
   &__img {
     width: 33px;
@@ -159,6 +188,7 @@
   }
 
   &__descr {
+    display: block;
     font-size: clamp(10px, 2vw, 14px);
     line-height: 1.2;
     color: clr(grey-lightest);
@@ -177,14 +207,130 @@
     }
   }
 
-  @include bp-down(sm) {
-    row-gap: 7px;
+  &__content {
+    // display: none;
   }
 
   &--payment {
     display: block;
     padding-block: clamp(10px, 2vw, 15px);
-    padding-inline: 25px;
+    padding-inline: clamp(10px, 2vw, 25px);
+
+    @include bp-down(sm) {
+      height: 50px;
+
+      .custom-field__note {
+        vertical-align: top;
+      }
+    }
+  }
+
+  @include bp-down(sm) {
+    border-radius: 5px;
+    row-gap: 7px;
+  }
+}
+
+.checked-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &__start {
+    padding-inline-start: 5px;
+
+    .route__descr {
+      color: clr(neutral-light-alpha);
+    }
+
+    .route__descr--station {
+      @include bp-down(sm) {
+        color: clr(light);
+      }
+    }
+  }
+
+  &__item {
+    display: grid;
+    gap: 8px;
+
+    &:nth-child(2) {
+      @include bp-down(sm) {
+        display: none;
+      }
+    }
+  }
+
+  &__address {
+    @include bp-up(sm) {
+      margin-block-end: 12px;
+      font-style: normal;
+      font-size: 18px;
+      line-height: 1.11;
+      color: clr(light);
+    }
+
+    @include bp-down(sm) {
+      display: none;
+    }
+  }
+
+  &__transport {
+    @include bp-up(sm) {
+      display: none;
+    }
+  }
+
+  &__end {
+    flex-shrink: 0;
+    padding-inline-end: 5px;
+  }
+
+  &__map {
+    overflow: hidden;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.mark {
+  display: grid;
+  // column-gap: 5px;
+  grid-auto-flow: dense;
+  grid-template-columns: min-content auto;
+  grid-template-rows: repeat(2, auto);
+
+  &__icon {
+    display: inline-flex;
+    grid-row: 2 span;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &--hours {
+      background-image: url("../images/svg/mono/hours.svg");
+    }
+
+    &--attention {
+      background-image: url("../images/svg/mono/attention.svg");
+    }
+
+    &--accent {
+      background-image: url("../images/svg/mono/accent.svg");
+    }
+  }
+
+  &__descr {
+    display: grid;
+    grid-column: 2 / 3;
+    max-inline-size: 27ch;
+    font-style: normal;
+    font-size: clamp(12px, 3vw, 14px);
+    line-height: 1.42;
+    color: clr(neutral-light-alpha);
   }
 }
 
@@ -196,6 +342,10 @@
   &__start {
     display: flex;
     gap: 8px;
+
+    @include bp-down(sm) {
+      flex-wrap: wrap;
+    }
   }
 
   &__end {
@@ -207,6 +357,56 @@
   &__input {
     &--big {
       height: 142px;
+    }
+  }
+}
+
+.checkout-total {
+  width: 100%;
+  font-weight: fw(400);
+  font-size: clamp(14px, 4vw, 18px);
+  line-height: 1.16;
+  color: clr(light);
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 5px;
+  }
+
+  &__caption {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+
+    span {
+      position: relative;
+      flex-grow: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset-inline-start: 2px;
+        inset-block-end: 2px;
+        display: inline-block;
+        width: 100%;
+        height: 2px;
+        background-image: url("../images/dot.png");
+        background-size: 3px 80%;
+        background-repeat: repeat-x;
+      }
+    }
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+    padding-inline-start: 3px;
+    text-align: right;
+
+    &--accent {
+      font-size: clamp(16px, 4vw, 24px);
     }
   }
 }

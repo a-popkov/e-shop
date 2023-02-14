@@ -1,9 +1,9 @@
-<section class="section section__offset--sm checkout">
+<section class="section section__offset section__offset--sm checkout">
   <div class="container">
     <h2 class="section__title section__title--accent">Оформление заказа</h2>
-    <form class="checkout__form form-checkout" id="form-checkout" action="#" method="post">
+    <form class="form checkout__form form-checkout" id="form-checkout" action="#" method="post">
       <h3 class="visually-hidden" aria-hidden="true" tabindex="-1">Заказ №</h3>
-      <div class="form-checkout__block">
+      <div class="form-checkout__blocks">
         <div class="form-checkout__start">
           <div class="fullprice">
             <div class="fullprice__caption">Итого</div>
@@ -16,113 +16,186 @@
           </div>
         </div>
         <div class="form-checkout__end">
-          <div class="form-checkout__steps checkout-steps">
-            <div class="checkout-steps__item">
-              <h4 class="checkout-steps__title">
-                <span>1.</span> Где и&nbsp;как вы&nbsp;хотите получить заказ?
-              </h4>
-              <div class="checkout-steps__control">
-                <label class="checkout-steps__label checkout-steps__pickup" for="pickup">
-                  <input class="checkout-steps__input" type="radio" name="delivery" id="pickup" checked>
-                  <div class="checkout-field checkout-field--pickup">
-                    <img class="reset-img checkout-field__img" src="../images/svg/mono/pickup.svg" alt=""
-                      aria-hidden="true" tabindex="-1">
-                    <p class="checkout-field__descr">Самовывоз из гитарной лавки</p>
-                    <span class="checkout-field__note">Сегодня, бесплатно</span>
+          <fieldset class="form-checkout__fieldset">
+            <legend class="form-checkout__legend">
+              <span>1.</span> Где и&nbsp;как вы&nbsp;хотите получить заказ?
+            </legend>
+            <div class="form-checkout__fields form-checkout__fields--receiving">
+              <label class="form-checkout__label" for="pickup">
+                <input class="form-checkout__input" type="radio" name="delivery" id="pickup" checked>
+                <span class="custom-field custom-field--pickup">
+                  <img class="reset-img custom-field__img" src="../images/svg/mono/pickup.svg" alt="" aria-hidden="true"
+                    tabindex="-1">
+                  <span class="custom-field__descr">Самовывоз из гитарной лавки</span>
+                  <span class="custom-field__note">Сегодня, бесплатно</span>
+                </span>
+              </label>
+              <label class="form-checkout__label" for="delivery">
+                <input class="form-checkout__input" type="radio" name="delivery" id="delivery">
+                <span class="custom-field custom-field--delivery">
+                  <img class="reset-img custom-field__img" src="../images/svg/mono/delivery.svg" alt=""
+                    aria-hidden="true" tabindex="-1">
+                  <span class="custom-field__descr">Доставка</span>
+                  <span class="custom-field__note">Сегодня от 387&#8381;</span>
+                </span>
+              </label>
+            </div>
+            <div class="custom-field__content checked-content checked-content--pickup">
+              <div class="checked-content__start">
+                <div class="checked-content__item">
+                  <address class="checked-content__address">
+                    г. Самара Московское ш.17 ТЦ &laquo;Сила Спорта&raquo;
+                    2&nbsp;этаж
+                  </address>
+                  <div class="route__metro route__metro--center">
+                    <span class="route__metro--icon"></span>
+                    <p class="route__descr route__descr--station">Московская</p>
                   </div>
-                </label>
-                <label class="checkout-steps__label checkout-steps__delivery" for="delivery">
-                  <input class="checkout-steps__input" type="radio" name="delivery" id="delivery">
-                  <div class="checkout-field checkout-field--delivery">
-                    <img class="reset-img checkout-field__img" src="../images/svg/mono/delivery.svg" alt=""
-                      aria-hidden="true" tabindex="-1">
-                    <p class="checkout-field__descr">Доставка</p>
-                    <span class="checkout-field__note">Сегодня от 387 ₽</span>
+                  <div class="route__transport checked-content__transport">
+                    <p class="route__descr">Автобус: 1, 37, 67</p>
+                    <p class="route__descr">Троллейбус: 12, 17, 20</p>
+                    <p class="route__descr">Маршрутное такси: 46, 126с, 126ю, 410а</p>
                   </div>
-                </label>
+                </div>
+                <div class="checked-content__item">
+                  <div class="mark">
+                    <span class="mark__icon mark__icon--hours"></span>
+                    <p class="mark__descr">
+                      <span>Часы работы:</span>
+                      <time datetime="10:00-22:00">10:00-22:00</time>
+                    </p>
+                  </div>
+                  <div class="mark">
+                    <span class="mark__icon mark__icon--attention"></span>
+                    <p class="mark__descr">
+                      Можно забрать через 15&nbsp;минут или в&nbsp;течении 14&nbsp;дней
+                    </p>
+                  </div>
+                  <div class="mark">
+                    <span class="mark__icon mark__icon--accent"></span>
+                    <p class="mark__descr">
+                      После оформления пункт выдачи изменить будет нельзя
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div class="checkout-steps__content content-pickup">content-1</div>
-              <div class="checkout-steps__content content-delivery">content-2
+              <div class="checked-content__end">
+                <div class="map checked-content__map" id="map">
+                </div>
+              </div>
+            </div>
+            <div class="custom-field__content checked-content checked-content--delivery">
+              <div class="checked-content__start">
                 <!--  -->
                 <!-- <label class="custom-radio">
-                  <input class="custom-radio__input" type="radio">
+                    <input class="custom-radio__input" type="radio">
+                    <span></span>
+                  </label> -->
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="form-checkout__fieldset">
+            <legend class="form-checkout__legend">
+              <span>2.</span> Как вам будет удобнее оплатить?
+            </legend>
+            <div class="form-checkout__fields">
+              <label class="form-checkout__label">
+                <input class="form-checkout__input" type="radio" name="payment" checked>
+                <span class="custom-field custom-field--payment">
+                  <span class="custom-field__descr">Онлайн</span>
+                  <span class="custom-field__note">Картами Visa</span>
+                </span>
+              </label>
+              <label class="form-checkout__label">
+                <input class="form-checkout__input" type="radio" name="payment">
+                <span class="custom-field custom-field--payment">
+                  <span class="custom-field__descr">При получении</span>
+                  <span class="custom-field__note">Наличными, картой</span>
+                </span>
+              </label>
+              <label class="form-checkout__label">
+                <input class="form-checkout__input" type="radio" name="payment">
+                <span class="custom-field custom-field--payment">
+                  <span class="custom-field__descr">Электронными деньги</span>
+                  <span class="custom-field__note">Наличными, картой</span>
+                </span>
+              </label>
+              <label class="form-checkout__label">
+                <input class="form-checkout__input" type="radio" name="payment">
+                <span class="custom-field custom-field--payment">
+                  <span class="custom-field__descr">В рассрочку</span>
+                  <span class="custom-field__note">Наличными, картой</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset class="form-checkout__fieldset">
+            <legend class="form-checkout__legend">
+              <span>3.</span> Укажите данные получателя заказа
+            </legend>
+            <div class="recipient-data">
+              <div class="recipient-data__start">
+                <label class="recipient-data__label form__label" for="name">
+                  <input class="reset-input recipient-data__input form__input" type="text" name="Имя" id="name"
+                    placeholder="Имя..." required pattern="[А-Яа-я]{2,}" title="Введите Ваше имя кириллицей">
+                </label>
+                <label class="recipient-data__label form__label" for="email">
+                  <input class="reset-input recipient-data__input form__input" type="email" name="Е-маил" id="email"
+                    placeholder="Email..." required pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+.[a-z]{2,}"
+                    title="Введите адрес электронной почты в формате name@example.com">
+                </label>
+              </div>
+              <div class="recipient-data__end">
+                <label class="recipient-data__label form__label" for="tel">
+                  <input class="reset-input recipient-data__input form__input" type="tel" name="Телефон" id="tel"
+                    placeholder="Телефон..." required pattern="[+0-9 (0-9) -]{8,18}"
+                    title="Введите номер телефона в формате +7 (800) 100-26-80">
+                </label>
+                <label class="recipient-data__label form__label recipient-data__label form__label--big">
+                  <textarea
+                    class="reset-input recipient-data__input form__input recipient-data__input--big form__input--big"
+                    name="Сообщение" placeholder="Комментарий к заказу..."></textarea>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="form-checkout__fieldset">
+            <legend class="form-checkout__legend">
+              <span>4.</span> Скидки к заказу
+            </legend>
+            <label class="custom-checkbox">
+              <input class="custom-checkbox__input visually-hidden" type="checkbox">
+              <span class="custom-checkbox__text">Промокод</span>
+            </label>
+            <div class="form-checkout__total checkout-total">
+              <div class="checkout-total__row">
+                <span class="checkout-total__caption">Товары без скидки
                   <span></span>
-                </label> -->
+                </span>
+                <span class="checkout-total__value">30 000&#8381;</span>
+              </div>
+              <div class="checkout-total__row">
+                <span class="checkout-total__caption">Забрать в магазине
+                  <span></span>
+                </span>
+                <span class="checkout-total__value">Бесплатно</span>
+              </div>
+              <div class="checkout-total__row">
+                <span class="checkout-total__caption">Итого к оплате
+                  <span></span>
+                </span>
+                <span class="checkout-total__value checkout-total__value--accent">30
+                  000&#8381;</span>
               </div>
             </div>
-            <div class="checkout-steps__item">
-              <h4 class="checkout-steps__title">
-                <span>2.</span> Как вам будет удобнее оплатить?
-              </h4>
-              <div class="checkout-steps__control">
-                <label class="checkout-steps__label checkout-steps__pickup">
-                  <input class="checkout-steps__input" type="radio" name="payment" id="payment" checked>
-                  <div class="checkout-field checkout-field--payment">
-                    <p class="checkout-field__descr">Онлайн</p>
-                    <span class="checkout-field__note">Картами Visa</span>
-                  </div>
-                </label>
-                <label class="checkout-steps__label checkout-steps__delivery">
-                  <input class="checkout-steps__input" type="radio" name="payment" id="payment">
-                  <div class="checkout-field checkout-field--payment">
-                    <p class="checkout-field__descr">При получении</p>
-                    <span class="checkout-field__note">Наличными, картой</span>
-                  </div>
-                </label>
-                <label class="checkout-steps__label checkout-steps__delivery">
-                  <input class="checkout-steps__input" type="radio" name="payment" id="payment">
-                  <div class="checkout-field checkout-field--payment">
-                    <p class="checkout-field__descr">Электронными деньги</p>
-                    <span class="checkout-field__note">Наличными, картой</span>
-                  </div>
-                </label>
-                <label class="checkout-steps__label checkout-steps__delivery">
-                  <input class="checkout-steps__input" type="radio" name="payment" id="payment">
-                  <div class="checkout-field checkout-field--payment">
-                    <p class="checkout-field__descr">В рассрочку</p>
-                    <span class="checkout-field__note">Наличными, картой</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-            <div class="checkout-steps__item recipient-data">
-              <h4 class="checkout-steps__title">
-                <span>3.</span> Укажите данные получателя заказа
-              </h4>
-              <form class="form recipient-data__form" id="recipient-data" action="#" method="post">
-                <div class="recipient-data__start">
-                  <label class="recipient-data__label form__label" for="name">
-                    <input class="reset-input recipient-data__input form__input" type="text" name="Имя" id="name"
-                      placeholder="Имя..." required pattern="[А-Яа-я]{2,}" title="Введите Ваше имя кириллицей">
-                  </label>
-                  <label class="recipient-data__label form__label" for="email">
-                    <input class="reset-input recipient-data__input form__input" type="email" name="Е-маил" id="email"
-                      placeholder="Email..." required pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+.[a-z]{2,}"
-                      title="Введите адрес электронной почты в формате name@example.com">
-                  </label>
-                </div>
-                <div class="recipient-data__end">
-                  <label class="recipient-data__label form__label" for="tel">
-                    <input class="reset-input recipient-data__input form__input" type="tel" name="Телефон" id="tel"
-                      placeholder="Телефон..." required pattern="[+0-9 (0-9) -]{8,18}"
-                      title="Введите номер телефона в формате +7 (800) 100-26-80">
-                  </label>
-                  <label class="recipient-data__label form__label recipient-data__label form__label--big">
-                    <textarea
-                      class="reset-input recipient-data__input form__input recipient-data__input--big form__input--big"
-                      name="Сообщение" cols="30" rows="10" placeholder="Комментарий к заказу..."></textarea>
-                  </label>
-                  <div class="recipient-data__btns">
-                    <button class="reset-btn btn btn--black recipient-data__btn" type="submit" disabled>
-                      Отправить
-                    </button>
-                    <a class="reset-link agree form-wholesale__agree" href="#">
-                      Я&nbsp;даю согласие на&nbsp;обработку своих персональных данных
-                    </a>
-                  </div>
-                </div>
-              </form>
-            </div>
+          </fieldset>
+          <div class="form-checkout__btns">
+            <button class="reset-btn btn btn--orange btn--orange-medium form-checkout__btn" type="submit" disabled>
+              Оформить заказ
+            </button>
+            <a class="reset-link agree form-checkout__agree" href="#">
+              Я&nbsp;даю согласие на&nbsp;обработку своих персональных данных
+            </a>
           </div>
         </div>
       </div>
