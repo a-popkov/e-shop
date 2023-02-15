@@ -18,3 +18,14 @@ tabsBtn.forEach((el) => {
     document.querySelector(`[data-target="${path}"]`).classList.add('tabs-item--active')
   });
 });
+
+
+const pickup = document.getElementById('pickup');
+const delivery = document.getElementById('delivery');
+const pickupContent = document.getElementById('.checked-content--pickup');
+const deliveryContent = document.getElementById('.checked-content--delivery');
+
+pickup.addEventListener('click', () => {
+  pickupContent.classList.add('checked-content--active');
+  console.log('click');
+});
