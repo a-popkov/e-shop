@@ -1,0 +1,100 @@
+.form-checkout {
+  &__blocks {
+    display: flex;
+    column-gap: 15px;
+    justify-content: space-between;
+
+    @include bp-down(md) {
+      flex-wrap: wrap;
+      row-gap: 20px;
+    }
+  }
+
+  &__start {
+    width: 100%;
+    max-inline-size: 355px;
+
+    .fullprice__caption {
+      margin-block-end: 15px;
+    }
+
+    @include bp-up(md) {
+      order: 2;
+    }
+  }
+
+  &__end {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-inline-size: 465px;
+    row-gap: 50px;
+  }
+
+  &__fieldset {
+    padding: 0;
+  }
+
+  &__legend {
+    margin-block-end: 7px;
+    font-weight: fw(400);
+    font-size: clamp(14px, 4vw, 24px);
+    line-height: 1.46;
+    color: clr(light);
+
+    span {
+      color: rgb(255 255 255 / 13%);
+    }
+  }
+
+  &__fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(15px, 2vw, 25px);
+
+    &--receiving {
+      margin-block-end: clamp(25px, 4vw, 40px);
+    }
+  }
+
+  &__label {
+    position: relative;
+    width: 100%;
+    max-inline-size: 220px;
+  }
+
+  &__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    opacity: 0;
+    visibility: hidden;
+
+    &:checked {
+      & + .custom-field {
+        border-color: clr(orange-light);
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+  }
+
+  &__btn {
+    font-size: clamp(14px, 4vw, 24px);
+
+    @include bp-up(sm) {
+      height: 70px;
+    }
+
+    @include bp-down(sm) {
+      text-transform: uppercase;
+    }
+  }
+}

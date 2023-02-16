@@ -1,0 +1,62 @@
+.custom-radio {
+  position: relative;
+  display: grid;
+  column-gap: 10px;
+  grid-auto-flow: dense;
+  grid-template-columns: auto auto;
+  margin-block-end: 10px;
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    inset-inline-start: 6px;
+    inset-block-start: 6px;
+    opacity: 0;
+    visibility: hidden;
+
+    &:checked + .custom-radio__check {
+      border: 6px solid clr(orange-light);
+      background-color: #d9d9da;
+    }
+  }
+
+  &__check {
+    display: grid;
+    overflow: hidden;
+    border: 2px solid clr(grey-lighter);
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    background-color: clr(grey-darker);
+  }
+
+  &__info {
+    display: grid;
+
+    @include bp-up(sm) {
+      grid-template-rows: 25px auto;
+      row-gap: 3px;
+    }
+  }
+
+  &__name {
+    display: grid;
+    align-items: center;
+    font-size: clamp(14px, 3vw, 18px);
+    color: clr(light);
+  }
+
+  &__descr {
+    font-size: clamp(12px, 3vw, 14px);
+    line-height: 1.2;
+    color: clr(neutral-light-alpha);
+  }
+
+  @include bp-down(sm) {
+    place-items: center;
+  }
+}
