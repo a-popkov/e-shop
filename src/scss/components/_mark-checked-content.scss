@@ -1,0 +1,38 @@
+.mark {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: min-content auto;
+  grid-template-rows: repeat(2, auto);
+
+  &__icon {
+    display: inline-flex;
+    grid-row: 2 span;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &--hours {
+      background-image: url("../images/svg/mono/hours.svg");
+    }
+
+    &--attention {
+      background-image: url("../images/svg/mono/attention.svg");
+    }
+
+    &--accent {
+      background-image: url("../images/svg/mono/accent.svg");
+    }
+  }
+
+  &__descr {
+    display: grid;
+    grid-column: 2 / 3;
+    max-inline-size: 27ch;
+    font-style: normal;
+    font-size: clamp(12px, 3vw, 14px);
+    line-height: 1.42;
+    color: clr(neutral-light-alpha);
+  }
+}

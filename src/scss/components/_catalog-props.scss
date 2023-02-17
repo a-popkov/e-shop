@@ -75,4 +75,12 @@
       fill: clr(link-hover);
     }
   }
+
+  .active {
+    .shape__icon {
+      fill: clr(link-hover);
+    }
+  }
+
+
 }

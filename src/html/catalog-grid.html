@@ -2,9 +2,24 @@
   <div class="catalog-grid__props">
     @include('catalog-props.html')
   </div>
-  <ul class="reset-list catalog-grid__list">
+  <ul class="reset-list catalog-grid__list catalog-grid__list--grid">
     <li class="catalog-grid__item">
       <article class="product product--border" itemscope itemtype="https://schema.org/Product">
+        <div class="product__panel product-panel">
+          <ul class="reset-list product-panel__list">
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn choices" aria-label="Добавить в избранные товары"
+                type="button">
+                <span class="choices__icon"></span>
+              </button>
+            </li>
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn cart" aria-label="Добавить в корзину" type="button">
+                <span class="cart__icon"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <div class="product__image product__image--radius-l product-image">
           <picture>
             <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
@@ -16,7 +31,8 @@
         <div class="product__info">
           <span class="product__category" itemprop="category">Гитары</span>
           <h3 class="product__name" itemprop="name">
-            <a class="reset-link" href="#" itemprop="url">Акустическая гитара Kepma A1C Black Gloss</a>
+            <a class="reset-link product__link" href="../product.html" itemprop="url">Акустическая гитара Kepma A1C
+              Black Gloss</a>
           </h3>
           <div class="product__props">
             <div class="product__price product-price" itemprop="offers" itemscope
@@ -26,15 +42,68 @@
             </div>
             <div class="product__stat">
               @include('rating.html')
-              <a class="reset-link product__comment" href="#" itemprop="reviewCount" aria-label="Что говорят о товаре">0
-                отзывов</a>
+              <span class="product__comment" itemprop="reviewCount" aria-label="Что говорят о товаре">0 отзывов</span>
+            </div>
+          </div>
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
             </div>
           </div>
         </div>
+        <template id="template"></template>
       </article>
     </li>
     <li class="catalog-grid__item">
       <article class="product product--border" itemscope itemtype="https://schema.org/Product">
+        <div class="product__panel product-panel">
+          <ul class="reset-list product-panel__list">
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn choices" aria-label="Добавить в избранные товары"
+                type="button">
+                <span class="choices__icon"></span>
+              </button>
+            </li>
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn cart" aria-label="Добавить в корзину" type="button">
+                <span class="cart__icon"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <div class="product__image product__image--radius-l product-image">
           <picture>
             <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
@@ -46,7 +115,8 @@
         <div class="product__info">
           <span class="product__category" itemprop="category">Гитары</span>
           <h3 class="product__name" itemprop="name">
-            <a class="reset-link" href="#" itemprop="url">Акустическая гитара Kepma A1C Black Gloss</a>
+            <a class="reset-link product__link" href="../product.html" itemprop="url">Акустическая гитара Kepma A1C
+              Black Gloss</a>
           </h3>
           <div class="product__props">
             <div class="product__price product-price" itemprop="offers" itemscope
@@ -56,15 +126,107 @@
             </div>
             <div class="product__stat">
               @include('rating.html')
-              <a class="reset-link product__comment" href="#" itemprop="reviewCount" aria-label="Что говорят о товаре">0
-                отзывов</a>
+              <span class="product__comment" itemprop="reviewCount" aria-label="Что говорят о товаре">0 отзывов</span>
+            </div>
+          </div>
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
             </div>
           </div>
         </div>
+        <template id="template">
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
+            </div>
+          </div>
+        </template>
       </article>
     </li>
     <li class="catalog-grid__item">
       <article class="product product--border" itemscope itemtype="https://schema.org/Product">
+        <div class="product__panel product-panel">
+          <ul class="reset-list product-panel__list">
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn choices" aria-label="Добавить в избранные товары"
+                type="button">
+                <span class="choices__icon"></span>
+              </button>
+            </li>
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn cart" aria-label="Добавить в корзину" type="button">
+                <span class="cart__icon"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <div class="product__image product__image--radius-l product-image">
           <picture>
             <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
@@ -76,7 +238,8 @@
         <div class="product__info">
           <span class="product__category" itemprop="category">Гитары</span>
           <h3 class="product__name" itemprop="name">
-            <a class="reset-link" href="#" itemprop="url">Акустическая гитара Kepma A1C Black Gloss</a>
+            <a class="reset-link product__link" href="../product.html" itemprop="url">Акустическая гитара Kepma A1C
+              Black Gloss</a>
           </h3>
           <div class="product__props">
             <div class="product__price product-price" itemprop="offers" itemscope
@@ -86,15 +249,68 @@
             </div>
             <div class="product__stat">
               @include('rating.html')
-              <a class="reset-link product__comment" href="#" itemprop="reviewCount" aria-label="Что говорят о товаре">0
-                отзывов</a>
+              <span class="product__comment" itemprop="reviewCount" aria-label="Что говорят о товаре">0 отзывов</span>
+            </div>
+          </div>
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
             </div>
           </div>
         </div>
+        <template id="template"></template>
       </article>
     </li>
     <li class="catalog-grid__item">
       <article class="product product--border" itemscope itemtype="https://schema.org/Product">
+        <div class="product__panel product-panel">
+          <ul class="reset-list product-panel__list">
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn choices" aria-label="Добавить в избранные товары"
+                type="button">
+                <span class="choices__icon"></span>
+              </button>
+            </li>
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn cart" aria-label="Добавить в корзину" type="button">
+                <span class="cart__icon"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <div class="product__image product__image--radius-l product-image">
           <picture>
             <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
@@ -106,7 +322,8 @@
         <div class="product__info">
           <span class="product__category" itemprop="category">Гитары</span>
           <h3 class="product__name" itemprop="name">
-            <a class="reset-link" href="#" itemprop="url">Акустическая гитара Kepma A1C Black Gloss</a>
+            <a class="reset-link product__link" href="../product.html" itemprop="url">Акустическая гитара Kepma A1C
+              Black Gloss</a>
           </h3>
           <div class="product__props">
             <div class="product__price product-price" itemprop="offers" itemscope
@@ -116,15 +333,68 @@
             </div>
             <div class="product__stat">
               @include('rating.html')
-              <a class="reset-link product__comment" href="#" itemprop="reviewCount" aria-label="Что говорят о товаре">0
-                отзывов</a>
+              <span class="product__comment" itemprop="reviewCount" aria-label="Что говорят о товаре">0 отзывов</span>
+            </div>
+          </div>
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
             </div>
           </div>
         </div>
+        <template id="template"></template>
       </article>
     </li>
     <li class="catalog-grid__item">
       <article class="product product--border" itemscope itemtype="https://schema.org/Product">
+        <div class="product__panel product-panel">
+          <ul class="reset-list product-panel__list">
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn choices" aria-label="Добавить в избранные товары"
+                type="button">
+                <span class="choices__icon"></span>
+              </button>
+            </li>
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn cart" aria-label="Добавить в корзину" type="button">
+                <span class="cart__icon"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <div class="product__image product__image--radius-l product-image">
           <picture>
             <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
@@ -136,7 +406,8 @@
         <div class="product__info">
           <span class="product__category" itemprop="category">Гитары</span>
           <h3 class="product__name" itemprop="name">
-            <a class="reset-link" href="#" itemprop="url">Акустическая гитара Kepma A1C Black Gloss</a>
+            <a class="reset-link product__link" href="../product.html" itemprop="url">Акустическая гитара Kepma A1C
+              Black Gloss</a>
           </h3>
           <div class="product__props">
             <div class="product__price product-price" itemprop="offers" itemscope
@@ -146,15 +417,68 @@
             </div>
             <div class="product__stat">
               @include('rating.html')
-              <a class="reset-link product__comment" href="#" itemprop="reviewCount" aria-label="Что говорят о товаре">0
-                отзывов</a>
+              <span class="product__comment" itemprop="reviewCount" aria-label="Что говорят о товаре">0 отзывов</span>
+            </div>
+          </div>
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
             </div>
           </div>
         </div>
+        <template id="template"></template>
       </article>
     </li>
     <li class="catalog-grid__item">
       <article class="product product--border" itemscope itemtype="https://schema.org/Product">
+        <div class="product__panel product-panel">
+          <ul class="reset-list product-panel__list">
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn choices" aria-label="Добавить в избранные товары"
+                type="button">
+                <span class="choices__icon"></span>
+              </button>
+            </li>
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn cart" aria-label="Добавить в корзину" type="button">
+                <span class="cart__icon"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <div class="product__image product__image--radius-l product-image">
           <picture>
             <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
@@ -166,7 +490,8 @@
         <div class="product__info">
           <span class="product__category" itemprop="category">Гитары</span>
           <h3 class="product__name" itemprop="name">
-            <a class="reset-link" href="#" itemprop="url">Акустическая гитара Kepma A1C Black Gloss</a>
+            <a class="reset-link product__link" href="../product.html" itemprop="url">Акустическая гитара Kepma A1C
+              Black Gloss</a>
           </h3>
           <div class="product__props">
             <div class="product__price product-price" itemprop="offers" itemscope
@@ -176,15 +501,68 @@
             </div>
             <div class="product__stat">
               @include('rating.html')
-              <a class="reset-link product__comment" href="#" itemprop="reviewCount" aria-label="Что говорят о товаре">0
-                отзывов</a>
+              <span class="product__comment" itemprop="reviewCount" aria-label="Что говорят о товаре">0 отзывов</span>
+            </div>
+          </div>
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
             </div>
           </div>
         </div>
+        <template id="template"></template>
       </article>
     </li>
     <li class="catalog-grid__item">
       <article class="product product--border" itemscope itemtype="https://schema.org/Product">
+        <div class="product__panel product-panel">
+          <ul class="reset-list product-panel__list">
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn choices" aria-label="Добавить в избранные товары"
+                type="button">
+                <span class="choices__icon"></span>
+              </button>
+            </li>
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn cart" aria-label="Добавить в корзину" type="button">
+                <span class="cart__icon"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <div class="product__image product__image--radius-l product-image">
           <picture>
             <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
@@ -196,7 +574,8 @@
         <div class="product__info">
           <span class="product__category" itemprop="category">Гитары</span>
           <h3 class="product__name" itemprop="name">
-            <a class="reset-link" href="#" itemprop="url">Акустическая гитара Kepma A1C Black Gloss</a>
+            <a class="reset-link product__link" href="../product.html" itemprop="url">Акустическая гитара Kepma A1C
+              Black Gloss</a>
           </h3>
           <div class="product__props">
             <div class="product__price product-price" itemprop="offers" itemscope
@@ -206,15 +585,68 @@
             </div>
             <div class="product__stat">
               @include('rating.html')
-              <a class="reset-link product__comment" href="#" itemprop="reviewCount" aria-label="Что говорят о товаре">0
-                отзывов</a>
+              <span class="product__comment" itemprop="reviewCount" aria-label="Что говорят о товаре">0 отзывов</span>
+            </div>
+          </div>
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
             </div>
           </div>
         </div>
+        <template id="template"></template>
       </article>
     </li>
     <li class="catalog-grid__item">
       <article class="product product--border" itemscope itemtype="https://schema.org/Product">
+        <div class="product__panel product-panel">
+          <ul class="reset-list product-panel__list">
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn choices" aria-label="Добавить в избранные товары"
+                type="button">
+                <span class="choices__icon"></span>
+              </button>
+            </li>
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn cart" aria-label="Добавить в корзину" type="button">
+                <span class="cart__icon"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <div class="product__image product__image--radius-l product-image">
           <picture>
             <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
@@ -226,7 +658,8 @@
         <div class="product__info">
           <span class="product__category" itemprop="category">Гитары</span>
           <h3 class="product__name" itemprop="name">
-            <a class="reset-link" href="#" itemprop="url">Акустическая гитара Kepma A1C Black Gloss</a>
+            <a class="reset-link product__link" href="../product.html" itemprop="url">Акустическая гитара Kepma A1C
+              Black Gloss</a>
           </h3>
           <div class="product__props">
             <div class="product__price product-price" itemprop="offers" itemscope
@@ -236,15 +669,68 @@
             </div>
             <div class="product__stat">
               @include('rating.html')
-              <a class="reset-link product__comment" href="#" itemprop="reviewCount" aria-label="Что говорят о товаре">0
-                отзывов</a>
+              <span class="product__comment" itemprop="reviewCount" aria-label="Что говорят о товаре">0 отзывов</span>
+            </div>
+          </div>
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
             </div>
           </div>
         </div>
+        <template id="template"></template>
       </article>
     </li>
     <li class="catalog-grid__item">
       <article class="product product--border" itemscope itemtype="https://schema.org/Product">
+        <div class="product__panel product-panel">
+          <ul class="reset-list product-panel__list">
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn choices" aria-label="Добавить в избранные товары"
+                type="button">
+                <span class="choices__icon"></span>
+              </button>
+            </li>
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn cart" aria-label="Добавить в корзину" type="button">
+                <span class="cart__icon"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <div class="product__image product__image--radius-l product-image">
           <picture>
             <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
@@ -256,7 +742,8 @@
         <div class="product__info">
           <span class="product__category" itemprop="category">Гитары</span>
           <h3 class="product__name" itemprop="name">
-            <a class="reset-link" href="#" itemprop="url">Акустическая гитара Kepma A1C Black Gloss</a>
+            <a class="reset-link product__link" href="../product.html" itemprop="url">Акустическая гитара Kepma A1C
+              Black Gloss</a>
           </h3>
           <div class="product__props">
             <div class="product__price product-price" itemprop="offers" itemscope
@@ -266,15 +753,68 @@
             </div>
             <div class="product__stat">
               @include('rating.html')
-              <a class="reset-link product__comment" href="#" itemprop="reviewCount" aria-label="Что говорят о товаре">0
-                отзывов</a>
+              <span class="product__comment" itemprop="reviewCount" aria-label="Что говорят о товаре">0 отзывов</span>
+            </div>
+          </div>
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
             </div>
           </div>
         </div>
+        <template id="template"></template>
       </article>
     </li>
     <li class="catalog-grid__item">
       <article class="product product--border" itemscope itemtype="https://schema.org/Product">
+        <div class="product__panel product-panel">
+          <ul class="reset-list product-panel__list">
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn choices" aria-label="Добавить в избранные товары"
+                type="button">
+                <span class="choices__icon"></span>
+              </button>
+            </li>
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn cart" aria-label="Добавить в корзину" type="button">
+                <span class="cart__icon"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <div class="product__image product__image--radius-l product-image">
           <picture>
             <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
@@ -286,7 +826,8 @@
         <div class="product__info">
           <span class="product__category" itemprop="category">Гитары</span>
           <h3 class="product__name" itemprop="name">
-            <a class="reset-link" href="#" itemprop="url">Акустическая гитара Kepma A1C Black Gloss</a>
+            <a class="reset-link product__link" href="../product.html" itemprop="url">Акустическая гитара Kepma A1C
+              Black Gloss</a>
           </h3>
           <div class="product__props">
             <div class="product__price product-price" itemprop="offers" itemscope
@@ -296,15 +837,68 @@
             </div>
             <div class="product__stat">
               @include('rating.html')
-              <a class="reset-link product__comment" href="#" itemprop="reviewCount" aria-label="Что говорят о товаре">0
-                отзывов</a>
+              <span class="product__comment" itemprop="reviewCount" aria-label="Что говорят о товаре">0 отзывов</span>
+            </div>
+          </div>
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
             </div>
           </div>
         </div>
+        <template id="template"></template>
       </article>
     </li>
     <li class="catalog-grid__item">
       <article class="product product--border" itemscope itemtype="https://schema.org/Product">
+        <div class="product__panel product-panel">
+          <ul class="reset-list product-panel__list">
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn choices" aria-label="Добавить в избранные товары"
+                type="button">
+                <span class="choices__icon"></span>
+              </button>
+            </li>
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn cart" aria-label="Добавить в корзину" type="button">
+                <span class="cart__icon"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <div class="product__image product__image--radius-l product-image">
           <picture>
             <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
@@ -316,7 +910,8 @@
         <div class="product__info">
           <span class="product__category" itemprop="category">Гитары</span>
           <h3 class="product__name" itemprop="name">
-            <a class="reset-link" href="#" itemprop="url">Акустическая гитара Kepma A1C Black Gloss</a>
+            <a class="reset-link product__link" href="../product.html" itemprop="url">Акустическая гитара Kepma A1C
+              Black Gloss</a>
           </h3>
           <div class="product__props">
             <div class="product__price product-price" itemprop="offers" itemscope
@@ -326,15 +921,68 @@
             </div>
             <div class="product__stat">
               @include('rating.html')
-              <a class="reset-link product__comment" href="#" itemprop="reviewCount" aria-label="Что говорят о товаре">0
-                отзывов</a>
+              <span class="product__comment" itemprop="reviewCount" aria-label="Что говорят о товаре">0 отзывов</span>
+            </div>
+          </div>
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
             </div>
           </div>
         </div>
+        <template id="template"></template>
       </article>
     </li>
     <li class="catalog-grid__item">
       <article class="product product--border" itemscope itemtype="https://schema.org/Product">
+        <div class="product__panel product-panel">
+          <ul class="reset-list product-panel__list">
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn choices" aria-label="Добавить в избранные товары"
+                type="button">
+                <span class="choices__icon"></span>
+              </button>
+            </li>
+            <li class="product-panel__item">
+              <button class="reset-btn expanded product-panel__btn cart" aria-label="Добавить в корзину" type="button">
+                <span class="cart__icon"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
         <div class="product__image product__image--radius-l product-image">
           <picture>
             <source type="image/avif" srcset="../images/products/kepma-a1c.avif">
@@ -346,7 +994,8 @@
         <div class="product__info">
           <span class="product__category" itemprop="category">Гитары</span>
           <h3 class="product__name" itemprop="name">
-            <a class="reset-link" href="#" itemprop="url">Акустическая гитара Kepma A1C Black Gloss</a>
+            <a class="reset-link product__link" href="../product.html" itemprop="url">Акустическая гитара Kepma A1C
+              Black Gloss</a>
           </h3>
           <div class="product__props">
             <div class="product__price product-price" itemprop="offers" itemscope
@@ -356,11 +1005,49 @@
             </div>
             <div class="product__stat">
               @include('rating.html')
-              <a class="reset-link product__comment" href="#" itemprop="reviewCount" aria-label="Что говорят о товаре">0
-                отзывов</a>
+              <span class="product__comment" itemprop="reviewCount" aria-label="Что говорят о товаре">0 отзывов</span>
+            </div>
+          </div>
+          <div class="product__bottom product-bottom">
+            <div class="product-bottom__start">
+              <div class="product-slider__nav">
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-1.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-1.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-1.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-2.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-2.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-2.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+                <div class="product-slider__item" tabindex="0">
+                  <picture>
+                    <source type="image/avif" srcset="../images/products/kepma-a1c-full-3.avif">
+                    <source type="image/webp" srcset="../images/products/kepma-a1c-full-3.webp">
+                    <img class="reset-img" loading="lazy" itemprop="image" src="../images/products/kepma-a1c-full-3.jpg"
+                      alt="Фотография акустической гитары Kepma A1C">
+                  </picture>
+                </div>
+              </div>
+              <p class="product-info__available">в&nbsp;наличии</p>
+            </div>
+            <div class="product-bottom__end">
+              <dutton class="reset-btn btn btn--gray btn--uppercase">
+                <span></span>
+                В корзину
+              </dutton>
+              <button class="reset-btn choices-product__remove" type="button">Добавить к&nbsp;сравнению</button>
             </div>
           </div>
         </div>
+        <template id="template"></template>
       </article>
     </li>
   </ul>

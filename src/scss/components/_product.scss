@@ -74,7 +74,7 @@
         z-index: 2;
         overflow: visible;
         max-block-size: min-content;
-        background: clr(grey-medium);
+        background-color: clr(grey-medium);
       }
     }
 
@@ -105,6 +105,10 @@
         color: clr(link-hover);
       }
     }
+  }
+
+  &__bottom {
+    display: none;
   }
 
   &:hover {
@@ -147,15 +151,11 @@
   column-gap: 20px;
   height: 452px;
 
-  @include bp-up(md) {
-    grid-row: 2 span;
-  }
-
   &__nav {
     display: flex;
     flex-direction: column;
     max-inline-size: 90px;
-    row-gap: 7px;
+    gap: 7px;
   }
 
   &__item {
@@ -174,8 +174,8 @@
     }
   }
 
-  &__content {
-
+  @include bp-up(md) {
+    grid-row: 2 span;
   }
 }
 

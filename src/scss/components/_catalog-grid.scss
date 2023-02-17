@@ -4,15 +4,126 @@
 
   &__list {
     display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     margin-block-end: clamp(24px, 5vw, 64px);
     gap: 20px;
+
+    &--grid {
+      justify-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    &--row {
+      justify-items: start;
+      grid-template-columns: auto;
+    }
   }
 
   &__item {
     .product {
       height: 100%;
+    }
+  }
+}
+
+.catalog-grid__list--row {
+  .catalog-grid__item {
+    width: 100%;
+  }
+
+  .product {
+    column-gap: 14px;
+    flex-direction: row;
+    max-inline-size: initial;
+    background-color: transparent;
+
+    &__image {
+      border-radius: initial;
+    }
+
+    &__info {
+      border-radius: none;
+      padding-block: 15px;
+      background-color: rgb(255 255 255 / 13%);
+    }
+
+    .product__name:hover:not(:focus-visible):not(:active) {
+      background: none;
+    }
+
+    &__props {
+      max-inline-size: 285px;
+    }
+
+    &__bottom {
+      z-index: 11;
+      display: flex;
+      justify-content: space-between;
+
+      @include bp-down(57em) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .product-slider__nav {
+    flex-direction: row;
+    margin-block-end: 7px;
+    max-inline-size: 438px;
+  }
+
+  .product-info__available {
+    margin: 0;
+    line-height: initial;
+
+    @include bp-down(57em) {
+      order: -1;
+      margin-block-end: 7px;
+    }
+  }
+
+  .choices-product__remove {
+    &:hover {
+      color: rgb(255 214 0 / 60%);
+    }
+  }
+
+  .product-bottom {
+    &__start {
+      @include bp-down(57em) {
+        display: grid;
+      }
+    }
+
+    &__end {
+      display: grid;
+      place-content: center;
+      place-items: center;
+      grid-template-columns: min-content;
+      grid-template-rows: auto min-content;
+      row-gap: 7px;
+
+      .btn--gray {
+        border: 1px solid clr(neutral-light-alpha);
+        color: #adadaf;
+
+        span {
+          margin-inline-end: 7px;
+          width: 20px;
+          height: 20px;
+          background-image: url("../images/svg/mono/btn-icon-cart.svg");
+          background-position: left center;
+          background-size: 20px 20px;
+        }
+
+        &:hover {
+          color: clr(light);
+          background-color: clr(neutral-yellow-alpha);
+        }
+      }
+
+      @include bp-down(57em) {
+        place-content: initial;
+      }
     }
   }
 }

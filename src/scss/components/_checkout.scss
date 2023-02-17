@@ -24,30 +24,3 @@
     }
   }
 }
-
-.recipient-data {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  &__start {
-    display: flex;
-    gap: 8px;
-
-    @include bp-down(sm) {
-      flex-wrap: wrap;
-    }
-  }
-
-  &__end {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  &__input {
-    &--big {
-      height: 142px;
-    }
-  }
-}

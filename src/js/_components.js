@@ -12,5 +12,6 @@ import './components/custom-select';
 import './components/product-tabs';
 import './components/checked-content';
 import './components/modals';
+import './components/catalog-grid';
 import './components/stepper';
 // import './components/to-top'; // экранировать код, выдает ошибку
