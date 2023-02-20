@@ -82,5 +82,7 @@
     }
   }
 
-
+  @include bp-down(sm) {
+    display: none;
+  }
 }

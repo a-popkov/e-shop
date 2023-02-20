@@ -13,40 +13,20 @@
   </li>
   <li class="catalog-props__item">
     <span class="catalog-props__caption">Сортировка</span>
-    <div class="catalog-props__select--width custom-select" tabindex="0">
-      <div class="custom-select__top">По умолчанию ...</div>
-      <div class="custom-select__dropdown">
-        <ul class="reset-list custom-select__list">
-          <li class="custom-select__item custom-select__item--active">По умолчанию...</li>
-          <li class="custom-select__item">Популярные</li>
-          <li class="custom-select__item">Высокий рейтинг</li>
-          <li class="custom-select__item">Сначала дешёвые</li>
-          <li class="custom-select__item">Сначала дорогие</li>
-        </ul>
-      </div>
-    </div>
+    <div class="catalog-props__select catalog-props__select--width custom-select" id="select" tabindex="0"></div>
   </li>
   <li class="catalog-props__item">
     <span class="catalog-props__caption">Показать</span>
-    <div class="catalog-props__select custom-select" tabindex="0">
-      <div class="custom-select__top">12</div>
-      <div class="custom-select__dropdown">
-        <ul class="reset-list custom-select__list">
-          <li class="custom-select__item custom-select__item--active">12</li>
-          <li class="custom-select__item">20</li>
-          <li class="custom-select__item">32</li>
-        </ul>
-      </div>
-    </div>
+    <div class="catalog-props__select custom-select" id="select-number" tabindex="0"></div>
   </li>
   <li class="catalog-props__item">
     <div class="shape">
-      <button class="reset-btn shape__btn shape-grid active" title="Отобразить сеткой">
+      <button class="reset-btn shape__btn shape-grid active" title="Плиточная раскладка">
         <svg class="shape__icon" width="23" height="14">
           <use xlink:href="images/sprite-mono.svg#grid"></use>
         </svg>
       </button>
-      <button class="reset-btn shape__btn shape-rows" title="Отобразить строкой">
+      <button class="reset-btn shape__btn shape-rows" title="Строчная раскладка">
         <svg class="shape__icon" width="37" height="14">
           <use xlink:href="images/sprite-mono.svg#row"></use>
         </svg>

@@ -1,21 +1,23 @@
-const shapeGrid = document.querySelector('.shape-grid');
-const shapeRow = document.querySelector('.shape-rows');
-const shapeList = document.querySelector('.catalog-grid__list');
+; (function () {
+  const shapeGrid = document.querySelector('.shape-grid');
+  const shapeRow = document.querySelector('.shape-rows');
+  const shapeList = document.querySelector('.catalog-grid__list');
 
-shapeGrid.addEventListener('click', (e) => {
-  shapeRow.classList.remove('active');
-  shapeGrid.classList.add('active');
-  shapeList.classList.remove('catalog-grid__list--row');
-  shapeList.classList.add('catalog-grid__list--grid');
-});
+  shapeGrid?.addEventListener('click', () => {
+    shapeRow.classList.remove('active');
+    shapeGrid.classList.add('active');
+    shapeList.classList.remove('catalog-grid__list--row');
+    shapeList.classList.add('catalog-grid__list--grid');
+  });
 
-shapeRow.addEventListener('click', (e) => {
-  shapeGrid.classList.remove('active');
-  shapeRow.classList.add('active');
-  shapeList.classList.add('catalog-grid__list--row');
-  shapeList.classList.remove('catalog-grid__list--grid');
-});
+  shapeRow?.addEventListener('click', () => {
+    shapeGrid.classList.remove('active');
+    shapeRow.classList.add('active');
+    shapeList.classList.add('catalog-grid__list--row');
+    shapeList.classList.remove('catalog-grid__list--grid');
+  });
 
+})();
 
 
 // template вставка контента

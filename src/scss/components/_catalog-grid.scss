@@ -37,6 +37,7 @@
     background-color: transparent;
 
     &__image {
+      flex-shrink: 0;
       border-radius: initial;
     }
 

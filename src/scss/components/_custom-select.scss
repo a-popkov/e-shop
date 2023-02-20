@@ -1,34 +1,48 @@
 .custom-select {
+  $height: 24px;
+
   position: relative;
 
-  &__top {
+  &__input {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border-radius: 5px;
     padding-block: 3px;
     padding-inline: 21px;
     width: 100%;
-    height: 24px;
+    height: $height;
     font-weight: fw(400);
     font-size: 14px;
     line-height: 1.21;
     text-align: left;
     color: clr(neutral-light-alpha);
-    background: rgb(196 196 196 / 30%);
+    background-color: rgb(196 196 196 / 30%);
     cursor: pointer;
+  }
+
+  &__placeholder {
+    z-index: -1;
   }
 
   &__dropdown {
     position: absolute;
     inset-inline-start: 0;
-    inset-block-start: 100%;
+    inset-block-start: $height;
     z-index: z(dropdown);
     display: none;
     overflow: hidden;
     border-end-end-radius: 5px;
     border-end-start-radius: 5px;
     width: 100%;
-    background-color: rgb(196 196 196 / 50%);
+    background-color: clr(grey-light);
+  }
+
+  &__backdrop {
+    position: fixed;
+    inset: 0;
+    display: none;
+    background: transparent;
   }
 
   &__item {
@@ -37,7 +51,6 @@
     font-weight: fw(400);
     font-size: 14px;
     line-height: 1.21;
-    text-align: left;
     color: clr(neutral-light-alpha);
     cursor: pointer;
 
@@ -46,19 +59,23 @@
       background-color: clr(link-hover);
     }
 
-    &--active {
+    &.selected {
       color: clr(light);
       background-color: clr(link-hover);
     }
   }
 
-  &--open {
-    .custom-select__top {
+  &.open {
+    .custom-select__dropdown {
+      display: block;
+    }
+
+    .custom-select__input {
       border-end-end-radius: 0;
       border-end-start-radius: 0;
     }
 
-    .custom-select__dropdown {
+    .custom-select__backdrop {
       display: block;
     }
   }
